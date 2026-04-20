@@ -23,7 +23,7 @@
 
 \title{A Python + PyTorch Pipeline for Code-Switched Lecture
   Transcription and Zero-Shot Cross-Lingual Voice Cloning\\
-  \large{\textit{Speech Understanding --- Programming Assignment 2}}}
+  \large{\textit{Speech Understanding - Programming Assignment 2}}}
 
 \author{\IEEEauthorblockN{Hitesh Shanmukha}
 \IEEEauthorblockA{Roll No: \textbf{B22AI013}\\
@@ -85,7 +85,7 @@ the end-to-end view.
       $0.78$ ($\pm 200$\,ms) on held-out code-switched data.
 \item A \emph{modified Kneser--Ney} 3-gram LM trained on a
       speech-course syllabus and wired into Whisper via a targeted
-      top-$K$ shallow-fusion logits processor --- cost-bounded at
+      top-$K$ shallow-fusion logits processor - cost-bounded at
       $\mathcal{O}(K)$ per decode step.
 \item A script-aware Hinglish G2P plus an IPA$\to$Devanagari
       back-transliterator, so the Meta MMS-TTS front-end accepts our
@@ -153,7 +153,7 @@ neural vocoder because vocoder artefacts tend to sit in the upper
 half of the spectrum, which MCL\'s Mel-warp squashes.
 
 % ============================================================
-\section{Part I --- Robust Code-Switched Transcription}
+\section{Part I - Robust Code-Switched Transcription}
 
 \subsection{Task 1.3 Denoising}
 We implement two interchangeable front-ends:
@@ -303,7 +303,7 @@ concatenated texts form the final transcript.
 Beyond the LM scalar bias we maintain an allow-list of 20 technical
 terms (\textit{cepstrum, viterbi, stochastic, formant, phoneme,
 attention, transformer, ...}). Each term's BPE IDs receive an
-additive $+2.0$-nat bonus regardless of the current history --- a
+additive $+2.0$-nat bonus regardless of the current history - a
 hard prior that recovers true-positive mentions even when the LM
 context is out of distribution (e.g.\ the first word of a chunk).
 
@@ -313,7 +313,7 @@ post-processor compresses any run of $\geq 10$ identical numeric or
 punctuation characters down to a single period before IPA conversion.
 
 % ============================================================
-\section{Part II --- Phonetic Mapping and Translation}
+\section{Part II - Phonetic Mapping and Translation}
 
 \subsection{Task 2.1 Hinglish IPA G2P}
 Off-the-shelf G2P tools target either Devanagari or Latin script but
@@ -321,7 +321,7 @@ never both in the same utterance. We implement a three-pass
 script-aware G2P:
 (1)~tokenise the mixed string into runs of Latin, Devanagari and
 punctuation;
-(2)~translate each run with a script-specific mapping---\textbf{a
+(2)~translate each run with a script-specific mapping-\textbf{a
 72-entry Devanagari$\to$IPA table with schwa deletion} on
 $C_1\!\text{\small ə}\!C_2\!V$ contexts, and an English pronunciation
 dictionary (200 hand-authored entries for technical vocabulary) with
@@ -386,7 +386,7 @@ the Devanagari entry formed by concatenating the two component
 Devanagari strings with a hyphen.
 
 % ============================================================
-\section{Part III --- Zero-Shot Cross-Lingual Voice Cloning}
+\section{Part III - Zero-Shot Cross-Lingual Voice Cloning}
 
 \subsection{Task 3.1 Speaker Embedding}
 We implement the x-vector front-end of
@@ -444,11 +444,11 @@ duration predictor scales quadratically with the input length. We
 therefore split the Devanagari input into $\leq 400$-character
 sentence chunks, synthesise each independently and concatenate. On
 a 10-min lecture this produces 14 speech chunks averaging $\approx
-30$\,s each --- a total of $430.7$\,s of Maithili audio at
+30$\,s each - a total of $430.7$\,s of Maithili audio at
 22.05\,kHz written to \texttt{output\_LRL\_raw.wav}.
 
 % ============================================================
-\section{Part IV --- Adversarial Robustness \& Spoofing}
+\section{Part IV - Adversarial Robustness \& Spoofing}
 
 \subsection{Task 4.1 LFCC-BiLSTM Anti-Spoofing CM}
 Waveform $\to$ 60-dim LFCC~\cite{sahidullah2015lfcc} with pre-emphasis
@@ -558,13 +558,13 @@ Whisper's built-in language detector probes say the user-supplied
 inference clip is
 \textbf{75\,\% Hindi / 25\,\% English} (114 switches). Our
 FLEURS-trained LID, however, classifies the clip as entirely English
---- this is a \textit{documented distribution-shift failure} between
+- this is a \textit{documented distribution-shift failure} between
 studio-quality FLEURS and classroom-recorded PM speech, not a bug
 (the same weights score 0.83 / 0.78 on the in-distribution test).
 Whisper-based LID output is retained in
 \texttt{switches\_whisper.json} as an apples-to-apples reference.
 
-\subsection{Ablation --- Prosody Warping vs Flat Synthesis}
+\subsection{Ablation - Prosody Warping vs Flat Synthesis}
 \label{sec:ablation}
 
 Table~\ref{tab:ablation} reports MCD-DTW (lower is better) between
@@ -724,7 +724,7 @@ rhetorical peaks and pauses. This is the behaviour the assignment's
 \texttt{183 218 254 188 148 196 248 149}
 }}
 \caption{Schematic $F_0$ contours before/after warping on an 8-frame
-window --- warped values track the lecturer to within a few Hz.}
+window - warped values track the lecturer to within a few Hz.}
 \label{fig:prosody}
 \end{figure}
 
@@ -736,12 +736,12 @@ Table~\ref{tab:conf} pinpoints HI$\to$EN as the dominant residual
 error on the held-out CS test (25.7\,\% of HI frames flipped). We
 attribute this to three co-occurring factors:
 \begin{enumerate}\itemsep1pt
-\item \textbf{SNR gap} --- FLEURS-\texttt{hi\_in} recordings have a
+\item \textbf{SNR gap} - FLEURS-\texttt{hi\_in} recordings have a
       median estimated SNR of $\approx 22$\,dB whereas LibriSpeech
       dev-clean sits at $\approx 35$\,dB.
-\item \textbf{Softer phonation} --- FLEURS speakers read in a
+\item \textbf{Softer phonation} - FLEURS speakers read in a
       measured tone; LibriSpeech audiobook speakers project.
-\item \textbf{Spectral tilt} --- LibriSpeech is broadcast-equalised
+\item \textbf{Spectral tilt} - LibriSpeech is broadcast-equalised
       while FLEURS audio passes through the FLEURS pipeline's own
       codec chain.
 \end{enumerate}
@@ -758,7 +758,7 @@ timeline is persisted separately as
 \texttt{data/infer/switches\_whisper.json} and is used for
 ablation-only comparisons. This is exactly the OOD picture that
 \cite{conneau2023fleurs} warns about for FLEURS-trained
-front-ends --- the model has never seen the PM-speech acoustic prior
+front-ends - the model has never seen the PM-speech acoustic prior
 (distant mic, reverberant hall, hoarse register, Hindi register).
 Fine-tuning on MUCS-2021 remains the single biggest lever.
 
@@ -805,7 +805,7 @@ Three findings stand out.
 model what a switch looks like.
 (ii)~The MMS-TTS backbone gets us to a 22.05\,kHz Maithili output,
 but lacking a speaker-conditioning head it cannot deliver the target
-MCD~$<\!8$ against the student voice --- swapping to YourTTS, which
+MCD~$<\!8$ against the student voice - swapping to YourTTS, which
 \emph{does} accept a speaker WAV for zero-shot conditioning, is the
 next step.
 (iii)~Our DTW-based prosody warp proves out the alignment logic but

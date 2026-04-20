@@ -7,7 +7,7 @@ decision per task, focused on trade-offs a quick code-scan would miss.
 
 ## Part I
 
-**Task 1.1 — Multi-Head LID.**
+**Task 1.1 - Multi-Head LID.**
 The "multi-head" aspect is *temporally resolved*: a frame head
 (argmax at a 10-ms hop) alongside a globally-pooled utterance head,
 jointly trained with α = 0.7 on the frame loss. A single utterance
@@ -26,7 +26,7 @@ SIL when RMS < −75 dBFS sustained for ≥ 150 ms. Together these lifted
 frame macro-F1 from 0.52 → 0.83 and SIL recall from 0 % → 91 % on
 held-out code-switched audio.
 
-**Task 1.2 — Constrained Decoding.**
+**Task 1.2 - Constrained Decoding.**
 Rather than biasing the full vocabulary on every step (intractable,
 $O(|V|)$ extra cost per time-step), we re-score only the **top-K = 64
 acoustic candidates**. Whisper's posteriors are sharp, so the ranking
@@ -36,9 +36,9 @@ is also **smeared across BPE sub-tokens** so that the first token of
 `cep|strum` isn't unfairly penalised by a low unigram prior.
 Additionally, Whisper special tokens (`<|en|>`, `<|notimestamps|>`,
 ...) are explicitly skipped to preserve language / timestamp
-tagging — otherwise biasing can corrupt the decoded structure.
+tagging - otherwise biasing can corrupt the decoded structure.
 
-**Task 1.3 — Denoising.**
+**Task 1.3 - Denoising.**
 The spectral-subtraction fallback uses a **Wiener-style floor
 β·|X(ω)|** instead of a hard lower bound. Hard flooring produces the
 characteristic "musical noise" that amplifies classroom environments;
@@ -49,14 +49,14 @@ hallucinating harmonics.
 
 ## Part II
 
-**Task 2.1 — Hinglish IPA.**
+**Task 2.1 - Hinglish IPA.**
 Schwa-deletion in Devanagari is applied **only in medial C-ə-C-V
 contexts**, not to every non-final schwa. This matches how Hindi is
 actually read aloud (*namaste → [nə̆m.əs.t̪eː]*) and keeps surface
 durations consistent; global deletion collapses whole syllables and
 breaks downstream TTS alignment.
 
-**Task 2.2 — Parallel Corpus.**
+**Task 2.2 - Parallel Corpus.**
 The corpus is deliberately **compositional**: 150 hand-authored seed
 rows plus a programmatic `modifier × head` expansion over seed
 atoms. This (a) reaches the 500-row quota without fabricating new
@@ -73,13 +73,13 @@ is the inverse of the G2P so a round-trip stays consistent.
 
 ## Part III
 
-**Task 3.1 — Speaker Embedding.**
+**Task 3.1 - Speaker Embedding.**
 The 60-s reference is **exactly 60 s**, not "roughly": shorter clips
 are padded, longer clips are truncated. The x-vector statistics pool
 would otherwise leak the recording length as an implicit feature,
 which breaks downstream CM evaluation.
 
-**Task 3.2 — DTW Prosody Warping.**
+**Task 3.2 - DTW Prosody Warping.**
 Two non-obvious choices:
 1. The DTW operates on **joint [log F₀, log E]**, not F₀ alone.
    Energy carries stress and pause information that disambiguates
@@ -90,7 +90,7 @@ Two non-obvious choices:
    interpolate the frame alignment back to full resolution. This is
    what lets the pipeline finish in minutes instead of hours.
 
-**Task 3.3 — Synthesis backend order.**
+**Task 3.3 - Synthesis backend order.**
 Priority is YourTTS → MMS → formant fallback. YourTTS can do genuine
 **zero-shot speaker cloning from a WAV** (the strict MCD target
 assumes that ability). MMS covers ~1 000 languages including Maithili
@@ -99,14 +99,14 @@ voice and apply the Part 3.2 warp with the student's x-vector to
 transfer prosodic identity. Empty-chunk detection (input with zero
 Devanagari tokens) was added after a long run crashed on the
 `_relative_position_to_absolute_position` attention kernel inside
-VITS — the punctuation-only tail of the transcript tokenises to an
+VITS - the punctuation-only tail of the transcript tokenises to an
 empty sequence.
 
 ---
 
 ## Part IV
 
-**Task 4.1 — Anti-Spoofing CM.**
+**Task 4.1 - Anti-Spoofing CM.**
 LFCC is chosen over MFCC specifically for the **linear band above
 4 kHz**. Neural vocoders (including our MMS output) tend to leave
 checkerboard artefacts in 4–8 kHz; Mel warping squashes that band to
@@ -114,13 +114,13 @@ a handful of coefficients, whereas LFCC keeps it at full resolution.
 That makes LFCC a strictly better discriminator against the exact
 kind of spoof we produce.
 
-**Task 4.2 — FGSM.**
+**Task 4.2 - FGSM.**
 The search is **binary, not grid**: the feasible ε set is convex in
 both the flipping and the SNR constraint, so log₂(ε_max/tol) ≈ 18
 iterations locate the minimum passing ε. A grid search would need
 10×–100× more forward passes and still miss the knee. The attack is
 \emph{targeted} toward `EN` so the gradient sign is *subtracted*, not
-added — a small sign-flip that's easy to miss in a copy-paste FGSM.
+added - a small sign-flip that's easy to miss in a copy-paste FGSM.
 
 Also non-obvious: FGSM on real-world audio requires care with the
 baseline. If the LID already predicts the target class, every

@@ -73,7 +73,7 @@ assignment2/
 python -m venv .venv && .venv\Scripts\activate        # or: source .venv/bin/activate
 pip install -r requirements.txt
 
-# 1. LID training data — LibriSpeech EN + FLEURS hi_in HI (≈800 clips)
+# 1. LID training data - LibriSpeech EN + FLEURS hi_in HI (≈800 clips)
 python scripts/prepare_lid_data.py --n-per-lang 400
 
 # 2. Add 120 synthetic code-switched training clips (EN/HI/SIL labelled)
@@ -96,7 +96,7 @@ python pipeline.py build-corpus --out data/parallel_corpus.json
 python scripts/build_codeswitch_test.py --target-s 120
 python scripts/eval_on_codeswitch.py --whisper openai/whisper-small
 
-# 6. Inference — drop your 10-min audio at data/infer/original_segment.wav
+# 6. Inference - drop your 10-min audio at data/infer/original_segment.wav
 #    and your 60-s voice reference at data/student_voice_ref.wav, then:
 python scripts/run_stt_only.py \
        --wav data/infer/original_segment.wav \
@@ -140,14 +140,14 @@ python scripts/run_voice_stages.py --voice-ref data/student_voice_ref.wav
 
 | Metric | Target | Observed | Status |
 |---|---|---|---|
-| LID frame macro-F1 (synth CS test) | — | **0.833** | ✓ |
+| LID frame macro-F1 (synth CS test) | - | **0.833** | ✓ |
 | LID boundary F1 ±200 ms (synth CS test) | ≥ 0.85 | **0.780** | near |
 | MCD vs lecturer, flat MMS | < 8.0 | **9.20 dB** | near |
 | **EER** | **< 10 %** | **5.00 %** | **✓** |
 | **FGSM ε @ SNR > 40 dB** | report | **no flip** | **✓ robust** |
 | TTS output sample rate | ≥ 22.05 kHz | **22.05 kHz** | ✓ |
 
-WER needs a ground-truth transcript — drop one at `results/ref_transcript.txt` and run [scripts/compute_wer.py](scripts/compute_wer.py).
+WER needs a ground-truth transcript - drop one at `results/ref_transcript.txt` and run [scripts/compute_wer.py](scripts/compute_wer.py).
 
 ### Ablation: Prosody warping vs flat synthesis (MCD-DTW, dB)
 
@@ -157,7 +157,7 @@ WER needs a ground-truth transcript — drop one at `results/ref_transcript.txt`
 | `lecture_clean.wav`     |  9.20 | 11.61 | +2.41 |
 
 The warp correctly transfers F0+energy; the resample-based
-pitch shifter distorts the spectral envelope — a phase-vocoder /
+pitch shifter distorts the spectral envelope - a phase-vocoder /
 TD-PSOLA pitch shifter is the primary future-work item (see report).
 
 ### LID confusion matrix on the held-out synthetic CS test
@@ -171,7 +171,7 @@ gt SIL             36        21       564
 
 HI→EN is the dominant residual error (FLEURS is acoustically softer
 than LibriSpeech; classifier leans toward the cleaner class). SIL
-recall 91 % — the energy-VAD post-filter did its job.
+recall 91 % - the energy-VAD post-filter did its job.
 
 ## Report + implementation note
 - [report/report.tex](report/report.tex) – full IEEE two-column report.
