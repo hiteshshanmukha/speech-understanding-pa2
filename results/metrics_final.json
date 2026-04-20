@@ -11,5 +11,9 @@
   "MCD_dB_vs_lecturer_cloned": 11.610892185137676,
   "ablation_prosody_warp_delta_dB_vs_lecturer": 2.4131030196308245,
   "pseudo_ref_note": "No ground-truth transcript supplied; WER/CER computed between Whisper-tiny no-bias and Whisper-small + N-gram LM bias over first 2 min. Quantifies LM-bias effect, not absolute accuracy.",
-  "WER_note": "WER not reported: no ground-truth transcript was supplied with the inference audio. The scripts/compute_wer.py helper computes WER against a user-provided ref_transcript.txt via jiwer."
+  "WER_note": "WER not reported: no ground-truth transcript was supplied with the inference audio. The scripts/compute_wer.py helper computes WER against a user-provided ref_transcript.txt via jiwer.",
+  "MCD_dB_dtw_raw_vs_newref": 12.723222596873553,
+  "MCD_dB_dtw_cloned_vs_newref": 13.449126918390858,
+  "voice_ref_note": "Voice ref is 52.7s of user speech; x-vector loader zero-pads to the required 60s.",
+  "tts_duration_s": 422.3
 }
