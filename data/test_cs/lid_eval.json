@@ -1,0 +1,26 @@
+{
+  "frame_macro_F1": 0.8326929340121526,
+  "boundary_F1_200ms": 0.78,
+  "labels": [
+    "EN",
+    "HI",
+    "SIL"
+  ],
+  "confusion_matrix_rows_gt_cols_pred": [
+    [
+      6448,
+      249,
+      59
+    ],
+    [
+      1192,
+      3280,
+      161
+    ],
+    [
+      36,
+      21,
+      564
+    ]
+  ]
+}

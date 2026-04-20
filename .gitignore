@@ -16,7 +16,8 @@ data/train_clips/
 data/lid_train/
 data/lid_cs_train/
 data/synth_lid/
-data/test_cs/
+data/test_cs/*.wav
+data/test_cs/*.log
 data/infer/cm_pairs/
 data/infer/inference_audio.m4a
 data/infer/student_voice_ref.m4a
@@ -45,5 +46,5 @@ Thumbs.db
 .vscode/
 .idea/
 
-# -- Claude Code workspace
+# -- Editor workspace
 .claude/
