@@ -50,11 +50,16 @@ assignment2/
 │   │   └── fgsm.py             # targeted FGSM with binary search
 │   └── common/audio_io.py      # soundfile-backed WAV IO (Windows-safe)
 ├── data/
-│   ├── infer/                  # inference artefacts (transcript, IPA, LID, ...)
-│   ├── test_cs/                # held-out CS test ground truth + eval JSON
-│   ├── parallel_corpus.json    # 500-row technical dictionary
-│   ├── student_voice_ref.wav   # 60-s voice reference
-│   └── output_LRL_cloned.wav   # **FINAL 22.05-kHz LRL lecture**
+│   ├── infer/original_segment.wav  # 10-min inference INPUT
+│   ├── student_voice_ref.wav       # 60-s voice reference INPUT
+│   └── parallel_corpus.json        # 500-row technical dictionary
+├── results/                        # all pipeline outputs (see results/README.md)
+│   ├── output_LRL_cloned.wav       # **FINAL 22.05-kHz LRL lecture**
+│   ├── transcript.txt, ipa.txt, translation.txt, maithili_text.txt
+│   ├── switches.json, switches_whisper.json
+│   ├── lid_confusion.json, synth_segments.json
+│   ├── metrics_final.json, fgsm_report.json
+│   └── README.md
 └── models/
     ├── lid.pt                  # trained LID
     ├── ngram_lm.pkl            # modified KN 3-gram
@@ -95,14 +100,11 @@ python scripts/eval_on_codeswitch.py --whisper openai/whisper-small
 #    and your 60-s voice reference at data/student_voice_ref.wav, then:
 python scripts/run_stt_only.py \
        --wav data/infer/original_segment.wav \
-       --out-dir data/infer \
        --whisper openai/whisper-small
-python scripts/run_voice_stages.py \
-       --voice-ref data/student_voice_ref.wav \
-       --out       data/output_LRL_cloned.wav
-#   -> data/infer/{transcript, ipa, translation, maithili_text}.txt
-#   -> data/infer/{switches, switches_whisper, fgsm_report, metrics_final}.json
-#   -> data/output_LRL_cloned.wav          (final 22.05-kHz LRL lecture)
+python scripts/run_voice_stages.py --voice-ref data/student_voice_ref.wav
+#   -> results/{transcript, ipa, translation, maithili_text}.txt
+#   -> results/{switches, switches_whisper, fgsm_report, metrics_final}.json
+#   -> results/output_LRL_cloned.wav        (final 22.05-kHz LRL lecture)
 ```
 
 ## Part-by-part reference

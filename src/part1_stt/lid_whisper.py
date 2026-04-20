@@ -118,7 +118,7 @@ if __name__ == "__main__":
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
     ap = argparse.ArgumentParser()
     ap.add_argument("--wav", required=True)
-    ap.add_argument("--out", default="data/infer/switches_whisper.json")
+    ap.add_argument("--out", default="results/switches_whisper.json")
     ap.add_argument("--model", default="openai/whisper-tiny")
     args = ap.parse_args()
 

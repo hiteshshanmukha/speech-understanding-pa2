@@ -42,11 +42,11 @@ def seg_to_frames(segments: list[list], n_frames: int, sr: int = 16_000) -> np.n
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--wav", default="data/test_cs/synth_code_switch.wav")
-    ap.add_argument("--segs", default="data/test_cs/synth_segments.json")
+    ap.add_argument("--segs", default="results/synth_segments.json")
     ap.add_argument("--lid", default="models/lid.pt")
     ap.add_argument("--lm", default="models/ngram_lm.pkl")
     ap.add_argument("--whisper", default="openai/whisper-small")
-    ap.add_argument("--out-dir", default="data/test_cs")
+    ap.add_argument("--out-dir", default="results")
     args = ap.parse_args()
 
     out = Path(args.out_dir); out.mkdir(parents=True, exist_ok=True)

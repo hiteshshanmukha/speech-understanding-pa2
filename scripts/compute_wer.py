@@ -1,6 +1,6 @@
 """Compute WER on the inference clip given a user-supplied reference.
 
-Drop a ground-truth transcript at ``data/infer/ref_transcript.txt``
+Drop a ground-truth transcript at ``results/ref_transcript.txt``
 (one utterance per line, or just a single blob – jiwer accepts both)
 and this script reports:
 
@@ -31,10 +31,10 @@ def _tokens(s: str) -> list[str]:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--ref", default="data/infer/ref_transcript.txt")
-    ap.add_argument("--hyp", default="data/infer/transcript.txt")
-    ap.add_argument("--switches", default="data/infer/switches.json")
-    ap.add_argument("--out", default="data/infer/wer_report.json")
+    ap.add_argument("--ref", default="results/ref_transcript.txt")
+    ap.add_argument("--hyp", default="results/transcript.txt")
+    ap.add_argument("--switches", default="results/switches.json")
+    ap.add_argument("--out", default="results/wer_report.json")
     args = ap.parse_args()
 
     from jiwer import wer, cer

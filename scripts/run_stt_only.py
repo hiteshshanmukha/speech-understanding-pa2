@@ -1,7 +1,8 @@
 """Run the STT half of the pipeline on the inference clip.
 
-Produces (under data/infer/):
-    lecture_clean.wav       – denoised 16-kHz inference audio
+Produces (under results/):
+    lecture_clean.wav       – denoised 16-kHz inference audio (written to
+                              data/infer/ to keep results/ non-huge)
     switches.json           – frame-level LID + merged code-switch timeline
     transcript.txt          – Whisper-v3 output biased by the custom KN LM
     ipa.txt                 – unified IPA string
@@ -30,7 +31,7 @@ from src.part2_phonetic.parallel_corpus import build_corpus, translate
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--wav", default="data/infer/original_segment.wav")
-    ap.add_argument("--out-dir", default="data/infer")
+    ap.add_argument("--out-dir", default="results")
     ap.add_argument("--lid", default="models/lid.pt")
     ap.add_argument("--lm", default="models/ngram_lm.pkl")
     ap.add_argument("--whisper", default="openai/whisper-large-v3")

@@ -5,8 +5,8 @@ by prepare_lid_data.py) to avoid train/test leak. Alternates between
 Hindi and English utterances with small pauses, targeting a specific
 total duration, and writes:
 
-    data/test_cs/synth_code_switch.wav   16-kHz mono WAV
-    data/test_cs/synth_segments.json     [[start_s, end_s, "EN"|"HI"], ...]
+    data/test_cs/synth_code_switch.wav   16-kHz mono WAV (large, gitignored)
+    results/synth_segments.json          [[start_s, end_s, "EN"|"HI"], ...]
 """
 from __future__ import annotations
 
@@ -59,7 +59,7 @@ def read_clip(src) -> tuple[np.ndarray, int]:
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out-wav", default="data/test_cs/synth_code_switch.wav")
-    ap.add_argument("--out-segs", default="data/test_cs/synth_segments.json")
+    ap.add_argument("--out-segs", default="results/synth_segments.json")
     ap.add_argument("--target-s", type=float, default=120.0,
                     help="Total target length in seconds")
     ap.add_argument("--pause-s", type=float, default=0.3,

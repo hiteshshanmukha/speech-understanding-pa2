@@ -1,18 +1,18 @@
 """Run the voice-dependent stages after the user drops their 60-s ref.
 
 Prereqs (produced by `run_stt_only.py`):
-    data/infer/lecture_clean.wav
-    data/infer/ipa.txt
+    results/lecture_clean.wav
+    results/ipa.txt
 
 Input (you supply):
     data/student_voice_ref.wav   # exactly 60 s of your own voice, 16 kHz mono
 
 Output:
-    data/infer/speaker_emb.pt           # 512-d x-vector
-    data/infer/output_LRL_raw.wav       # flat TTS in Santhali
-    data/output_LRL_cloned.wav          # DTW-prosody-warped final lecture
-    data/infer/fgsm_report.json         # Task 4.2 result
-    data/infer/eer_report.json          # Task 4.1 result (if --cm given)
+    results/speaker_emb.pt              # 512-d x-vector
+    results/output_LRL_raw.wav          # flat TTS in LRL
+    results/output_LRL_cloned.wav       # DTW-prosody-warped final lecture
+    results/fgsm_report.json            # Task 4.2 result
+    results/eer_report.json             # Task 4.1 result
 """
 from __future__ import annotations
 
@@ -39,8 +39,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--voice-ref", required=True,
                     help="60-s reference, 16-kHz mono, e.g. data/student_voice_ref.wav")
-    ap.add_argument("--infer-dir", default="data/infer")
-    ap.add_argument("--out", default="data/output_LRL_cloned.wav")
+    ap.add_argument("--infer-dir", default="results")
+    ap.add_argument("--out", default="results/output_LRL_cloned.wav")
     ap.add_argument("--lid", default="models/lid.pt")
     ap.add_argument("--cm", default=None,
                     help="Optional pre-trained CM checkpoint; if absent, trained on-the-fly.")

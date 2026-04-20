@@ -38,6 +38,9 @@ report/*.out
 report/*.synctex.gz
 report/*.bbl
 report/*.blg
+report/*.fdb_latexmk
+report/*.fls
+report/*.xdv
 
 # -- OS / editor
 .DS_Store
@@ -48,3 +51,4 @@ Thumbs.db
 
 # -- Editor workspace
 .claude/
+statement.txt

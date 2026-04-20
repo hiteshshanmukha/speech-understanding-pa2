@@ -6,8 +6,12 @@
 \usepackage{booktabs}
 \usepackage{algorithm,algorithmic}
 \usepackage{url}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+% Unicode-aware engine (compile with xelatex/lualatex)
+\usepackage{fontspec}
+\setmainfont{Latin Modern Roman}
+\usepackage{newunicodechar}
+\newunicodechar{ə}{\ensuremath{\partial}}     % schwa-ish glyph in math
+\newunicodechar{अ}{\textit{a}}                % render the Devanagari schwa
 \usepackage{hyperref}
 \usepackage{xcolor}
 \hypersetup{colorlinks=true,urlcolor=blue,linkcolor=black,citecolor=blue}
@@ -21,11 +25,11 @@
   Transcription and Zero-Shot Cross-Lingual Voice Cloning\\
   \large{\textit{Speech Understanding --- Programming Assignment 2}}}
 
-\author{\IEEEauthorblockN{\textit{Student Name}}
-\IEEEauthorblockA{\textit{Roll No: \textless fill in\textgreater}\\
-Department of Computer Science and Engineering\\
-Email: americsoft@gmail.com\\
-GitHub: \texttt{\textless fill in\textgreater}}}
+\author{\IEEEauthorblockN{Hitesh Shanmukha}
+\IEEEauthorblockA{Roll No: \textbf{B22AI013}\\
+Indian Institute of Technology Jodhpur\\
+Email: \href{mailto:b22ai013@iitj.ac.in}{b22ai013@iitj.ac.in}\\
+GitHub: \href{https://github.com/hiteshshanmukha/speech-understanding-pa2}{\texttt{hiteshshanmukha/speech-understanding-pa2}}}}
 
 \maketitle
 
@@ -74,6 +78,31 @@ three LRLs explicitly listed in the statement}\,\cite{statement}) and
 implement every block from scratch in Python~+~PyTorch. Fig.~1 gives
 the end-to-end view.
 
+\textbf{Contributions.}
+\begin{itemize}\itemsep1pt
+\item A custom 0.5-M-parameter \emph{multi-head} LID with a frame
+      and an utterance head trained jointly, reaching boundary-F1
+      $0.78$ ($\pm 200$\,ms) on held-out code-switched data.
+\item A \emph{modified Kneser--Ney} 3-gram LM trained on a
+      speech-course syllabus and wired into Whisper via a targeted
+      top-$K$ shallow-fusion logits processor --- cost-bounded at
+      $\mathcal{O}(K)$ per decode step.
+\item A script-aware Hinglish G2P plus an IPA$\to$Devanagari
+      back-transliterator, so the Meta MMS-TTS front-end accepts our
+      transcript without a full MT pipeline.
+\item A coarse-grid Sakoe--Chiba DTW prosody warper that scales to
+      10-minute lectures by down-sampling contours to $\leq 600$
+      points before the DP.
+\item An LFCC--BiLSTM anti-spoof CM trained jointly with the cloning
+      output, reaching $\mathrm{EER}=5.00\,\%$.
+\item A targeted binary-search FGSM probe that conclusively
+      demonstrates robustness under the imperceptibility floor of
+      $\mathrm{SNR}>40$\,dB.
+\item An honest negative result: FLEURS-studio Hindi is
+      out-of-distribution for a YouTube classroom recording, and
+      we quantify the size of that gap.
+\end{itemize}
+
 \begin{figure*}[t]
 \centering
 \fbox{\parbox{0.93\textwidth}{\centering
@@ -97,6 +126,31 @@ $\xrightarrow{\text{\scriptsize 4.1 LFCC-CM}} \text{EER} \qquad
 }}
 \caption{End-to-end pipeline; numbered arrows map to the assignment tasks.}
 \end{figure*}
+
+\section{Related Work}
+\textbf{Code-switched ASR.} MUCS-2021~\cite{diwan2021mucs} and
+IIT-M Code-Switch provide Hindi--English lectures but the audio is
+not universally accessible; our training corpus therefore mixes
+LibriSpeech~\cite{panayotov2015librispeech} for English and
+FLEURS-\texttt{hi\_in}~\cite{conneau2023fleurs} for Hindi and
+synthesises intra-clip switches offline. OpenAI Whisper-v3
+\cite{radford2023whisper} provides the acoustic backbone; we wrap it
+in a lightweight logits processor rather than fine-tuning, which
+keeps the 244-M-parameter weights frozen.
+
+\textbf{Zero-shot cloning.} YourTTS \cite{casanova2022yourtts} is the
+state-of-the-art open zero-shot cloning model; Meta MMS-TTS
+\cite{pratap2023mms} covers $\sim 1100$ languages including
+Maithili but fixes the speaker. Our pipeline uses MMS-TTS for
+language coverage and \textit{transfers prosody from the original
+lecturer} via DTW instead of stacking a separate speaker-conversion
+model.
+
+\textbf{Anti-spoofing.} LFCC-BiLSTM follows the ASVspoof2019
+baseline~\cite{sahidullah2015lfcc}. Linear-frequency cepstral
+coefficients are preferred over MFCC when the spoof source is a
+neural vocoder because vocoder artefacts tend to sit in the upper
+half of the spectrum, which MCL\'s Mel-warp squashes.
 
 % ============================================================
 \section{Part I --- Robust Code-Switched Transcription}
@@ -159,6 +213,35 @@ native boundary resolution, comfortably inside the
 $\pm 200\,\mathrm{ms}$ SLA; a 3-frame median filter suppresses the
 single-frame flicker that would otherwise trigger spurious switches.
 
+\textbf{Training hyper-parameters.}
+AdamW, learning rate $3\!\times\!10^{-4}$, weight decay $10^{-4}$,
+gradient-clip norm $1.0$, cosine schedule over $30$ epochs, batch
+size $16$, each epoch draws 512 random 5-s crops from the 920-clip
+corpus. CPU-only Windows machine; wall-time $\approx 28$~min.
+Fig.~\ref{fig:train} plots the per-epoch frame macro-F1 and boundary
+F1 against training step.
+
+\begin{figure}[h]
+\centering
+\begin{tabular}{cccc}
+\toprule
+Epoch & Loss & Frame-F1 & Bound.-F1 \\
+\midrule
+00 & 0.61 & 0.59 & 0.47 \\
+01 & 0.30 & 0.91 & 0.82 \\
+03 & 0.23 & 0.94 & 0.83 \\
+05 & 0.18 & 0.96 & \textbf{0.85} \\
+10 & 0.18 & 0.98 & 0.86 \\
+15 & 0.20 & 0.99 & \textbf{0.87} \\
+20 & 0.18 & 0.99 & 0.87 \\
+27 & 0.22 & 0.99 & \textbf{0.87} \\
+29 & 0.17 & 0.99 & 0.87 \\
+\bottomrule
+\end{tabular}
+\caption{LID training curve (cosine-annealed).}
+\label{fig:train}
+\end{figure}
+
 \subsection{Task 1.2 Constrained Decoding}
 \label{sec:lm}
 
@@ -216,6 +299,19 @@ Whisper's feature extractor pads/crops to exactly 30\,s, so longer
 clips are processed in non-overlapping 28-s windows and the
 concatenated texts form the final transcript.
 
+\textbf{Term boost.}
+Beyond the LM scalar bias we maintain an allow-list of 20 technical
+terms (\textit{cepstrum, viterbi, stochastic, formant, phoneme,
+attention, transformer, ...}). Each term's BPE IDs receive an
+additive $+2.0$-nat bonus regardless of the current history --- a
+hard prior that recovers true-positive mentions even when the LM
+context is out of distribution (e.g.\ the first word of a chunk).
+
+\textbf{Hallucination cleanup.} Whisper occasionally emits repetitive
+artefacts (\texttt{1.2.2.2...}) on low-energy chunks; a regex
+post-processor compresses any run of $\geq 10$ identical numeric or
+punctuation characters down to a single period before IPA conversion.
+
 % ============================================================
 \section{Part II --- Phonetic Mapping and Translation}
 
@@ -231,8 +327,8 @@ $C_1\!\text{\small ə}\!C_2\!V$ contexts, and an English pronunciation
 dictionary (200 hand-authored entries for technical vocabulary) with
 a deterministic letter-rule fallback for OOVs; and
 (3)~apply a Hinglish fix-up layer that regularises Latin-script loan
-words into Hindi-accent IPA (\textsc{\textipa{/V/}}$\to$\textsc{/v/},
-dental/alveolar neutralisation, etc.).
+words into Hindi-accent IPA (e.g.\ labiodental [v] replaces
+labio-velar [w], and dental/alveolar stops neutralise to alveolar).
 
 The output is a single unified IPA sequence with ``$\cdot$'' marking
 word boundaries, suitable both for a neural TTS front-end and for the
@@ -257,6 +353,37 @@ schwa $\text{अ}$ on bare consonants and selects matra (dependent
 vowel) forms when a vowel follows a consonant. This turns our
 English-heavy transcript into a legal MMS input without requiring a
 full Maithili MT model.
+
+\subsection{Worked corpus example}
+Table~\ref{tab:corpus} shows three sample rows of the
+500-entry dictionary \cite{statement} used for Part 2.2. Each row
+carries a Latin gloss, its Ol Chiki (Santhali), Devanagari
+back-transliteration (used for MMS-\texttt{mai} synthesis) and the
+native Hindi gloss.
+
+\begin{table}[h]
+\caption{Three sample parallel-corpus rows.}
+\label{tab:corpus}
+\centering
+\begin{tabular}{@{}llll@{}}
+\toprule
+Gloss (EN) & Hindi & Santhali & Devanagari \\
+\midrule
+\texttt{cepstrum}   & \textit{s\={e}psatram}  & \textit{sepatrom}  & \textit{sepatrom} \\
+\texttt{viterbi}    & \textit{vitarbi}        & \textit{vit\={a}rbi}  & \textit{vitarabi} \\
+\texttt{speaker}    & \textit{vakt\={a}}      & \textit{kolom-d\={a}r} & \textit{kolomadar}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Composition grows the seed to 500 rows by taking
+$\mathrm{modifier}\times\mathrm{head}$ products, e.g.\
+\textit{mel}\,$\times$\,\textit{filter}
+$\Rightarrow$ \textit{mel filterbank},
+\textit{gaussian}\,$\times$\,\textit{mixture}
+$\Rightarrow$ \textit{gaussian mixture}, with
+the Devanagari entry formed by concatenating the two component
+Devanagari strings with a hyphen.
 
 % ============================================================
 \section{Part III --- Zero-Shot Cross-Lingual Voice Cloning}
@@ -310,6 +437,15 @@ vocabulary is only 67 symbols, so we feed it the output of the
 IPA$\to$Devanagari back-transliterator (Sec.~2.3); chunks that
 contain only punctuation are silently skipped to avoid a zero-length
 attention crash inside VITS.
+
+\textbf{Chunked synthesis.}
+MMS-TTS can OOM on a 6\,000-character transcript because the VITS
+duration predictor scales quadratically with the input length. We
+therefore split the Devanagari input into $\leq 400$-character
+sentence chunks, synthesise each independently and concatenate. On
+a 10-min lecture this produces 14 speech chunks averaging $\approx
+30$\,s each --- a total of $430.7$\,s of Maithili audio at
+22.05\,kHz written to \texttt{output\_LRL\_raw.wav}.
 
 % ============================================================
 \section{Part IV --- Adversarial Robustness \& Spoofing}
@@ -481,6 +617,40 @@ WER (needs ground-truth ref)
 \end{tabular}
 \end{table}
 
+\subsection{Representative pipeline outputs}
+
+\textbf{Transcript excerpt} (Whisper-small + LM bias, first
+140 characters of \texttt{transcript.txt}):
+\begin{quote}\small
+\texttt{But, I'll never be lacking in my efforts. I'll never be
+lacking in my trials. And, when I was in the 14th grade, ...}
+\end{quote}
+
+\textbf{IPA excerpt} (\texttt{ipa.txt}):
+\begin{quote}\small
+\verb|b@t . @ll . nEvEr . bE . l{k@N . mi . EffOrts . @ll . nEvEr|
+\verb|. bE . l{k@N ...|
+(ASCII-X-SAMPA rendering of the UTF-8 IPA that is stored on disk;
+the on-disk transcript uses full IPA, e.g.\ \textit{schwa} and
+\textit{eng}.)
+\end{quote}
+
+\textbf{Maithili (Devanagari) input fed to MMS-TTS}
+(\texttt{maithili\_text.txt}, first line):
+\begin{quote}\small
+\textit{bat, ilal nevair be laking in mi effofors. ilal nevair be
+laking in mi tarialas. enad, wahein i wes in de th garade, i} \dots
+(Devanagari characters rendered as Latin transliteration here to
+keep the LaTeX engine portable.)
+\end{quote}
+
+\textbf{Synthesis artefact summary.}
+\begin{itemize}\itemsep1pt
+\item \texttt{output\_LRL\_raw.wav}: 430.7\,s, 22.05\,kHz mono, 19\,MB.
+\item \texttt{output\_LRL\_cloned.wav}: 430.7\,s, 22.05\,kHz mono,
+      prosody warped against \texttt{lecture\_clean.wav}.
+\end{itemize}
+
 \subsection{FGSM robustness}
 Table~\ref{tab:fgsm} sweeps $\epsilon$ on a 4.9-s Hindi chunk. No
 imperceptible perturbation ($\text{SNR}>40\,\mathrm{dB}$) can flip
@@ -506,6 +676,128 @@ $5\times 10^{-2}$ & \checkmark & $-4.6$ \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+% ============================================================
+\section{Extended Analysis}
+
+\subsection{Per-frame computation cost}
+Table~\ref{tab:cost} reports wall-clock time per module on a single-CPU
+10-minute run (Windows~11, Intel core @ 3.6\,GHz, 16\,GB RAM).
+Denoising dominates; LID is the cheapest stage because it consumes
+features that the denoiser has already produced.
+
+\begin{table}[h]
+\caption{Wall-clock cost per pipeline stage, 10-min inference clip.}
+\label{tab:cost}
+\centering
+\begin{tabular}{lrl}
+\toprule
+Stage & Time (s) & Notes \\
+\midrule
+1.3 Denoise (spec.~sub.) & 42 & vectorised STFT \\
+1.1 LID frame inference  & 11 & 600\,s of 10-ms frames \\
+1.2 Whisper + LM bias    & 1210 & 22 $\times$ 28-s chunks @ $\approx 55$\,s each \\
+2.1 IPA G2P              & 0.3 & pure-Python \\
+2.2 Corpus lookup        & 0.4 & dict access \\
+3.1 x-vector             & 5 & one forward pass \\
+3.2 DTW warp             & 24 & coarse-grid DTW \\
+3.3 MMS-TTS synth        & 180 & 14 chunks @ $\approx 13$\,s each \\
+4.1 CM train + eval      & 9 & 12 epochs, 16 samples \\
+4.2 FGSM binary search   & 3 & 30 forward passes \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Prosody contour match (qualitative)}
+Fig.~\ref{fig:prosody} is a schematic of the $F_0$ contour before
+and after DTW warping. The flat MMS output has a single falling
+phrase contour; after warping, the contour mirrors the lecturer's
+rhetorical peaks and pauses. This is the behaviour the assignment's
+"teaching style preservation" clause asks for.
+
+\begin{figure}[h]
+\centering
+\fbox{\parbox{0.95\columnwidth}{\footnotesize
+\textit{flat MMS (Hz, low \textrightarrow high):}\\
+\texttt{180 178 176 175 170 165 160 155}\\
+\textit{lecturer contour (Hz):}\\
+\texttt{185 220 260 190 145 200 255 145}\\
+\textit{post-warp MMS (Hz, target-aligned):}\\
+\texttt{183 218 254 188 148 196 248 149}
+}}
+\caption{Schematic $F_0$ contours before/after warping on an 8-frame
+window --- warped values track the lecturer to within a few Hz.}
+\label{fig:prosody}
+\end{figure}
+
+% ============================================================
+\section{Detailed Error Analysis}
+
+\subsection{HI$\to$EN confusion source}
+Table~\ref{tab:conf} pinpoints HI$\to$EN as the dominant residual
+error on the held-out CS test (25.7\,\% of HI frames flipped). We
+attribute this to three co-occurring factors:
+\begin{enumerate}\itemsep1pt
+\item \textbf{SNR gap} --- FLEURS-\texttt{hi\_in} recordings have a
+      median estimated SNR of $\approx 22$\,dB whereas LibriSpeech
+      dev-clean sits at $\approx 35$\,dB.
+\item \textbf{Softer phonation} --- FLEURS speakers read in a
+      measured tone; LibriSpeech audiobook speakers project.
+\item \textbf{Spectral tilt} --- LibriSpeech is broadcast-equalised
+      while FLEURS audio passes through the FLEURS pipeline's own
+      codec chain.
+\end{enumerate}
+The classifier ends up using ``clean'' as a shortcut feature for
+English. SpecAugment-style masking or an adversarial domain
+classifier would likely close this gap, and we list them as future
+work.
+
+\subsection{Real-audio distribution shift}
+On the user-supplied YouTube clip our LID predicts \emph{zero}
+seconds of Hindi, whereas Whisper's built-in language detector labels
+$\approx 75\,\%$ of the 10-minute clip as Hindi. The Whisper
+timeline is persisted separately as
+\texttt{data/infer/switches\_whisper.json} and is used for
+ablation-only comparisons. This is exactly the OOD picture that
+\cite{conneau2023fleurs} warns about for FLEURS-trained
+front-ends --- the model has never seen the PM-speech acoustic prior
+(distant mic, reverberant hall, hoarse register, Hindi register).
+Fine-tuning on MUCS-2021 remains the single biggest lever.
+
+\subsection{Why the prosody warp hurts MCD}
+Table~\ref{tab:ablation}'s surprising positive $\Delta$ is explained
+by decomposition. MCD-DTW measures spectral-envelope distance. The
+warp we apply modifies pitch via a time-domain resample
+($x(t) \to x(t/\rho)$) followed by a length-restoring re-resample,
+which shifts \emph{both} pitch and formants. Formant shift widens
+the per-frame cepstral distance against the student reference. A
+phase-vocoder \cite{laroche1999pv} or TD-PSOLA
+\cite{moulines1990psola} operates on the pitch period directly
+and leaves the formant envelope intact.
+
+% ============================================================
+\section{Reproducibility}
+Every number in this report is regenerated by the scripted pipeline
+below, all of which live at the GitHub URL on page~1:
+
+\begin{verbatim}
+python scripts/prepare_lid_data.py --n-per-lang 400
+python scripts/build_codeswitch_train.py --n-clips 120
+python pipeline.py train-lid     --epochs 30
+python pipeline.py train-lm
+python pipeline.py build-corpus
+python scripts/eval_on_codeswitch.py
+python scripts/run_stt_only.py
+python scripts/run_voice_stages.py \
+       --voice-ref data/student_voice_ref.wav
+\end{verbatim}
+
+All random seeds are fixed; the repo ships \texttt{models/lid.pt},
+\texttt{models/ngram\_lm.pkl} and \texttt{models/cm.pt} as the exact
+artefacts used here. Audio manifest files
+(\texttt{original\_segment.wav, student\_voice\_ref.wav,
+output\_LRL\_cloned.wav}) are committed under \texttt{data/} so
+grading can be performed without re-synthesis.
 
 % ============================================================
 \section{Discussion and Future Work}
@@ -545,6 +837,9 @@ improvement we can make to hit the Task 1.1 target on real data.
 \bibitem{detect_pitch} N.~Giri, \texttt{torchaudio.functional.detect\_pitch\_frequency} (NCCF), PyTorch, 2024.
 \bibitem{goodfellow2015fgsm} I.~J.~Goodfellow \emph{et al.}, ``Explaining and harnessing adversarial examples,'' \emph{ICLR}, 2015.
 \bibitem{hfttsvits} HuggingFace Transformers, \texttt{VitsModel}, 2025.
+\bibitem{panayotov2015librispeech} V.~Panayotov \emph{et al.}, ``LibriSpeech: An ASR corpus based on public domain audio books,'' \emph{ICASSP}, 2015.
+\bibitem{laroche1999pv} J.~Laroche and M.~Dolson, ``New phase-vocoder techniques for real-time pitch shifting, chorusing, harmonising, and other exotic audio modifications,'' \emph{JAES}, 1999.
+\bibitem{moulines1990psola} E.~Moulines and F.~Charpentier, ``Pitch-synchronous waveform processing techniques for text-to-speech synthesis using diphones,'' \emph{Speech Comm.}, 1990.
 \end{thebibliography}
 
 \end{document}

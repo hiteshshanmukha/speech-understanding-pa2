@@ -13,7 +13,7 @@ Run the full inference chain on the supplied lecture + reference:
     python pipeline.py run \
         --lecture    data/original_segment.wav \
         --voice-ref  data/student_voice_ref.wav \
-        --out        data/output_LRL_cloned.wav \
+        --out        results/output_LRL_cloned.wav \
         --lm         models/ngram_lm.pkl \
         --lid        models/lid.pt \
         --cm         models/cm.pt           # optional
@@ -23,7 +23,7 @@ The runner writes:
   * data/ipa.txt                – unified IPA sequence
   * data/translation.txt        – Santhali translation (Ol Chiki)
   * data/output_LRL_raw.wav     – pre-warp TTS output
-  * data/output_LRL_cloned.wav  – prosody-warped final lecture
+  * results/output_LRL_cloned.wav  – prosody-warped final lecture
   * data/confusion_matrix.json  – code-switch boundary confusion stats
   * data/fgsm_report.json       – minimum epsilon from Task 4.2
   * data/eer_report.json        – CM EER from Task 4.1
@@ -197,7 +197,7 @@ def main():
     s = sub.add_parser("run")
     s.add_argument("--lecture", required=True)
     s.add_argument("--voice-ref", required=True)
-    s.add_argument("--out", default="data/output_LRL_cloned.wav")
+    s.add_argument("--out", default="results/output_LRL_cloned.wav")
     s.add_argument("--lm", default="models/ngram_lm.pkl")
     s.add_argument("--lid", default="models/lid.pt")
     s.add_argument("--cm", default=None)
