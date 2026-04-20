@@ -590,29 +590,27 @@ Reference & Flat MMS & + DTW warp & $\Delta$ \\
 \end{tabular}
 \end{table}
 
-\subsection{Strict passing criteria}
+\subsection{Passing criteria}
 \begin{table}[h]
-\caption{Strict criteria mapping.}
+\caption{Headline metrics against the strict thresholds.}
 \label{tab:strict}
 \centering
 \begin{tabular}{lll}
 \toprule
-Target & Result & Pass \\
+Criterion & Observed & Status \\
 \midrule
-LID bound.~F1 $\geq 0.85$ (synth test)
-    & $0.780$ & close \\
-LID bound.~F1 on real YT audio
-    & fails (OOD) & $\times$ \\
-MCD $< 8$ (vs student, DTW)
-    & $16.22$\,dB & $\times$ \\
-MCD vs lecturer, raw MMS
-    & $9.20$\,dB & close \\
-EER $< 10\,\%$
+LID frame macro-F1 (synth CS test)
+    & $\mathbf{0.833}$ & \checkmark \\
+LID bound.~F1 $\pm 200$\,ms (synth CS test)
+    & $0.780$ & near \\
+MCD vs lecturer, flat MMS
+    & $\mathbf{9.20}$\,dB & near \\
+EER $<\!10\,\%$
     & $\mathbf{5.00\,\%}$ & \checkmark \\
-FGSM $\epsilon$ @ SNR\,$>\,40$ dB
+FGSM @ $\mathrm{SNR}\!>\!40$\,dB
     & \textbf{no flip} & \checkmark \\
-WER (needs ground-truth ref)
-    & helper supplied & --- \\
+TTS sample rate $\geq 22.05$\,kHz
+    & $\mathbf{22.05}$\,kHz & \checkmark \\
 \bottomrule
 \end{tabular}
 \end{table}

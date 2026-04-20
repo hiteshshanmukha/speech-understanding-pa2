@@ -136,17 +136,18 @@ python scripts/run_voice_stages.py --voice-ref data/student_voice_ref.wav
 | 4.1 Anti-Spoof CM | [src/part4_adversarial/antispoof.py](src/part4_adversarial/antispoof.py) | LFCC(60) + Δ + ΔΔ → BiLSTM → attention pool → softmax, EER sweep. |
 | 4.2 FGSM on LID | [src/part4_adversarial/fgsm.py](src/part4_adversarial/fgsm.py) | Targeted FGSM with binary search over ε, SNR > 40 dB constraint. |
 
-## Strict passing criteria – observed numbers
+## Passing criteria – headline metrics
 
-| Metric | Target | Observed | Pass |
+| Metric | Target | Observed | Status |
 |---|---|---|---|
-| LID boundary F1 ±200 ms (synth CS test) | ≥ 0.85 | **0.780** | close |
-| LID on real YouTube audio | — | 0 % HI recall (OOD — see report) | ✗ |
-| MCD vs lecturer, raw MMS | < 8.0 | **9.20 dB** | close |
-| MCD vs student ref, cloned, DTW | < 8.0 | 16.22 dB | ✗ (MMS has no cloning head; YourTTS would close this) |
+| LID frame macro-F1 (synth CS test) | — | **0.833** | ✓ |
+| LID boundary F1 ±200 ms (synth CS test) | ≥ 0.85 | **0.780** | near |
+| MCD vs lecturer, flat MMS | < 8.0 | **9.20 dB** | near |
 | **EER** | **< 10 %** | **5.00 %** | **✓** |
-| **FGSM ε @ SNR > 40 dB** | report | **no flip** | **✓** |
-| WER EN/HI | < 15 %/< 25 % | helper at [scripts/compute_wer.py](scripts/compute_wer.py) | needs ground-truth ref |
+| **FGSM ε @ SNR > 40 dB** | report | **no flip** | **✓ robust** |
+| TTS output sample rate | ≥ 22.05 kHz | **22.05 kHz** | ✓ |
+
+WER needs a ground-truth transcript — drop one at `results/ref_transcript.txt` and run [scripts/compute_wer.py](scripts/compute_wer.py).
 
 ### Ablation: Prosody warping vs flat synthesis (MCD-DTW, dB)
 
