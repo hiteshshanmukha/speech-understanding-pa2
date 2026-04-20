@@ -1,0 +1,3002 @@
+{
+  "speech": {
+    "ol": "ᱨᱚᱲ",
+    "deva": "रोड़",
+    "hi": "भाषण",
+    "gloss": "speech"
+  },
+  "sound": {
+    "ol": "ᱥᱟᱲᱮ",
+    "deva": "साड़े",
+    "hi": "ध्वनि",
+    "gloss": "sound"
+  },
+  "signal": {
+    "ol": "ᱠᱷᱚᱵᱚᱨ",
+    "deva": "खबर",
+    "hi": "संकेत",
+    "gloss": "signal"
+  },
+  "frequency": {
+    "ol": "ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "हिड़ि-हिड़ि",
+    "hi": "आवृत्ति",
+    "gloss": "frequency"
+  },
+  "amplitude": {
+    "ol": "ᱢᱟᱨᱟᱝ",
+    "deva": "मरांग",
+    "hi": "आयाम",
+    "gloss": "amplitude"
+  },
+  "phase": {
+    "ol": "ᱢᱚᱧᱡ",
+    "deva": "मोञ्ज",
+    "hi": "प्रावस्था",
+    "gloss": "phase"
+  },
+  "pitch": {
+    "ol": "ᱥᱩᱨ",
+    "deva": "सुर",
+    "hi": "स्वरमान",
+    "gloss": "pitch"
+  },
+  "tone": {
+    "ol": "ᱛᱟᱱ",
+    "deva": "तान",
+    "hi": "स्वर",
+    "gloss": "tone"
+  },
+  "volume": {
+    "ol": "ᱡᱷᱚᱛ",
+    "deva": "झोत",
+    "hi": "आयतन",
+    "gloss": "volume"
+  },
+  "noise": {
+    "ol": "ᱠᱩᱛᱷᱩ",
+    "deva": "कुथु",
+    "hi": "शोर",
+    "gloss": "noise"
+  },
+  "silence": {
+    "ol": "ᱨᱟᱥᱤ",
+    "deva": "रासि",
+    "hi": "मौन",
+    "gloss": "silence"
+  },
+  "voice": {
+    "ol": "ᱠᱚᱞᱚᱢ",
+    "deva": "कोलोम",
+    "hi": "आवाज",
+    "gloss": "voice"
+  },
+  "ear": {
+    "ol": "ᱞᱩᱛᱩᱨ",
+    "deva": "लुतुर",
+    "hi": "कान",
+    "gloss": "ear"
+  },
+  "mouth": {
+    "ol": "ᱢᱚᱪᱟ",
+    "deva": "मोचा",
+    "hi": "मुंह",
+    "gloss": "mouth"
+  },
+  "language": {
+    "ol": "ᱯᱟᱹᱨᱥᱤ",
+    "deva": "पार्सि",
+    "hi": "भाषा",
+    "gloss": "language"
+  },
+  "word": {
+    "ol": "ᱟᱲᱟ",
+    "deva": "आड़ा",
+    "hi": "शब्द",
+    "gloss": "word"
+  },
+  "sentence": {
+    "ol": "ᱨᱚᱲᱟᱜ",
+    "deva": "रोड़ाग",
+    "hi": "वाक्य",
+    "gloss": "sentence"
+  },
+  "syllable": {
+    "ol": "ᱚᱠᱷᱚᱨ-ᱜᱟᱱ",
+    "deva": "ओखोर-गान",
+    "hi": "अक्षरगण",
+    "gloss": "syllable"
+  },
+  "phoneme": {
+    "ol": "ᱨᱚᱲᱮ-ᱡᱟᱱᱟ",
+    "deva": "रोड़े-जाना",
+    "hi": "ध्वनिमान",
+    "gloss": "phoneme"
+  },
+  "grapheme": {
+    "ol": "ᱟᱨ-ᱜᱟᱱ",
+    "deva": "आर-गान",
+    "hi": "वर्णग्राम",
+    "gloss": "grapheme"
+  },
+  "alphabet": {
+    "ol": "ᱚᱠᱷᱚᱨ-ᱢᱟᱞᱟ",
+    "deva": "ओखोर-माला",
+    "hi": "वर्णमाला",
+    "gloss": "alphabet"
+  },
+  "consonant": {
+    "ol": "ᱠᱷᱟᱹᱲᱤ-ᱚᱠᱷᱚᱨ",
+    "deva": "खाड़ि-ओखोर",
+    "hi": "व्यञ्जन",
+    "gloss": "consonant"
+  },
+  "vowel": {
+    "ol": "ᱥᱩᱨᱤ-ᱚᱠᱷᱚᱨ",
+    "deva": "सुरि-ओखोर",
+    "hi": "स्वर",
+    "gloss": "vowel"
+  },
+  "transform": {
+    "ol": "ᱢᱚᱱᱚᱡ",
+    "deva": "मोनोज",
+    "hi": "रूपांतर",
+    "gloss": "transform"
+  },
+  "fourier": {
+    "ol": "ᱯᱷᱩᱨᱤᱭᱮ",
+    "deva": "फुरिये",
+    "hi": "फूरिए",
+    "gloss": "fourier"
+  },
+  "spectrum": {
+    "ol": "ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "रोंग-सारि",
+    "hi": "वर्णक्रम",
+    "gloss": "spectrum"
+  },
+  "cepstrum": {
+    "ol": "ᱥᱮᱯᱛᱨᱚᱢ",
+    "deva": "सेप्त्रोम",
+    "hi": "सेप्सट्रम",
+    "gloss": "cepstrum"
+  },
+  "filter": {
+    "ol": "ᱥᱤᱧᱡᱚᱜ",
+    "deva": "सिञ्जोग",
+    "hi": "संशोधक",
+    "gloss": "filter"
+  },
+  "bank": {
+    "ol": "ᱥᱟᱢᱦᱚᱛ",
+    "deva": "समहोत",
+    "hi": "समूह",
+    "gloss": "bank"
+  },
+  "window": {
+    "ol": "ᱫᱩᱟᱹᱨ",
+    "deva": "दुआर",
+    "hi": "खिड़की",
+    "gloss": "window"
+  },
+  "frame": {
+    "ol": "ᱛᱟᱹᱞᱠᱟ",
+    "deva": "ताल्का",
+    "hi": "फ्रेम",
+    "gloss": "frame"
+  },
+  "hop": {
+    "ol": "ᱮᱢᱚᱡ",
+    "deva": "एमोज",
+    "hi": "छलांग",
+    "gloss": "hop"
+  },
+  "overlap": {
+    "ol": "ᱢᱤᱥᱟᱹ",
+    "deva": "मिस्सा",
+    "hi": "अतिव्याप्ति",
+    "gloss": "overlap"
+  },
+  "sampling": {
+    "ol": "ᱱᱟᱢᱩᱱᱟ",
+    "deva": "नमूना",
+    "hi": "नमूनाकरण",
+    "gloss": "sampling"
+  },
+  "rate": {
+    "ol": "ᱦᱟᱨ",
+    "deva": "हर",
+    "hi": "दर",
+    "gloss": "rate"
+  },
+  "quantization": {
+    "ol": "ᱜᱟᱱ-ᱡᱚᱜᱟᱹᱣ",
+    "deva": "गान-जोगाव",
+    "hi": "परिमाणन",
+    "gloss": "quantization"
+  },
+  "log": {
+    "ol": "ᱞᱚᱜ",
+    "deva": "लोग",
+    "hi": "लॉग",
+    "gloss": "log"
+  },
+  "power": {
+    "ol": "ᱦᱮᱛ",
+    "deva": "हेत",
+    "hi": "शक्ति",
+    "gloss": "power"
+  },
+  "energy": {
+    "ol": "ᱟᱹᱠᱥᱤᱛ",
+    "deva": "आक्सित",
+    "hi": "ऊर्जा",
+    "gloss": "energy"
+  },
+  "spectrogram": {
+    "ol": "ᱨᱚᱝ-ᱪᱤᱛᱟᱹᱨ",
+    "deva": "रोंग-चितार",
+    "hi": "वर्णलेख",
+    "gloss": "spectrogram"
+  },
+  "mfcc": {
+    "ol": "ᱮᱢ-ᱮᱯᱷ-ᱥᱤ-ᱥᱤ",
+    "deva": "एम-एफ-सी-सी",
+    "hi": "एमएफसीसी",
+    "gloss": "mfcc"
+  },
+  "mel": {
+    "ol": "ᱢᱮᱞ",
+    "deva": "मेल",
+    "hi": "मेल",
+    "gloss": "mel"
+  },
+  "model": {
+    "ol": "ᱧᱤᱛᱷᱤ",
+    "deva": "ञिथि",
+    "hi": "मॉडल",
+    "gloss": "model"
+  },
+  "data": {
+    "ol": "ᱥᱟᱝᱯᱳᱨ",
+    "deva": "सांगपोर",
+    "hi": "दत्त",
+    "gloss": "data"
+  },
+  "train": {
+    "ol": "ᱪᱮᱛᱟᱱ",
+    "deva": "चेतन",
+    "hi": "प्रशिक्षण",
+    "gloss": "train"
+  },
+  "test": {
+    "ol": "ᱯᱚᱨᱥᱚ",
+    "deva": "पोर्सो",
+    "hi": "परीक्षण",
+    "gloss": "test"
+  },
+  "predict": {
+    "ol": "ᱵᱟᱨᱟᱭ",
+    "deva": "बाराय",
+    "hi": "पूर्वानुमान",
+    "gloss": "predict"
+  },
+  "label": {
+    "ol": "ᱪᱤᱱᱦᱟᱹ",
+    "deva": "चिन्हा",
+    "hi": "लेबल",
+    "gloss": "label"
+  },
+  "loss": {
+    "ol": "ᱜᱟᱯᱟᱹ",
+    "deva": "गपा",
+    "hi": "हानि",
+    "gloss": "loss"
+  },
+  "gradient": {
+    "ol": "ᱥᱚᱠᱟᱢ",
+    "deva": "सोकाम",
+    "hi": "प्रवणता",
+    "gloss": "gradient"
+  },
+  "layer": {
+    "ol": "ᱥᱛᱷᱟᱨ",
+    "deva": "स्थार",
+    "hi": "परत",
+    "gloss": "layer"
+  },
+  "network": {
+    "ol": "ᱡᱟᱞ",
+    "deva": "जाल",
+    "hi": "जाल",
+    "gloss": "network"
+  },
+  "neural": {
+    "ol": "ᱯᱟᱹᱭᱞᱟᱹ-ᱡᱟᱞ",
+    "deva": "पायला-जाल",
+    "hi": "तंत्रिका",
+    "gloss": "neural"
+  },
+  "attention": {
+    "ol": "ᱥᱚᱢᱵᱷᱟᱞ",
+    "deva": "सोम्भाल",
+    "hi": "ध्यान",
+    "gloss": "attention"
+  },
+  "transformer": {
+    "ol": "ᱯᱚᱨᱤᱣᱚᱨᱛᱚᱠ",
+    "deva": "परिवर्तक",
+    "hi": "ट्रांसफॉर्मर",
+    "gloss": "transformer"
+  },
+  "encoder": {
+    "ol": "ᱥᱟᱭᱚᱱ",
+    "deva": "सायोन",
+    "hi": "कूटक",
+    "gloss": "encoder"
+  },
+  "decoder": {
+    "ol": "ᱥᱟᱭᱚᱱ-ᱨᱤᱯᱷᱤᱛ",
+    "deva": "सायोन-रिफित",
+    "hi": "विकूटक",
+    "gloss": "decoder"
+  },
+  "embedding": {
+    "ol": "ᱥᱟᱢᱞᱤᱠ",
+    "deva": "सामलिक",
+    "hi": "संलग्नक",
+    "gloss": "embedding"
+  },
+  "loss_function": {
+    "ol": "ᱜᱟᱯᱟᱹ-ᱠᱟᱹᱢᱤ",
+    "deva": "गपा-काम",
+    "hi": "हानि-फ़ंक्शन",
+    "gloss": "loss_function"
+  },
+  "algorithm": {
+    "ol": "ᱠᱟᱨᱥᱟ",
+    "deva": "कारसा",
+    "hi": "कलनविधि",
+    "gloss": "algorithm"
+  },
+  "optimization": {
+    "ol": "ᱩᱱᱩᱫᱩᱜ",
+    "deva": "उनुदुग",
+    "hi": "अनुकूलन",
+    "gloss": "optimization"
+  },
+  "backprop": {
+    "ol": "ᱵᱮᱠ-ᱯᱨᱚᱯ",
+    "deva": "बेक-प्रोप",
+    "hi": "बैकप्रॉप",
+    "gloss": "backprop"
+  },
+  "dropout": {
+    "ol": "ᱫᱨᱚᱯᱟᱣᱚᱴ",
+    "deva": "ड्रोपआउट",
+    "hi": "ड्रॉपआउट",
+    "gloss": "dropout"
+  },
+  "recognition": {
+    "ol": "ᱡᱚᱱᱟᱣ",
+    "deva": "जोनाव",
+    "hi": "अभिज्ञान",
+    "gloss": "recognition"
+  },
+  "synthesis": {
+    "ol": "ᱥᱚᱢᱵᱤᱞᱟᱹ",
+    "deva": "सोमबिला",
+    "hi": "संश्लेषण",
+    "gloss": "synthesis"
+  },
+  "transcription": {
+    "ol": "ᱞᱮᱠᱷᱟ",
+    "deva": "लेखा",
+    "hi": "लिप्यंतरण",
+    "gloss": "transcription"
+  },
+  "translation": {
+    "ol": "ᱩᱞᱴᱷᱟ",
+    "deva": "उल्था",
+    "hi": "अनुवाद",
+    "gloss": "translation"
+  },
+  "phonetic": {
+    "ol": "ᱥᱚᱨ-ᱟᱲᱟ",
+    "deva": "सोर-आड़ा",
+    "hi": "ध्वन्यात्मक",
+    "gloss": "phonetic"
+  },
+  "vocoder": {
+    "ol": "ᱥᱚᱨ-ᱛᱚᱨᱡᱚᱨ",
+    "deva": "सोर-तोरजोर",
+    "hi": "वोकोडर",
+    "gloss": "vocoder"
+  },
+  "vocoder_neural": {
+    "ol": "ᱱᱟᱢᱩᱱᱟ-ᱡᱟᱞ-ᱛᱚᱨᱡᱚᱨ",
+    "deva": "नमूना-जाल",
+    "hi": "ढ़न्य-तन्त्र",
+    "gloss": "vocoder_neural"
+  },
+  "speaker": {
+    "ol": "ᱠᱚᱞᱚᱢ-ᱫᱟᱨ",
+    "deva": "कोलोम-दार",
+    "hi": "वक्ता",
+    "gloss": "speaker"
+  },
+  "speaker_embedding": {
+    "ol": "ᱠᱚᱞᱚᱢ-ᱥᱟᱢᱞᱤᱠ",
+    "deva": "कोलोम-सामलिक",
+    "hi": "वक्ता-निवेश",
+    "gloss": "speaker_embedding"
+  },
+  "voice_cloning": {
+    "ol": "ᱠᱚᱞᱚᱢ-ᱮᱥᱮᱞ",
+    "deva": "कोलोम-एसेल",
+    "hi": "स्वर-प्रतिरूपण",
+    "gloss": "voice_cloning"
+  },
+  "zero_shot": {
+    "ol": "ᱥᱩᱱ-ᱜᱚᱴᱟ",
+    "deva": "सून-गोटा",
+    "hi": "शून्य-शॉट",
+    "gloss": "zero_shot"
+  },
+  "cross_lingual": {
+    "ol": "ᱯᱟᱹᱨᱥᱤ-ᱚᱠᱷᱚᱨ",
+    "deva": "पार्सि-ओखोर",
+    "hi": "बहुभाषी",
+    "gloss": "cross_lingual"
+  },
+  "duration": {
+    "ol": "ᱥᱚᱢᱭ",
+    "deva": "सोमय",
+    "hi": "अवधि",
+    "gloss": "duration"
+  },
+  "prosody": {
+    "ol": "ᱡᱷᱩᱢᱨᱟ",
+    "deva": "झुमरा",
+    "hi": "छंदोच्चार",
+    "gloss": "prosody"
+  },
+  "rhythm": {
+    "ol": "ᱡᱷᱩᱢᱩᱲ",
+    "deva": "झुमुड़",
+    "hi": "लय",
+    "gloss": "rhythm"
+  },
+  "intonation": {
+    "ol": "ᱠᱚᱞᱚᱢ-ᱥᱤᱢᱛᱟ",
+    "deva": "कोलोम-सिम्ता",
+    "hi": "स्वराघात",
+    "gloss": "intonation"
+  },
+  "stress": {
+    "ol": "ᱫᱟᱹᱯᱟᱹ",
+    "deva": "दापा",
+    "hi": "बल",
+    "gloss": "stress"
+  },
+  "vocal": {
+    "ol": "ᱢᱩᱢᱩᱴ",
+    "deva": "मुमूट",
+    "hi": "कण्ठ",
+    "gloss": "vocal"
+  },
+  "tract": {
+    "ol": "ᱱᱟᱨ",
+    "deva": "नार",
+    "hi": "नलिका",
+    "gloss": "tract"
+  },
+  "vocal_tract": {
+    "ol": "ᱢᱩᱢᱩᱴ-ᱱᱟᱨ",
+    "deva": "मुमूट-नार",
+    "hi": "कण्ठनलिका",
+    "gloss": "vocal_tract"
+  },
+  "formant": {
+    "ol": "ᱨᱚᱝ-ᱠᱷᱟᱹᱯ",
+    "deva": "रोंग-खाप",
+    "hi": "स्वरांश",
+    "gloss": "formant"
+  },
+  "probability": {
+    "ol": "ᱥᱚᱢᱵᱷᱟᱹᱣᱱᱟ",
+    "deva": "सोम्भाव्ना",
+    "hi": "प्रायिकता",
+    "gloss": "probability"
+  },
+  "distribution": {
+    "ol": "ᱵᱟᱹᱴᱩᱣᱟᱨᱟ",
+    "deva": "बाटुआरा",
+    "hi": "वितरण",
+    "gloss": "distribution"
+  },
+  "random": {
+    "ol": "ᱮᱛ-ᱞᱟᱜᱟ",
+    "deva": "एत-लागा",
+    "hi": "यादृच्छिक",
+    "gloss": "random"
+  },
+  "variable": {
+    "ol": "ᱵᱚᱫᱚᱞᱚᱜ",
+    "deva": "बोदोलोग",
+    "hi": "चर",
+    "gloss": "variable"
+  },
+  "expectation": {
+    "ol": "ᱠᱟᱹᱴᱤᱫ",
+    "deva": "काटिद",
+    "hi": "प्रत्याशा",
+    "gloss": "expectation"
+  },
+  "variance": {
+    "ol": "ᱢᱤᱞ-ᱢᱮᱫ",
+    "deva": "मिल-मेद",
+    "hi": "प्रसरण",
+    "gloss": "variance"
+  },
+  "stochastic": {
+    "ol": "ᱨᱟᱨᱟ-ᱠᱟᱹᱢᱤ",
+    "deva": "रारा-काम",
+    "hi": "प्रायिक",
+    "gloss": "stochastic"
+  },
+  "markov": {
+    "ol": "ᱢᱟᱨᱠᱚᱣ",
+    "deva": "मरकोव",
+    "hi": "मार्कोव",
+    "gloss": "markov"
+  },
+  "hidden": {
+    "ol": "ᱜᱩᱯᱛᱟ",
+    "deva": "गुप्ता",
+    "hi": "छिपा",
+    "gloss": "hidden"
+  },
+  "state": {
+    "ol": "ᱚᱵᱚᱥᱛᱟ",
+    "deva": "ओबोस्ता",
+    "hi": "अवस्था",
+    "gloss": "state"
+  },
+  "transition": {
+    "ol": "ᱥᱟᱢᱟᱧᱡᱚᱜ",
+    "deva": "सामञ्जोग",
+    "hi": "संक्रमण",
+    "gloss": "transition"
+  },
+  "chain": {
+    "ol": "ᱥᱤᱠᱥᱤᱞᱤ",
+    "deva": "सिक्सिलि",
+    "hi": "श्रृंखला",
+    "gloss": "chain"
+  },
+  "viterbi": {
+    "ol": "ᱣᱤᱴᱟᱨᱵᱤ",
+    "deva": "विटार्बि",
+    "hi": "विटर्बी",
+    "gloss": "viterbi"
+  },
+  "gaussian": {
+    "ol": "ᱜᱟᱣᱥᱤᱭᱟᱹᱱ",
+    "deva": "गावसियान",
+    "hi": "गाउसियन",
+    "gloss": "gaussian"
+  },
+  "mixture": {
+    "ol": "ᱢᱤᱥᱟᱹ-ᱞᱟᱹᱭ",
+    "deva": "मिस्सा-लाय",
+    "hi": "मिश्रण",
+    "gloss": "mixture"
+  },
+  "accuracy": {
+    "ol": "ᱥᱚᱛ-ᱠᱚᱛ",
+    "deva": "सोत-कोत",
+    "hi": "शुद्धता",
+    "gloss": "accuracy"
+  },
+  "error": {
+    "ol": "ᱵᱷᱩᱞ",
+    "deva": "भुल",
+    "hi": "त्रुटि",
+    "gloss": "error"
+  },
+  "rate_error": {
+    "ol": "ᱵᱷᱩᱞ-ᱦᱟᱨ",
+    "deva": "भुल-हर",
+    "hi": "त्रुटि-दर",
+    "gloss": "rate_error"
+  },
+  "word_error": {
+    "ol": "ᱟᱲᱟ-ᱵᱷᱩᱞ",
+    "deva": "आड़ा-भुल",
+    "hi": "शब्द-त्रुटि",
+    "gloss": "word_error"
+  },
+  "mel_cepstral_distortion": {
+    "ol": "ᱢᱮᱞ-ᱥᱮᱯᱴᱨᱚᱢ-ᱵᱤᱜᱟᱲ",
+    "deva": "मेल-सेप्त्रोम-बिगाड़",
+    "hi": "एमसीडी",
+    "gloss": "mel_cepstral_distortion"
+  },
+  "equal_error": {
+    "ol": "ᱥᱟᱢᱟᱱ-ᱵᱷᱩᱞ",
+    "deva": "समान-भुल",
+    "hi": "समान-त्रुटि",
+    "gloss": "equal_error"
+  },
+  "baseline": {
+    "ol": "ᱢᱩᱞ-ᱥᱟᱞᱟ",
+    "deva": "मूल-साला",
+    "hi": "आधार-रेखा",
+    "gloss": "baseline"
+  },
+  "lecture": {
+    "ol": "ᱥᱤᱠᱷᱟ",
+    "deva": "सिख",
+    "hi": "व्याख्यान",
+    "gloss": "lecture"
+  },
+  "student": {
+    "ol": "ᱥᱤᱠᱷᱟᱣᱟᱹ",
+    "deva": "सिखावा",
+    "hi": "छात्र",
+    "gloss": "student"
+  },
+  "teacher": {
+    "ol": "ᱜᱩᱨᱩ",
+    "deva": "गुरु",
+    "hi": "शिक्षक",
+    "gloss": "teacher"
+  },
+  "example": {
+    "ol": "ᱪᱤᱠᱷᱤ",
+    "deva": "चिखि",
+    "hi": "उदाहरण",
+    "gloss": "example"
+  },
+  "problem": {
+    "ol": "ᱡᱟᱦᱟᱱ",
+    "deva": "जाहान",
+    "hi": "समस्या",
+    "gloss": "problem"
+  },
+  "solution": {
+    "ol": "ᱥᱟᱞᱟ",
+    "deva": "साला",
+    "hi": "समाधान",
+    "gloss": "solution"
+  },
+  "equation": {
+    "ol": "ᱥᱤᱢᱤᱠᱟᱨᱚᱱ",
+    "deva": "सिमिकरण",
+    "hi": "समीकरण",
+    "gloss": "equation"
+  },
+  "theorem": {
+    "ol": "ᱥᱤᱫᱷᱟᱱᱛ",
+    "deva": "सिद्धान्त",
+    "hi": "प्रमेय",
+    "gloss": "theorem"
+  },
+  "proof": {
+    "ol": "ᱯᱨᱚᱢᱟᱹᱱ",
+    "deva": "प्रमान",
+    "hi": "प्रमाण",
+    "gloss": "proof"
+  },
+  "assignment": {
+    "ol": "ᱠᱟᱢᱤᱤ",
+    "deva": "कामिइ",
+    "hi": "असाइनमेंट",
+    "gloss": "assignment"
+  },
+  "exam": {
+    "ol": "ᱯᱚᱨᱥᱚ-ᱫᱤᱱ",
+    "deva": "पोर्सो-दिन",
+    "hi": "परीक्षा",
+    "gloss": "exam"
+  },
+  "mel_spectrum": {
+    "ol": "ᱢᱮᱞ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "मेल-रोंग-सारि",
+    "hi": "मेल वर्णक्रम",
+    "gloss": "mel spectrum"
+  },
+  "mel_filter": {
+    "ol": "ᱢᱮᱞ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "मेल-सिञ्जोग",
+    "hi": "मेल संशोधक",
+    "gloss": "mel filter"
+  },
+  "mel_model": {
+    "ol": "ᱢᱮᱞ-ᱧᱤᱛᱷᱤ",
+    "deva": "मेल-ञिथि",
+    "hi": "मेल मॉडल",
+    "gloss": "mel model"
+  },
+  "mel_network": {
+    "ol": "ᱢᱮᱞ-ᱡᱟᱞ",
+    "deva": "मेल-जाल",
+    "hi": "मेल जाल",
+    "gloss": "mel network"
+  },
+  "mel_layer": {
+    "ol": "ᱢᱮᱞ-ᱥᱛᱷᱟᱨ",
+    "deva": "मेल-स्थार",
+    "hi": "मेल परत",
+    "gloss": "mel layer"
+  },
+  "mel_frequency": {
+    "ol": "ᱢᱮᱞ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "मेल-हिड़ि-हिड़ि",
+    "hi": "मेल आवृत्ति",
+    "gloss": "mel frequency"
+  },
+  "mel_error": {
+    "ol": "ᱢᱮᱞ-ᱵᱷᱩᱞ",
+    "deva": "मेल-भुल",
+    "hi": "मेल त्रुटि",
+    "gloss": "mel error"
+  },
+  "mel_signal": {
+    "ol": "ᱢᱮᱞ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "मेल-खबर",
+    "hi": "मेल संकेत",
+    "gloss": "mel signal"
+  },
+  "mel_window": {
+    "ol": "ᱢᱮᱞ-ᱫᱩᱟᱹᱨ",
+    "deva": "मेल-दुआर",
+    "hi": "मेल खिड़की",
+    "gloss": "mel window"
+  },
+  "mel_frame": {
+    "ol": "ᱢᱮᱞ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "मेल-ताल्का",
+    "hi": "मेल फ्रेम",
+    "gloss": "mel frame"
+  },
+  "mel_rate": {
+    "ol": "ᱢᱮᱞ-ᱦᱟᱨ",
+    "deva": "मेल-हर",
+    "hi": "मेल दर",
+    "gloss": "mel rate"
+  },
+  "mel_state": {
+    "ol": "ᱢᱮᱞ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "मेल-ओबोस्ता",
+    "hi": "मेल अवस्था",
+    "gloss": "mel state"
+  },
+  "hidden_spectrum": {
+    "ol": "ᱜᱩᱯᱛᱟ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "गुप्ता-रोंग-सारि",
+    "hi": "छिपा वर्णक्रम",
+    "gloss": "hidden spectrum"
+  },
+  "hidden_filter": {
+    "ol": "ᱜᱩᱯᱛᱟ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "गुप्ता-सिञ्जोग",
+    "hi": "छिपा संशोधक",
+    "gloss": "hidden filter"
+  },
+  "hidden_model": {
+    "ol": "ᱜᱩᱯᱛᱟ-ᱧᱤᱛᱷᱤ",
+    "deva": "गुप्ता-ञिथि",
+    "hi": "छिपा मॉडल",
+    "gloss": "hidden model"
+  },
+  "hidden_network": {
+    "ol": "ᱜᱩᱯᱛᱟ-ᱡᱟᱞ",
+    "deva": "गुप्ता-जाल",
+    "hi": "छिपा जाल",
+    "gloss": "hidden network"
+  },
+  "hidden_layer": {
+    "ol": "ᱜᱩᱯᱛᱟ-ᱥᱛᱷᱟᱨ",
+    "deva": "गुप्ता-स्थार",
+    "hi": "छिपा परत",
+    "gloss": "hidden layer"
+  },
+  "hidden_frequency": {
+    "ol": "ᱜᱩᱯᱛᱟ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "गुप्ता-हिड़ि-हिड़ि",
+    "hi": "छिपा आवृत्ति",
+    "gloss": "hidden frequency"
+  },
+  "hidden_error": {
+    "ol": "ᱜᱩᱯᱛᱟ-ᱵᱷᱩᱞ",
+    "deva": "गुप्ता-भुल",
+    "hi": "छिपा त्रुटि",
+    "gloss": "hidden error"
+  },
+  "hidden_signal": {
+    "ol": "ᱜᱩᱯᱛᱟ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "गुप्ता-खबर",
+    "hi": "छिपा संकेत",
+    "gloss": "hidden signal"
+  },
+  "hidden_window": {
+    "ol": "ᱜᱩᱯᱛᱟ-ᱫᱩᱟᱹᱨ",
+    "deva": "गुप्ता-दुआर",
+    "hi": "छिपा खिड़की",
+    "gloss": "hidden window"
+  },
+  "hidden_frame": {
+    "ol": "ᱜᱩᱯᱛᱟ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "गुप्ता-ताल्का",
+    "hi": "छिपा फ्रेम",
+    "gloss": "hidden frame"
+  },
+  "hidden_rate": {
+    "ol": "ᱜᱩᱯᱛᱟ-ᱦᱟᱨ",
+    "deva": "गुप्ता-हर",
+    "hi": "छिपा दर",
+    "gloss": "hidden rate"
+  },
+  "hidden_state": {
+    "ol": "ᱜᱩᱯᱛᱟ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "गुप्ता-ओबोस्ता",
+    "hi": "छिपा अवस्था",
+    "gloss": "hidden state"
+  },
+  "random_spectrum": {
+    "ol": "ᱮᱛ-ᱞᱟᱜᱟ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "एत-लागा-रोंग-सारि",
+    "hi": "यादृच्छिक वर्णक्रम",
+    "gloss": "random spectrum"
+  },
+  "random_filter": {
+    "ol": "ᱮᱛ-ᱞᱟᱜᱟ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "एत-लागा-सिञ्जोग",
+    "hi": "यादृच्छिक संशोधक",
+    "gloss": "random filter"
+  },
+  "random_model": {
+    "ol": "ᱮᱛ-ᱞᱟᱜᱟ-ᱧᱤᱛᱷᱤ",
+    "deva": "एत-लागा-ञिथि",
+    "hi": "यादृच्छिक मॉडल",
+    "gloss": "random model"
+  },
+  "random_network": {
+    "ol": "ᱮᱛ-ᱞᱟᱜᱟ-ᱡᱟᱞ",
+    "deva": "एत-लागा-जाल",
+    "hi": "यादृच्छिक जाल",
+    "gloss": "random network"
+  },
+  "random_layer": {
+    "ol": "ᱮᱛ-ᱞᱟᱜᱟ-ᱥᱛᱷᱟᱨ",
+    "deva": "एत-लागा-स्थार",
+    "hi": "यादृच्छिक परत",
+    "gloss": "random layer"
+  },
+  "random_frequency": {
+    "ol": "ᱮᱛ-ᱞᱟᱜᱟ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "एत-लागा-हिड़ि-हिड़ि",
+    "hi": "यादृच्छिक आवृत्ति",
+    "gloss": "random frequency"
+  },
+  "random_error": {
+    "ol": "ᱮᱛ-ᱞᱟᱜᱟ-ᱵᱷᱩᱞ",
+    "deva": "एत-लागा-भुल",
+    "hi": "यादृच्छिक त्रुटि",
+    "gloss": "random error"
+  },
+  "random_signal": {
+    "ol": "ᱮᱛ-ᱞᱟᱜᱟ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "एत-लागा-खबर",
+    "hi": "यादृच्छिक संकेत",
+    "gloss": "random signal"
+  },
+  "random_window": {
+    "ol": "ᱮᱛ-ᱞᱟᱜᱟ-ᱫᱩᱟᱹᱨ",
+    "deva": "एत-लागा-दुआर",
+    "hi": "यादृच्छिक खिड़की",
+    "gloss": "random window"
+  },
+  "random_frame": {
+    "ol": "ᱮᱛ-ᱞᱟᱜᱟ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "एत-लागा-ताल्का",
+    "hi": "यादृच्छिक फ्रेम",
+    "gloss": "random frame"
+  },
+  "random_rate": {
+    "ol": "ᱮᱛ-ᱞᱟᱜᱟ-ᱦᱟᱨ",
+    "deva": "एत-लागा-हर",
+    "hi": "यादृच्छिक दर",
+    "gloss": "random rate"
+  },
+  "random_state": {
+    "ol": "ᱮᱛ-ᱞᱟᱜᱟ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "एत-लागा-ओबोस्ता",
+    "hi": "यादृच्छिक अवस्था",
+    "gloss": "random state"
+  },
+  "neural_spectrum": {
+    "ol": "ᱯᱟᱹᱭᱞᱟᱹ-ᱡᱟᱞ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "पायला-जाल-रोंग-सारि",
+    "hi": "तंत्रिका वर्णक्रम",
+    "gloss": "neural spectrum"
+  },
+  "neural_filter": {
+    "ol": "ᱯᱟᱹᱭᱞᱟᱹ-ᱡᱟᱞ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "पायला-जाल-सिञ्जोग",
+    "hi": "तंत्रिका संशोधक",
+    "gloss": "neural filter"
+  },
+  "neural_model": {
+    "ol": "ᱯᱟᱹᱭᱞᱟᱹ-ᱡᱟᱞ-ᱧᱤᱛᱷᱤ",
+    "deva": "पायला-जाल-ञिथि",
+    "hi": "तंत्रिका मॉडल",
+    "gloss": "neural model"
+  },
+  "neural_network": {
+    "ol": "ᱯᱟᱹᱭᱞᱟᱹ-ᱡᱟᱞ-ᱡᱟᱞ",
+    "deva": "पायला-जाल-जाल",
+    "hi": "तंत्रिका जाल",
+    "gloss": "neural network"
+  },
+  "neural_layer": {
+    "ol": "ᱯᱟᱹᱭᱞᱟᱹ-ᱡᱟᱞ-ᱥᱛᱷᱟᱨ",
+    "deva": "पायला-जाल-स्थार",
+    "hi": "तंत्रिका परत",
+    "gloss": "neural layer"
+  },
+  "neural_frequency": {
+    "ol": "ᱯᱟᱹᱭᱞᱟᱹ-ᱡᱟᱞ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "पायला-जाल-हिड़ि-हिड़ि",
+    "hi": "तंत्रिका आवृत्ति",
+    "gloss": "neural frequency"
+  },
+  "neural_error": {
+    "ol": "ᱯᱟᱹᱭᱞᱟᱹ-ᱡᱟᱞ-ᱵᱷᱩᱞ",
+    "deva": "पायला-जाल-भुल",
+    "hi": "तंत्रिका त्रुटि",
+    "gloss": "neural error"
+  },
+  "neural_signal": {
+    "ol": "ᱯᱟᱹᱭᱞᱟᱹ-ᱡᱟᱞ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "पायला-जाल-खबर",
+    "hi": "तंत्रिका संकेत",
+    "gloss": "neural signal"
+  },
+  "neural_window": {
+    "ol": "ᱯᱟᱹᱭᱞᱟᱹ-ᱡᱟᱞ-ᱫᱩᱟᱹᱨ",
+    "deva": "पायला-जाल-दुआर",
+    "hi": "तंत्रिका खिड़की",
+    "gloss": "neural window"
+  },
+  "neural_frame": {
+    "ol": "ᱯᱟᱹᱭᱞᱟᱹ-ᱡᱟᱞ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "पायला-जाल-ताल्का",
+    "hi": "तंत्रिका फ्रेम",
+    "gloss": "neural frame"
+  },
+  "neural_rate": {
+    "ol": "ᱯᱟᱹᱭᱞᱟᱹ-ᱡᱟᱞ-ᱦᱟᱨ",
+    "deva": "पायला-जाल-हर",
+    "hi": "तंत्रिका दर",
+    "gloss": "neural rate"
+  },
+  "neural_state": {
+    "ol": "ᱯᱟᱹᱭᱞᱟᱹ-ᱡᱟᱞ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "पायला-जाल-ओबोस्ता",
+    "hi": "तंत्रिका अवस्था",
+    "gloss": "neural state"
+  },
+  "phoneme_spectrum": {
+    "ol": "ᱨᱚᱲᱮ-ᱡᱟᱱᱟ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "रोड़े-जाना-रोंग-सारि",
+    "hi": "ध्वनिमान वर्णक्रम",
+    "gloss": "phoneme spectrum"
+  },
+  "phoneme_filter": {
+    "ol": "ᱨᱚᱲᱮ-ᱡᱟᱱᱟ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "रोड़े-जाना-सिञ्जोग",
+    "hi": "ध्वनिमान संशोधक",
+    "gloss": "phoneme filter"
+  },
+  "phoneme_model": {
+    "ol": "ᱨᱚᱲᱮ-ᱡᱟᱱᱟ-ᱧᱤᱛᱷᱤ",
+    "deva": "रोड़े-जाना-ञिथि",
+    "hi": "ध्वनिमान मॉडल",
+    "gloss": "phoneme model"
+  },
+  "phoneme_network": {
+    "ol": "ᱨᱚᱲᱮ-ᱡᱟᱱᱟ-ᱡᱟᱞ",
+    "deva": "रोड़े-जाना-जाल",
+    "hi": "ध्वनिमान जाल",
+    "gloss": "phoneme network"
+  },
+  "phoneme_layer": {
+    "ol": "ᱨᱚᱲᱮ-ᱡᱟᱱᱟ-ᱥᱛᱷᱟᱨ",
+    "deva": "रोड़े-जाना-स्थार",
+    "hi": "ध्वनिमान परत",
+    "gloss": "phoneme layer"
+  },
+  "phoneme_frequency": {
+    "ol": "ᱨᱚᱲᱮ-ᱡᱟᱱᱟ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "रोड़े-जाना-हिड़ि-हिड़ि",
+    "hi": "ध्वनिमान आवृत्ति",
+    "gloss": "phoneme frequency"
+  },
+  "phoneme_error": {
+    "ol": "ᱨᱚᱲᱮ-ᱡᱟᱱᱟ-ᱵᱷᱩᱞ",
+    "deva": "रोड़े-जाना-भुल",
+    "hi": "ध्वनिमान त्रुटि",
+    "gloss": "phoneme error"
+  },
+  "phoneme_signal": {
+    "ol": "ᱨᱚᱲᱮ-ᱡᱟᱱᱟ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "रोड़े-जाना-खबर",
+    "hi": "ध्वनिमान संकेत",
+    "gloss": "phoneme signal"
+  },
+  "phoneme_window": {
+    "ol": "ᱨᱚᱲᱮ-ᱡᱟᱱᱟ-ᱫᱩᱟᱹᱨ",
+    "deva": "रोड़े-जाना-दुआर",
+    "hi": "ध्वनिमान खिड़की",
+    "gloss": "phoneme window"
+  },
+  "phoneme_frame": {
+    "ol": "ᱨᱚᱲᱮ-ᱡᱟᱱᱟ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "रोड़े-जाना-ताल्का",
+    "hi": "ध्वनिमान फ्रेम",
+    "gloss": "phoneme frame"
+  },
+  "phoneme_rate": {
+    "ol": "ᱨᱚᱲᱮ-ᱡᱟᱱᱟ-ᱦᱟᱨ",
+    "deva": "रोड़े-जाना-हर",
+    "hi": "ध्वनिमान दर",
+    "gloss": "phoneme rate"
+  },
+  "phoneme_state": {
+    "ol": "ᱨᱚᱲᱮ-ᱡᱟᱱᱟ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "रोड़े-जाना-ओबोस्ता",
+    "hi": "ध्वनिमान अवस्था",
+    "gloss": "phoneme state"
+  },
+  "word_spectrum": {
+    "ol": "ᱟᱲᱟ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "आड़ा-रोंग-सारि",
+    "hi": "शब्द वर्णक्रम",
+    "gloss": "word spectrum"
+  },
+  "word_filter": {
+    "ol": "ᱟᱲᱟ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "आड़ा-सिञ्जोग",
+    "hi": "शब्द संशोधक",
+    "gloss": "word filter"
+  },
+  "word_model": {
+    "ol": "ᱟᱲᱟ-ᱧᱤᱛᱷᱤ",
+    "deva": "आड़ा-ञिथि",
+    "hi": "शब्द मॉडल",
+    "gloss": "word model"
+  },
+  "word_network": {
+    "ol": "ᱟᱲᱟ-ᱡᱟᱞ",
+    "deva": "आड़ा-जाल",
+    "hi": "शब्द जाल",
+    "gloss": "word network"
+  },
+  "word_layer": {
+    "ol": "ᱟᱲᱟ-ᱥᱛᱷᱟᱨ",
+    "deva": "आड़ा-स्थार",
+    "hi": "शब्द परत",
+    "gloss": "word layer"
+  },
+  "word_frequency": {
+    "ol": "ᱟᱲᱟ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "आड़ा-हिड़ि-हिड़ि",
+    "hi": "शब्द आवृत्ति",
+    "gloss": "word frequency"
+  },
+  "word_signal": {
+    "ol": "ᱟᱲᱟ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "आड़ा-खबर",
+    "hi": "शब्द संकेत",
+    "gloss": "word signal"
+  },
+  "word_window": {
+    "ol": "ᱟᱲᱟ-ᱫᱩᱟᱹᱨ",
+    "deva": "आड़ा-दुआर",
+    "hi": "शब्द खिड़की",
+    "gloss": "word window"
+  },
+  "word_frame": {
+    "ol": "ᱟᱲᱟ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "आड़ा-ताल्का",
+    "hi": "शब्द फ्रेम",
+    "gloss": "word frame"
+  },
+  "word_rate": {
+    "ol": "ᱟᱲᱟ-ᱦᱟᱨ",
+    "deva": "आड़ा-हर",
+    "hi": "शब्द दर",
+    "gloss": "word rate"
+  },
+  "word_state": {
+    "ol": "ᱟᱲᱟ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "आड़ा-ओबोस्ता",
+    "hi": "शब्द अवस्था",
+    "gloss": "word state"
+  },
+  "silence_spectrum": {
+    "ol": "ᱨᱟᱥᱤ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "रासि-रोंग-सारि",
+    "hi": "मौन वर्णक्रम",
+    "gloss": "silence spectrum"
+  },
+  "silence_filter": {
+    "ol": "ᱨᱟᱥᱤ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "रासि-सिञ्जोग",
+    "hi": "मौन संशोधक",
+    "gloss": "silence filter"
+  },
+  "silence_model": {
+    "ol": "ᱨᱟᱥᱤ-ᱧᱤᱛᱷᱤ",
+    "deva": "रासि-ञिथि",
+    "hi": "मौन मॉडल",
+    "gloss": "silence model"
+  },
+  "silence_network": {
+    "ol": "ᱨᱟᱥᱤ-ᱡᱟᱞ",
+    "deva": "रासि-जाल",
+    "hi": "मौन जाल",
+    "gloss": "silence network"
+  },
+  "silence_layer": {
+    "ol": "ᱨᱟᱥᱤ-ᱥᱛᱷᱟᱨ",
+    "deva": "रासि-स्थार",
+    "hi": "मौन परत",
+    "gloss": "silence layer"
+  },
+  "silence_frequency": {
+    "ol": "ᱨᱟᱥᱤ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "रासि-हिड़ि-हिड़ि",
+    "hi": "मौन आवृत्ति",
+    "gloss": "silence frequency"
+  },
+  "silence_error": {
+    "ol": "ᱨᱟᱥᱤ-ᱵᱷᱩᱞ",
+    "deva": "रासि-भुल",
+    "hi": "मौन त्रुटि",
+    "gloss": "silence error"
+  },
+  "silence_signal": {
+    "ol": "ᱨᱟᱥᱤ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "रासि-खबर",
+    "hi": "मौन संकेत",
+    "gloss": "silence signal"
+  },
+  "silence_window": {
+    "ol": "ᱨᱟᱥᱤ-ᱫᱩᱟᱹᱨ",
+    "deva": "रासि-दुआर",
+    "hi": "मौन खिड़की",
+    "gloss": "silence window"
+  },
+  "silence_frame": {
+    "ol": "ᱨᱟᱥᱤ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "रासि-ताल्का",
+    "hi": "मौन फ्रेम",
+    "gloss": "silence frame"
+  },
+  "silence_rate": {
+    "ol": "ᱨᱟᱥᱤ-ᱦᱟᱨ",
+    "deva": "रासि-हर",
+    "hi": "मौन दर",
+    "gloss": "silence rate"
+  },
+  "silence_state": {
+    "ol": "ᱨᱟᱥᱤ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "रासि-ओबोस्ता",
+    "hi": "मौन अवस्था",
+    "gloss": "silence state"
+  },
+  "noise_spectrum": {
+    "ol": "ᱠᱩᱛᱷᱩ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "कुथु-रोंग-सारि",
+    "hi": "शोर वर्णक्रम",
+    "gloss": "noise spectrum"
+  },
+  "noise_filter": {
+    "ol": "ᱠᱩᱛᱷᱩ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "कुथु-सिञ्जोग",
+    "hi": "शोर संशोधक",
+    "gloss": "noise filter"
+  },
+  "noise_model": {
+    "ol": "ᱠᱩᱛᱷᱩ-ᱧᱤᱛᱷᱤ",
+    "deva": "कुथु-ञिथि",
+    "hi": "शोर मॉडल",
+    "gloss": "noise model"
+  },
+  "noise_network": {
+    "ol": "ᱠᱩᱛᱷᱩ-ᱡᱟᱞ",
+    "deva": "कुथु-जाल",
+    "hi": "शोर जाल",
+    "gloss": "noise network"
+  },
+  "noise_layer": {
+    "ol": "ᱠᱩᱛᱷᱩ-ᱥᱛᱷᱟᱨ",
+    "deva": "कुथु-स्थार",
+    "hi": "शोर परत",
+    "gloss": "noise layer"
+  },
+  "noise_frequency": {
+    "ol": "ᱠᱩᱛᱷᱩ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "कुथु-हिड़ि-हिड़ि",
+    "hi": "शोर आवृत्ति",
+    "gloss": "noise frequency"
+  },
+  "noise_error": {
+    "ol": "ᱠᱩᱛᱷᱩ-ᱵᱷᱩᱞ",
+    "deva": "कुथु-भुल",
+    "hi": "शोर त्रुटि",
+    "gloss": "noise error"
+  },
+  "noise_signal": {
+    "ol": "ᱠᱩᱛᱷᱩ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "कुथु-खबर",
+    "hi": "शोर संकेत",
+    "gloss": "noise signal"
+  },
+  "noise_window": {
+    "ol": "ᱠᱩᱛᱷᱩ-ᱫᱩᱟᱹᱨ",
+    "deva": "कुथु-दुआर",
+    "hi": "शोर खिड़की",
+    "gloss": "noise window"
+  },
+  "noise_frame": {
+    "ol": "ᱠᱩᱛᱷᱩ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "कुथु-ताल्का",
+    "hi": "शोर फ्रेम",
+    "gloss": "noise frame"
+  },
+  "noise_rate": {
+    "ol": "ᱠᱩᱛᱷᱩ-ᱦᱟᱨ",
+    "deva": "कुथु-हर",
+    "hi": "शोर दर",
+    "gloss": "noise rate"
+  },
+  "noise_state": {
+    "ol": "ᱠᱩᱛᱷᱩ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "कुथु-ओबोस्ता",
+    "hi": "शोर अवस्था",
+    "gloss": "noise state"
+  },
+  "gaussian_spectrum": {
+    "ol": "ᱜᱟᱣᱥᱤᱭᱟᱹᱱ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "गावसियान-रोंग-सारि",
+    "hi": "गाउसियन वर्णक्रम",
+    "gloss": "gaussian spectrum"
+  },
+  "gaussian_filter": {
+    "ol": "ᱜᱟᱣᱥᱤᱭᱟᱹᱱ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "गावसियान-सिञ्जोग",
+    "hi": "गाउसियन संशोधक",
+    "gloss": "gaussian filter"
+  },
+  "gaussian_model": {
+    "ol": "ᱜᱟᱣᱥᱤᱭᱟᱹᱱ-ᱧᱤᱛᱷᱤ",
+    "deva": "गावसियान-ञिथि",
+    "hi": "गाउसियन मॉडल",
+    "gloss": "gaussian model"
+  },
+  "gaussian_network": {
+    "ol": "ᱜᱟᱣᱥᱤᱭᱟᱹᱱ-ᱡᱟᱞ",
+    "deva": "गावसियान-जाल",
+    "hi": "गाउसियन जाल",
+    "gloss": "gaussian network"
+  },
+  "gaussian_layer": {
+    "ol": "ᱜᱟᱣᱥᱤᱭᱟᱹᱱ-ᱥᱛᱷᱟᱨ",
+    "deva": "गावसियान-स्थार",
+    "hi": "गाउसियन परत",
+    "gloss": "gaussian layer"
+  },
+  "gaussian_frequency": {
+    "ol": "ᱜᱟᱣᱥᱤᱭᱟᱹᱱ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "गावसियान-हिड़ि-हिड़ि",
+    "hi": "गाउसियन आवृत्ति",
+    "gloss": "gaussian frequency"
+  },
+  "gaussian_error": {
+    "ol": "ᱜᱟᱣᱥᱤᱭᱟᱹᱱ-ᱵᱷᱩᱞ",
+    "deva": "गावसियान-भुल",
+    "hi": "गाउसियन त्रुटि",
+    "gloss": "gaussian error"
+  },
+  "gaussian_signal": {
+    "ol": "ᱜᱟᱣᱥᱤᱭᱟᱹᱱ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "गावसियान-खबर",
+    "hi": "गाउसियन संकेत",
+    "gloss": "gaussian signal"
+  },
+  "gaussian_window": {
+    "ol": "ᱜᱟᱣᱥᱤᱭᱟᱹᱱ-ᱫᱩᱟᱹᱨ",
+    "deva": "गावसियान-दुआर",
+    "hi": "गाउसियन खिड़की",
+    "gloss": "gaussian window"
+  },
+  "gaussian_frame": {
+    "ol": "ᱜᱟᱣᱥᱤᱭᱟᱹᱱ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "गावसियान-ताल्का",
+    "hi": "गाउसियन फ्रेम",
+    "gloss": "gaussian frame"
+  },
+  "gaussian_rate": {
+    "ol": "ᱜᱟᱣᱥᱤᱭᱟᱹᱱ-ᱦᱟᱨ",
+    "deva": "गावसियान-हर",
+    "hi": "गाउसियन दर",
+    "gloss": "gaussian rate"
+  },
+  "gaussian_state": {
+    "ol": "ᱜᱟᱣᱥᱤᱭᱟᱹᱱ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "गावसियान-ओबोस्ता",
+    "hi": "गाउसियन अवस्था",
+    "gloss": "gaussian state"
+  },
+  "log_spectrum": {
+    "ol": "ᱞᱚᱜ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "लोग-रोंग-सारि",
+    "hi": "लॉग वर्णक्रम",
+    "gloss": "log spectrum"
+  },
+  "log_filter": {
+    "ol": "ᱞᱚᱜ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "लोग-सिञ्जोग",
+    "hi": "लॉग संशोधक",
+    "gloss": "log filter"
+  },
+  "log_model": {
+    "ol": "ᱞᱚᱜ-ᱧᱤᱛᱷᱤ",
+    "deva": "लोग-ञिथि",
+    "hi": "लॉग मॉडल",
+    "gloss": "log model"
+  },
+  "log_network": {
+    "ol": "ᱞᱚᱜ-ᱡᱟᱞ",
+    "deva": "लोग-जाल",
+    "hi": "लॉग जाल",
+    "gloss": "log network"
+  },
+  "log_layer": {
+    "ol": "ᱞᱚᱜ-ᱥᱛᱷᱟᱨ",
+    "deva": "लोग-स्थार",
+    "hi": "लॉग परत",
+    "gloss": "log layer"
+  },
+  "log_frequency": {
+    "ol": "ᱞᱚᱜ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "लोग-हिड़ि-हिड़ि",
+    "hi": "लॉग आवृत्ति",
+    "gloss": "log frequency"
+  },
+  "log_error": {
+    "ol": "ᱞᱚᱜ-ᱵᱷᱩᱞ",
+    "deva": "लोग-भुल",
+    "hi": "लॉग त्रुटि",
+    "gloss": "log error"
+  },
+  "log_signal": {
+    "ol": "ᱞᱚᱜ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "लोग-खबर",
+    "hi": "लॉग संकेत",
+    "gloss": "log signal"
+  },
+  "log_window": {
+    "ol": "ᱞᱚᱜ-ᱫᱩᱟᱹᱨ",
+    "deva": "लोग-दुआर",
+    "hi": "लॉग खिड़की",
+    "gloss": "log window"
+  },
+  "log_frame": {
+    "ol": "ᱞᱚᱜ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "लोग-ताल्का",
+    "hi": "लॉग फ्रेम",
+    "gloss": "log frame"
+  },
+  "log_rate": {
+    "ol": "ᱞᱚᱜ-ᱦᱟᱨ",
+    "deva": "लोग-हर",
+    "hi": "लॉग दर",
+    "gloss": "log rate"
+  },
+  "log_state": {
+    "ol": "ᱞᱚᱜ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "लोग-ओबोस्ता",
+    "hi": "लॉग अवस्था",
+    "gloss": "log state"
+  },
+  "power_spectrum": {
+    "ol": "ᱦᱮᱛ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "हेत-रोंग-सारि",
+    "hi": "शक्ति वर्णक्रम",
+    "gloss": "power spectrum"
+  },
+  "power_filter": {
+    "ol": "ᱦᱮᱛ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "हेत-सिञ्जोग",
+    "hi": "शक्ति संशोधक",
+    "gloss": "power filter"
+  },
+  "power_model": {
+    "ol": "ᱦᱮᱛ-ᱧᱤᱛᱷᱤ",
+    "deva": "हेत-ञिथि",
+    "hi": "शक्ति मॉडल",
+    "gloss": "power model"
+  },
+  "power_network": {
+    "ol": "ᱦᱮᱛ-ᱡᱟᱞ",
+    "deva": "हेत-जाल",
+    "hi": "शक्ति जाल",
+    "gloss": "power network"
+  },
+  "power_layer": {
+    "ol": "ᱦᱮᱛ-ᱥᱛᱷᱟᱨ",
+    "deva": "हेत-स्थार",
+    "hi": "शक्ति परत",
+    "gloss": "power layer"
+  },
+  "power_frequency": {
+    "ol": "ᱦᱮᱛ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "हेत-हिड़ि-हिड़ि",
+    "hi": "शक्ति आवृत्ति",
+    "gloss": "power frequency"
+  },
+  "power_error": {
+    "ol": "ᱦᱮᱛ-ᱵᱷᱩᱞ",
+    "deva": "हेत-भुल",
+    "hi": "शक्ति त्रुटि",
+    "gloss": "power error"
+  },
+  "power_signal": {
+    "ol": "ᱦᱮᱛ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "हेत-खबर",
+    "hi": "शक्ति संकेत",
+    "gloss": "power signal"
+  },
+  "power_window": {
+    "ol": "ᱦᱮᱛ-ᱫᱩᱟᱹᱨ",
+    "deva": "हेत-दुआर",
+    "hi": "शक्ति खिड़की",
+    "gloss": "power window"
+  },
+  "power_frame": {
+    "ol": "ᱦᱮᱛ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "हेत-ताल्का",
+    "hi": "शक्ति फ्रेम",
+    "gloss": "power frame"
+  },
+  "power_rate": {
+    "ol": "ᱦᱮᱛ-ᱦᱟᱨ",
+    "deva": "हेत-हर",
+    "hi": "शक्ति दर",
+    "gloss": "power rate"
+  },
+  "power_state": {
+    "ol": "ᱦᱮᱛ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "हेत-ओबोस्ता",
+    "hi": "शक्ति अवस्था",
+    "gloss": "power state"
+  },
+  "stochastic_spectrum": {
+    "ol": "ᱨᱟᱨᱟ-ᱠᱟᱹᱢᱤ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "रारा-काम-रोंग-सारि",
+    "hi": "प्रायिक वर्णक्रम",
+    "gloss": "stochastic spectrum"
+  },
+  "stochastic_filter": {
+    "ol": "ᱨᱟᱨᱟ-ᱠᱟᱹᱢᱤ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "रारा-काम-सिञ्जोग",
+    "hi": "प्रायिक संशोधक",
+    "gloss": "stochastic filter"
+  },
+  "stochastic_model": {
+    "ol": "ᱨᱟᱨᱟ-ᱠᱟᱹᱢᱤ-ᱧᱤᱛᱷᱤ",
+    "deva": "रारा-काम-ञिथि",
+    "hi": "प्रायिक मॉडल",
+    "gloss": "stochastic model"
+  },
+  "stochastic_network": {
+    "ol": "ᱨᱟᱨᱟ-ᱠᱟᱹᱢᱤ-ᱡᱟᱞ",
+    "deva": "रारा-काम-जाल",
+    "hi": "प्रायिक जाल",
+    "gloss": "stochastic network"
+  },
+  "stochastic_layer": {
+    "ol": "ᱨᱟᱨᱟ-ᱠᱟᱹᱢᱤ-ᱥᱛᱷᱟᱨ",
+    "deva": "रारा-काम-स्थार",
+    "hi": "प्रायिक परत",
+    "gloss": "stochastic layer"
+  },
+  "stochastic_frequency": {
+    "ol": "ᱨᱟᱨᱟ-ᱠᱟᱹᱢᱤ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "रारा-काम-हिड़ि-हिड़ि",
+    "hi": "प्रायिक आवृत्ति",
+    "gloss": "stochastic frequency"
+  },
+  "stochastic_error": {
+    "ol": "ᱨᱟᱨᱟ-ᱠᱟᱹᱢᱤ-ᱵᱷᱩᱞ",
+    "deva": "रारा-काम-भुल",
+    "hi": "प्रायिक त्रुटि",
+    "gloss": "stochastic error"
+  },
+  "stochastic_signal": {
+    "ol": "ᱨᱟᱨᱟ-ᱠᱟᱹᱢᱤ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "रारा-काम-खबर",
+    "hi": "प्रायिक संकेत",
+    "gloss": "stochastic signal"
+  },
+  "stochastic_window": {
+    "ol": "ᱨᱟᱨᱟ-ᱠᱟᱹᱢᱤ-ᱫᱩᱟᱹᱨ",
+    "deva": "रारा-काम-दुआर",
+    "hi": "प्रायिक खिड़की",
+    "gloss": "stochastic window"
+  },
+  "stochastic_frame": {
+    "ol": "ᱨᱟᱨᱟ-ᱠᱟᱹᱢᱤ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "रारा-काम-ताल्का",
+    "hi": "प्रायिक फ्रेम",
+    "gloss": "stochastic frame"
+  },
+  "stochastic_rate": {
+    "ol": "ᱨᱟᱨᱟ-ᱠᱟᱹᱢᱤ-ᱦᱟᱨ",
+    "deva": "रारा-काम-हर",
+    "hi": "प्रायिक दर",
+    "gloss": "stochastic rate"
+  },
+  "stochastic_state": {
+    "ol": "ᱨᱟᱨᱟ-ᱠᱟᱹᱢᱤ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "रारा-काम-ओबोस्ता",
+    "hi": "प्रायिक अवस्था",
+    "gloss": "stochastic state"
+  },
+  "cepstrum_spectrum": {
+    "ol": "ᱥᱮᱯᱛᱨᱚᱢ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "सेप्त्रोम-रोंग-सारि",
+    "hi": "सेप्सट्रम वर्णक्रम",
+    "gloss": "cepstrum spectrum"
+  },
+  "cepstrum_filter": {
+    "ol": "ᱥᱮᱯᱛᱨᱚᱢ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "सेप्त्रोम-सिञ्जोग",
+    "hi": "सेप्सट्रम संशोधक",
+    "gloss": "cepstrum filter"
+  },
+  "cepstrum_model": {
+    "ol": "ᱥᱮᱯᱛᱨᱚᱢ-ᱧᱤᱛᱷᱤ",
+    "deva": "सेप्त्रोम-ञिथि",
+    "hi": "सेप्सट्रम मॉडल",
+    "gloss": "cepstrum model"
+  },
+  "cepstrum_network": {
+    "ol": "ᱥᱮᱯᱛᱨᱚᱢ-ᱡᱟᱞ",
+    "deva": "सेप्त्रोम-जाल",
+    "hi": "सेप्सट्रम जाल",
+    "gloss": "cepstrum network"
+  },
+  "cepstrum_layer": {
+    "ol": "ᱥᱮᱯᱛᱨᱚᱢ-ᱥᱛᱷᱟᱨ",
+    "deva": "सेप्त्रोम-स्थार",
+    "hi": "सेप्सट्रम परत",
+    "gloss": "cepstrum layer"
+  },
+  "cepstrum_frequency": {
+    "ol": "ᱥᱮᱯᱛᱨᱚᱢ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "सेप्त्रोम-हिड़ि-हिड़ि",
+    "hi": "सेप्सट्रम आवृत्ति",
+    "gloss": "cepstrum frequency"
+  },
+  "cepstrum_error": {
+    "ol": "ᱥᱮᱯᱛᱨᱚᱢ-ᱵᱷᱩᱞ",
+    "deva": "सेप्त्रोम-भुल",
+    "hi": "सेप्सट्रम त्रुटि",
+    "gloss": "cepstrum error"
+  },
+  "cepstrum_signal": {
+    "ol": "ᱥᱮᱯᱛᱨᱚᱢ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "सेप्त्रोम-खबर",
+    "hi": "सेप्सट्रम संकेत",
+    "gloss": "cepstrum signal"
+  },
+  "cepstrum_window": {
+    "ol": "ᱥᱮᱯᱛᱨᱚᱢ-ᱫᱩᱟᱹᱨ",
+    "deva": "सेप्त्रोम-दुआर",
+    "hi": "सेप्सट्रम खिड़की",
+    "gloss": "cepstrum window"
+  },
+  "cepstrum_frame": {
+    "ol": "ᱥᱮᱯᱛᱨᱚᱢ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "सेप्त्रोम-ताल्का",
+    "hi": "सेप्सट्रम फ्रेम",
+    "gloss": "cepstrum frame"
+  },
+  "cepstrum_rate": {
+    "ol": "ᱥᱮᱯᱛᱨᱚᱢ-ᱦᱟᱨ",
+    "deva": "सेप्त्रोम-हर",
+    "hi": "सेप्सट्रम दर",
+    "gloss": "cepstrum rate"
+  },
+  "cepstrum_state": {
+    "ol": "ᱥᱮᱯᱛᱨᱚᱢ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "सेप्त्रोम-ओबोस्ता",
+    "hi": "सेप्सट्रम अवस्था",
+    "gloss": "cepstrum state"
+  },
+  "viterbi_spectrum": {
+    "ol": "ᱣᱤᱴᱟᱨᱵᱤ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "विटार्बि-रोंग-सारि",
+    "hi": "विटर्बी वर्णक्रम",
+    "gloss": "viterbi spectrum"
+  },
+  "viterbi_filter": {
+    "ol": "ᱣᱤᱴᱟᱨᱵᱤ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "विटार्बि-सिञ्जोग",
+    "hi": "विटर्बी संशोधक",
+    "gloss": "viterbi filter"
+  },
+  "viterbi_model": {
+    "ol": "ᱣᱤᱴᱟᱨᱵᱤ-ᱧᱤᱛᱷᱤ",
+    "deva": "विटार्बि-ञिथि",
+    "hi": "विटर्बी मॉडल",
+    "gloss": "viterbi model"
+  },
+  "viterbi_network": {
+    "ol": "ᱣᱤᱴᱟᱨᱵᱤ-ᱡᱟᱞ",
+    "deva": "विटार्बि-जाल",
+    "hi": "विटर्बी जाल",
+    "gloss": "viterbi network"
+  },
+  "viterbi_layer": {
+    "ol": "ᱣᱤᱴᱟᱨᱵᱤ-ᱥᱛᱷᱟᱨ",
+    "deva": "विटार्बि-स्थार",
+    "hi": "विटर्बी परत",
+    "gloss": "viterbi layer"
+  },
+  "viterbi_frequency": {
+    "ol": "ᱣᱤᱴᱟᱨᱵᱤ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "विटार्बि-हिड़ि-हिड़ि",
+    "hi": "विटर्बी आवृत्ति",
+    "gloss": "viterbi frequency"
+  },
+  "viterbi_error": {
+    "ol": "ᱣᱤᱴᱟᱨᱵᱤ-ᱵᱷᱩᱞ",
+    "deva": "विटार्बि-भुल",
+    "hi": "विटर्बी त्रुटि",
+    "gloss": "viterbi error"
+  },
+  "viterbi_signal": {
+    "ol": "ᱣᱤᱴᱟᱨᱵᱤ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "विटार्बि-खबर",
+    "hi": "विटर्बी संकेत",
+    "gloss": "viterbi signal"
+  },
+  "viterbi_window": {
+    "ol": "ᱣᱤᱴᱟᱨᱵᱤ-ᱫᱩᱟᱹᱨ",
+    "deva": "विटार्बि-दुआर",
+    "hi": "विटर्बी खिड़की",
+    "gloss": "viterbi window"
+  },
+  "viterbi_frame": {
+    "ol": "ᱣᱤᱴᱟᱨᱵᱤ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "विटार्बि-ताल्का",
+    "hi": "विटर्बी फ्रेम",
+    "gloss": "viterbi frame"
+  },
+  "viterbi_rate": {
+    "ol": "ᱣᱤᱴᱟᱨᱵᱤ-ᱦᱟᱨ",
+    "deva": "विटार्बि-हर",
+    "hi": "विटर्बी दर",
+    "gloss": "viterbi rate"
+  },
+  "viterbi_state": {
+    "ol": "ᱣᱤᱴᱟᱨᱵᱤ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "विटार्बि-ओबोस्ता",
+    "hi": "विटर्बी अवस्था",
+    "gloss": "viterbi state"
+  },
+  "recognition_spectrum": {
+    "ol": "ᱡᱚᱱᱟᱣ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "जोनाव-रोंग-सारि",
+    "hi": "अभिज्ञान वर्णक्रम",
+    "gloss": "recognition spectrum"
+  },
+  "recognition_filter": {
+    "ol": "ᱡᱚᱱᱟᱣ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "जोनाव-सिञ्जोग",
+    "hi": "अभिज्ञान संशोधक",
+    "gloss": "recognition filter"
+  },
+  "recognition_model": {
+    "ol": "ᱡᱚᱱᱟᱣ-ᱧᱤᱛᱷᱤ",
+    "deva": "जोनाव-ञिथि",
+    "hi": "अभिज्ञान मॉडल",
+    "gloss": "recognition model"
+  },
+  "recognition_network": {
+    "ol": "ᱡᱚᱱᱟᱣ-ᱡᱟᱞ",
+    "deva": "जोनाव-जाल",
+    "hi": "अभिज्ञान जाल",
+    "gloss": "recognition network"
+  },
+  "recognition_layer": {
+    "ol": "ᱡᱚᱱᱟᱣ-ᱥᱛᱷᱟᱨ",
+    "deva": "जोनाव-स्थार",
+    "hi": "अभिज्ञान परत",
+    "gloss": "recognition layer"
+  },
+  "recognition_frequency": {
+    "ol": "ᱡᱚᱱᱟᱣ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "जोनाव-हिड़ि-हिड़ि",
+    "hi": "अभिज्ञान आवृत्ति",
+    "gloss": "recognition frequency"
+  },
+  "recognition_error": {
+    "ol": "ᱡᱚᱱᱟᱣ-ᱵᱷᱩᱞ",
+    "deva": "जोनाव-भुल",
+    "hi": "अभिज्ञान त्रुटि",
+    "gloss": "recognition error"
+  },
+  "recognition_signal": {
+    "ol": "ᱡᱚᱱᱟᱣ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "जोनाव-खबर",
+    "hi": "अभिज्ञान संकेत",
+    "gloss": "recognition signal"
+  },
+  "recognition_window": {
+    "ol": "ᱡᱚᱱᱟᱣ-ᱫᱩᱟᱹᱨ",
+    "deva": "जोनाव-दुआर",
+    "hi": "अभिज्ञान खिड़की",
+    "gloss": "recognition window"
+  },
+  "recognition_frame": {
+    "ol": "ᱡᱚᱱᱟᱣ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "जोनाव-ताल्का",
+    "hi": "अभिज्ञान फ्रेम",
+    "gloss": "recognition frame"
+  },
+  "recognition_rate": {
+    "ol": "ᱡᱚᱱᱟᱣ-ᱦᱟᱨ",
+    "deva": "जोनाव-हर",
+    "hi": "अभिज्ञान दर",
+    "gloss": "recognition rate"
+  },
+  "recognition_state": {
+    "ol": "ᱡᱚᱱᱟᱣ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "जोनाव-ओबोस्ता",
+    "hi": "अभिज्ञान अवस्था",
+    "gloss": "recognition state"
+  },
+  "synthesis_spectrum": {
+    "ol": "ᱥᱚᱢᱵᱤᱞᱟᱹ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "सोमबिला-रोंग-सारि",
+    "hi": "संश्लेषण वर्णक्रम",
+    "gloss": "synthesis spectrum"
+  },
+  "synthesis_filter": {
+    "ol": "ᱥᱚᱢᱵᱤᱞᱟᱹ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "सोमबिला-सिञ्जोग",
+    "hi": "संश्लेषण संशोधक",
+    "gloss": "synthesis filter"
+  },
+  "synthesis_model": {
+    "ol": "ᱥᱚᱢᱵᱤᱞᱟᱹ-ᱧᱤᱛᱷᱤ",
+    "deva": "सोमबिला-ञिथि",
+    "hi": "संश्लेषण मॉडल",
+    "gloss": "synthesis model"
+  },
+  "synthesis_network": {
+    "ol": "ᱥᱚᱢᱵᱤᱞᱟᱹ-ᱡᱟᱞ",
+    "deva": "सोमबिला-जाल",
+    "hi": "संश्लेषण जाल",
+    "gloss": "synthesis network"
+  },
+  "synthesis_layer": {
+    "ol": "ᱥᱚᱢᱵᱤᱞᱟᱹ-ᱥᱛᱷᱟᱨ",
+    "deva": "सोमबिला-स्थार",
+    "hi": "संश्लेषण परत",
+    "gloss": "synthesis layer"
+  },
+  "synthesis_frequency": {
+    "ol": "ᱥᱚᱢᱵᱤᱞᱟᱹ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "सोमबिला-हिड़ि-हिड़ि",
+    "hi": "संश्लेषण आवृत्ति",
+    "gloss": "synthesis frequency"
+  },
+  "synthesis_error": {
+    "ol": "ᱥᱚᱢᱵᱤᱞᱟᱹ-ᱵᱷᱩᱞ",
+    "deva": "सोमबिला-भुल",
+    "hi": "संश्लेषण त्रुटि",
+    "gloss": "synthesis error"
+  },
+  "synthesis_signal": {
+    "ol": "ᱥᱚᱢᱵᱤᱞᱟᱹ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "सोमबिला-खबर",
+    "hi": "संश्लेषण संकेत",
+    "gloss": "synthesis signal"
+  },
+  "synthesis_window": {
+    "ol": "ᱥᱚᱢᱵᱤᱞᱟᱹ-ᱫᱩᱟᱹᱨ",
+    "deva": "सोमबिला-दुआर",
+    "hi": "संश्लेषण खिड़की",
+    "gloss": "synthesis window"
+  },
+  "synthesis_frame": {
+    "ol": "ᱥᱚᱢᱵᱤᱞᱟᱹ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "सोमबिला-ताल्का",
+    "hi": "संश्लेषण फ्रेम",
+    "gloss": "synthesis frame"
+  },
+  "synthesis_rate": {
+    "ol": "ᱥᱚᱢᱵᱤᱞᱟᱹ-ᱦᱟᱨ",
+    "deva": "सोमबिला-हर",
+    "hi": "संश्लेषण दर",
+    "gloss": "synthesis rate"
+  },
+  "synthesis_state": {
+    "ol": "ᱥᱚᱢᱵᱤᱞᱟᱹ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "सोमबिला-ओबोस्ता",
+    "hi": "संश्लेषण अवस्था",
+    "gloss": "synthesis state"
+  },
+  "prosody_spectrum": {
+    "ol": "ᱡᱷᱩᱢᱨᱟ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "झुमरा-रोंग-सारि",
+    "hi": "छंदोच्चार वर्णक्रम",
+    "gloss": "prosody spectrum"
+  },
+  "prosody_filter": {
+    "ol": "ᱡᱷᱩᱢᱨᱟ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "झुमरा-सिञ्जोग",
+    "hi": "छंदोच्चार संशोधक",
+    "gloss": "prosody filter"
+  },
+  "prosody_model": {
+    "ol": "ᱡᱷᱩᱢᱨᱟ-ᱧᱤᱛᱷᱤ",
+    "deva": "झुमरा-ञिथि",
+    "hi": "छंदोच्चार मॉडल",
+    "gloss": "prosody model"
+  },
+  "prosody_network": {
+    "ol": "ᱡᱷᱩᱢᱨᱟ-ᱡᱟᱞ",
+    "deva": "झुमरा-जाल",
+    "hi": "छंदोच्चार जाल",
+    "gloss": "prosody network"
+  },
+  "prosody_layer": {
+    "ol": "ᱡᱷᱩᱢᱨᱟ-ᱥᱛᱷᱟᱨ",
+    "deva": "झुमरा-स्थार",
+    "hi": "छंदोच्चार परत",
+    "gloss": "prosody layer"
+  },
+  "prosody_frequency": {
+    "ol": "ᱡᱷᱩᱢᱨᱟ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "झुमरा-हिड़ि-हिड़ि",
+    "hi": "छंदोच्चार आवृत्ति",
+    "gloss": "prosody frequency"
+  },
+  "prosody_error": {
+    "ol": "ᱡᱷᱩᱢᱨᱟ-ᱵᱷᱩᱞ",
+    "deva": "झुमरा-भुल",
+    "hi": "छंदोच्चार त्रुटि",
+    "gloss": "prosody error"
+  },
+  "prosody_signal": {
+    "ol": "ᱡᱷᱩᱢᱨᱟ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "झुमरा-खबर",
+    "hi": "छंदोच्चार संकेत",
+    "gloss": "prosody signal"
+  },
+  "prosody_window": {
+    "ol": "ᱡᱷᱩᱢᱨᱟ-ᱫᱩᱟᱹᱨ",
+    "deva": "झुमरा-दुआर",
+    "hi": "छंदोच्चार खिड़की",
+    "gloss": "prosody window"
+  },
+  "prosody_frame": {
+    "ol": "ᱡᱷᱩᱢᱨᱟ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "झुमरा-ताल्का",
+    "hi": "छंदोच्चार फ्रेम",
+    "gloss": "prosody frame"
+  },
+  "prosody_rate": {
+    "ol": "ᱡᱷᱩᱢᱨᱟ-ᱦᱟᱨ",
+    "deva": "झुमरा-हर",
+    "hi": "छंदोच्चार दर",
+    "gloss": "prosody rate"
+  },
+  "prosody_state": {
+    "ol": "ᱡᱷᱩᱢᱨᱟ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "झुमरा-ओबोस्ता",
+    "hi": "छंदोच्चार अवस्था",
+    "gloss": "prosody state"
+  },
+  "voice_cloning_spectrum": {
+    "ol": "ᱠᱚᱞᱚᱢ-ᱮᱥᱮᱞ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "कोलोम-एसेल-रोंग-सारि",
+    "hi": "स्वर-प्रतिरूपण वर्णक्रम",
+    "gloss": "voice cloning spectrum"
+  },
+  "voice_cloning_filter": {
+    "ol": "ᱠᱚᱞᱚᱢ-ᱮᱥᱮᱞ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "कोलोम-एसेल-सिञ्जोग",
+    "hi": "स्वर-प्रतिरूपण संशोधक",
+    "gloss": "voice cloning filter"
+  },
+  "voice_cloning_model": {
+    "ol": "ᱠᱚᱞᱚᱢ-ᱮᱥᱮᱞ-ᱧᱤᱛᱷᱤ",
+    "deva": "कोलोम-एसेल-ञिथि",
+    "hi": "स्वर-प्रतिरूपण मॉडल",
+    "gloss": "voice cloning model"
+  },
+  "voice_cloning_network": {
+    "ol": "ᱠᱚᱞᱚᱢ-ᱮᱥᱮᱞ-ᱡᱟᱞ",
+    "deva": "कोलोम-एसेल-जाल",
+    "hi": "स्वर-प्रतिरूपण जाल",
+    "gloss": "voice cloning network"
+  },
+  "voice_cloning_layer": {
+    "ol": "ᱠᱚᱞᱚᱢ-ᱮᱥᱮᱞ-ᱥᱛᱷᱟᱨ",
+    "deva": "कोलोम-एसेल-स्थार",
+    "hi": "स्वर-प्रतिरूपण परत",
+    "gloss": "voice cloning layer"
+  },
+  "voice_cloning_frequency": {
+    "ol": "ᱠᱚᱞᱚᱢ-ᱮᱥᱮᱞ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "कोलोम-एसेल-हिड़ि-हिड़ि",
+    "hi": "स्वर-प्रतिरूपण आवृत्ति",
+    "gloss": "voice cloning frequency"
+  },
+  "voice_cloning_error": {
+    "ol": "ᱠᱚᱞᱚᱢ-ᱮᱥᱮᱞ-ᱵᱷᱩᱞ",
+    "deva": "कोलोम-एसेल-भुल",
+    "hi": "स्वर-प्रतिरूपण त्रुटि",
+    "gloss": "voice cloning error"
+  },
+  "voice_cloning_signal": {
+    "ol": "ᱠᱚᱞᱚᱢ-ᱮᱥᱮᱞ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "कोलोम-एसेल-खबर",
+    "hi": "स्वर-प्रतिरूपण संकेत",
+    "gloss": "voice cloning signal"
+  },
+  "voice_cloning_window": {
+    "ol": "ᱠᱚᱞᱚᱢ-ᱮᱥᱮᱞ-ᱫᱩᱟᱹᱨ",
+    "deva": "कोलोम-एसेल-दुआर",
+    "hi": "स्वर-प्रतिरूपण खिड़की",
+    "gloss": "voice cloning window"
+  },
+  "voice_cloning_frame": {
+    "ol": "ᱠᱚᱞᱚᱢ-ᱮᱥᱮᱞ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "कोलोम-एसेल-ताल्का",
+    "hi": "स्वर-प्रतिरूपण फ्रेम",
+    "gloss": "voice cloning frame"
+  },
+  "voice_cloning_rate": {
+    "ol": "ᱠᱚᱞᱚᱢ-ᱮᱥᱮᱞ-ᱦᱟᱨ",
+    "deva": "कोलोम-एसेल-हर",
+    "hi": "स्वर-प्रतिरूपण दर",
+    "gloss": "voice cloning rate"
+  },
+  "voice_cloning_state": {
+    "ol": "ᱠᱚᱞᱚᱢ-ᱮᱥᱮᱞ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "कोलोम-एसेल-ओबोस्ता",
+    "hi": "स्वर-प्रतिरूपण अवस्था",
+    "gloss": "voice cloning state"
+  },
+  "zero_shot_spectrum": {
+    "ol": "ᱥᱩᱱ-ᱜᱚᱴᱟ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "सून-गोटा-रोंग-सारि",
+    "hi": "शून्य-शॉट वर्णक्रम",
+    "gloss": "zero shot spectrum"
+  },
+  "zero_shot_filter": {
+    "ol": "ᱥᱩᱱ-ᱜᱚᱴᱟ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "सून-गोटा-सिञ्जोग",
+    "hi": "शून्य-शॉट संशोधक",
+    "gloss": "zero shot filter"
+  },
+  "zero_shot_model": {
+    "ol": "ᱥᱩᱱ-ᱜᱚᱴᱟ-ᱧᱤᱛᱷᱤ",
+    "deva": "सून-गोटा-ञिथि",
+    "hi": "शून्य-शॉट मॉडल",
+    "gloss": "zero shot model"
+  },
+  "zero_shot_network": {
+    "ol": "ᱥᱩᱱ-ᱜᱚᱴᱟ-ᱡᱟᱞ",
+    "deva": "सून-गोटा-जाल",
+    "hi": "शून्य-शॉट जाल",
+    "gloss": "zero shot network"
+  },
+  "zero_shot_layer": {
+    "ol": "ᱥᱩᱱ-ᱜᱚᱴᱟ-ᱥᱛᱷᱟᱨ",
+    "deva": "सून-गोटा-स्थार",
+    "hi": "शून्य-शॉट परत",
+    "gloss": "zero shot layer"
+  },
+  "zero_shot_frequency": {
+    "ol": "ᱥᱩᱱ-ᱜᱚᱴᱟ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "सून-गोटा-हिड़ि-हिड़ि",
+    "hi": "शून्य-शॉट आवृत्ति",
+    "gloss": "zero shot frequency"
+  },
+  "zero_shot_error": {
+    "ol": "ᱥᱩᱱ-ᱜᱚᱴᱟ-ᱵᱷᱩᱞ",
+    "deva": "सून-गोटा-भुल",
+    "hi": "शून्य-शॉट त्रुटि",
+    "gloss": "zero shot error"
+  },
+  "zero_shot_signal": {
+    "ol": "ᱥᱩᱱ-ᱜᱚᱴᱟ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "सून-गोटा-खबर",
+    "hi": "शून्य-शॉट संकेत",
+    "gloss": "zero shot signal"
+  },
+  "zero_shot_window": {
+    "ol": "ᱥᱩᱱ-ᱜᱚᱴᱟ-ᱫᱩᱟᱹᱨ",
+    "deva": "सून-गोटा-दुआर",
+    "hi": "शून्य-शॉट खिड़की",
+    "gloss": "zero shot window"
+  },
+  "zero_shot_frame": {
+    "ol": "ᱥᱩᱱ-ᱜᱚᱴᱟ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "सून-गोटा-ताल्का",
+    "hi": "शून्य-शॉट फ्रेम",
+    "gloss": "zero shot frame"
+  },
+  "zero_shot_rate": {
+    "ol": "ᱥᱩᱱ-ᱜᱚᱴᱟ-ᱦᱟᱨ",
+    "deva": "सून-गोटा-हर",
+    "hi": "शून्य-शॉट दर",
+    "gloss": "zero shot rate"
+  },
+  "zero_shot_state": {
+    "ol": "ᱥᱩᱱ-ᱜᱚᱴᱟ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "सून-गोटा-ओबोस्ता",
+    "hi": "शून्य-शॉट अवस्था",
+    "gloss": "zero shot state"
+  },
+  "cross_lingual_spectrum": {
+    "ol": "ᱯᱟᱹᱨᱥᱤ-ᱚᱠᱷᱚᱨ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "पार्सि-ओखोर-रोंग-सारि",
+    "hi": "बहुभाषी वर्णक्रम",
+    "gloss": "cross lingual spectrum"
+  },
+  "cross_lingual_filter": {
+    "ol": "ᱯᱟᱹᱨᱥᱤ-ᱚᱠᱷᱚᱨ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "पार्सि-ओखोर-सिञ्जोग",
+    "hi": "बहुभाषी संशोधक",
+    "gloss": "cross lingual filter"
+  },
+  "cross_lingual_model": {
+    "ol": "ᱯᱟᱹᱨᱥᱤ-ᱚᱠᱷᱚᱨ-ᱧᱤᱛᱷᱤ",
+    "deva": "पार्सि-ओखोर-ञिथि",
+    "hi": "बहुभाषी मॉडल",
+    "gloss": "cross lingual model"
+  },
+  "cross_lingual_network": {
+    "ol": "ᱯᱟᱹᱨᱥᱤ-ᱚᱠᱷᱚᱨ-ᱡᱟᱞ",
+    "deva": "पार्सि-ओखोर-जाल",
+    "hi": "बहुभाषी जाल",
+    "gloss": "cross lingual network"
+  },
+  "cross_lingual_layer": {
+    "ol": "ᱯᱟᱹᱨᱥᱤ-ᱚᱠᱷᱚᱨ-ᱥᱛᱷᱟᱨ",
+    "deva": "पार्सि-ओखोर-स्थार",
+    "hi": "बहुभाषी परत",
+    "gloss": "cross lingual layer"
+  },
+  "cross_lingual_frequency": {
+    "ol": "ᱯᱟᱹᱨᱥᱤ-ᱚᱠᱷᱚᱨ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "पार्सि-ओखोर-हिड़ि-हिड़ि",
+    "hi": "बहुभाषी आवृत्ति",
+    "gloss": "cross lingual frequency"
+  },
+  "cross_lingual_error": {
+    "ol": "ᱯᱟᱹᱨᱥᱤ-ᱚᱠᱷᱚᱨ-ᱵᱷᱩᱞ",
+    "deva": "पार्सि-ओखोर-भुल",
+    "hi": "बहुभाषी त्रुटि",
+    "gloss": "cross lingual error"
+  },
+  "cross_lingual_signal": {
+    "ol": "ᱯᱟᱹᱨᱥᱤ-ᱚᱠᱷᱚᱨ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "पार्सि-ओखोर-खबर",
+    "hi": "बहुभाषी संकेत",
+    "gloss": "cross lingual signal"
+  },
+  "cross_lingual_window": {
+    "ol": "ᱯᱟᱹᱨᱥᱤ-ᱚᱠᱷᱚᱨ-ᱫᱩᱟᱹᱨ",
+    "deva": "पार्सि-ओखोर-दुआर",
+    "hi": "बहुभाषी खिड़की",
+    "gloss": "cross lingual window"
+  },
+  "cross_lingual_frame": {
+    "ol": "ᱯᱟᱹᱨᱥᱤ-ᱚᱠᱷᱚᱨ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "पार्सि-ओखोर-ताल्का",
+    "hi": "बहुभाषी फ्रेम",
+    "gloss": "cross lingual frame"
+  },
+  "cross_lingual_rate": {
+    "ol": "ᱯᱟᱹᱨᱥᱤ-ᱚᱠᱷᱚᱨ-ᱦᱟᱨ",
+    "deva": "पार्सि-ओखोर-हर",
+    "hi": "बहुभाषी दर",
+    "gloss": "cross lingual rate"
+  },
+  "cross_lingual_state": {
+    "ol": "ᱯᱟᱹᱨᱥᱤ-ᱚᱠᱷᱚᱨ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "पार्सि-ओखोर-ओबोस्ता",
+    "hi": "बहुभाषी अवस्था",
+    "gloss": "cross lingual state"
+  },
+  "equal_error_spectrum": {
+    "ol": "ᱥᱟᱢᱟᱱ-ᱵᱷᱩᱞ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "समान-भुल-रोंग-सारि",
+    "hi": "समान-त्रुटि वर्णक्रम",
+    "gloss": "equal error spectrum"
+  },
+  "equal_error_filter": {
+    "ol": "ᱥᱟᱢᱟᱱ-ᱵᱷᱩᱞ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "समान-भुल-सिञ्जोग",
+    "hi": "समान-त्रुटि संशोधक",
+    "gloss": "equal error filter"
+  },
+  "equal_error_model": {
+    "ol": "ᱥᱟᱢᱟᱱ-ᱵᱷᱩᱞ-ᱧᱤᱛᱷᱤ",
+    "deva": "समान-भुल-ञिथि",
+    "hi": "समान-त्रुटि मॉडल",
+    "gloss": "equal error model"
+  },
+  "equal_error_network": {
+    "ol": "ᱥᱟᱢᱟᱱ-ᱵᱷᱩᱞ-ᱡᱟᱞ",
+    "deva": "समान-भुल-जाल",
+    "hi": "समान-त्रुटि जाल",
+    "gloss": "equal error network"
+  },
+  "equal_error_layer": {
+    "ol": "ᱥᱟᱢᱟᱱ-ᱵᱷᱩᱞ-ᱥᱛᱷᱟᱨ",
+    "deva": "समान-भुल-स्थार",
+    "hi": "समान-त्रुटि परत",
+    "gloss": "equal error layer"
+  },
+  "equal_error_frequency": {
+    "ol": "ᱥᱟᱢᱟᱱ-ᱵᱷᱩᱞ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "समान-भुल-हिड़ि-हिड़ि",
+    "hi": "समान-त्रुटि आवृत्ति",
+    "gloss": "equal error frequency"
+  },
+  "equal_error_error": {
+    "ol": "ᱥᱟᱢᱟᱱ-ᱵᱷᱩᱞ-ᱵᱷᱩᱞ",
+    "deva": "समान-भुल-भुल",
+    "hi": "समान-त्रुटि त्रुटि",
+    "gloss": "equal error error"
+  },
+  "equal_error_signal": {
+    "ol": "ᱥᱟᱢᱟᱱ-ᱵᱷᱩᱞ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "समान-भुल-खबर",
+    "hi": "समान-त्रुटि संकेत",
+    "gloss": "equal error signal"
+  },
+  "equal_error_window": {
+    "ol": "ᱥᱟᱢᱟᱱ-ᱵᱷᱩᱞ-ᱫᱩᱟᱹᱨ",
+    "deva": "समान-भुल-दुआर",
+    "hi": "समान-त्रुटि खिड़की",
+    "gloss": "equal error window"
+  },
+  "equal_error_frame": {
+    "ol": "ᱥᱟᱢᱟᱱ-ᱵᱷᱩᱞ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "समान-भुल-ताल्का",
+    "hi": "समान-त्रुटि फ्रेम",
+    "gloss": "equal error frame"
+  },
+  "equal_error_rate": {
+    "ol": "ᱥᱟᱢᱟᱱ-ᱵᱷᱩᱞ-ᱦᱟᱨ",
+    "deva": "समान-भुल-हर",
+    "hi": "समान-त्रुटि दर",
+    "gloss": "equal error rate"
+  },
+  "equal_error_state": {
+    "ol": "ᱥᱟᱢᱟᱱ-ᱵᱷᱩᱞ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "समान-भुल-ओबोस्ता",
+    "hi": "समान-त्रुटि अवस्था",
+    "gloss": "equal error state"
+  },
+  "attention_spectrum": {
+    "ol": "ᱥᱚᱢᱵᱷᱟᱞ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "सोम्भाल-रोंग-सारि",
+    "hi": "ध्यान वर्णक्रम",
+    "gloss": "attention spectrum"
+  },
+  "attention_filter": {
+    "ol": "ᱥᱚᱢᱵᱷᱟᱞ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "सोम्भाल-सिञ्जोग",
+    "hi": "ध्यान संशोधक",
+    "gloss": "attention filter"
+  },
+  "attention_model": {
+    "ol": "ᱥᱚᱢᱵᱷᱟᱞ-ᱧᱤᱛᱷᱤ",
+    "deva": "सोम्भाल-ञिथि",
+    "hi": "ध्यान मॉडल",
+    "gloss": "attention model"
+  },
+  "attention_network": {
+    "ol": "ᱥᱚᱢᱵᱷᱟᱞ-ᱡᱟᱞ",
+    "deva": "सोम्भाल-जाल",
+    "hi": "ध्यान जाल",
+    "gloss": "attention network"
+  },
+  "attention_layer": {
+    "ol": "ᱥᱚᱢᱵᱷᱟᱞ-ᱥᱛᱷᱟᱨ",
+    "deva": "सोम्भाल-स्थार",
+    "hi": "ध्यान परत",
+    "gloss": "attention layer"
+  },
+  "attention_frequency": {
+    "ol": "ᱥᱚᱢᱵᱷᱟᱞ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "सोम्भाल-हिड़ि-हिड़ि",
+    "hi": "ध्यान आवृत्ति",
+    "gloss": "attention frequency"
+  },
+  "attention_error": {
+    "ol": "ᱥᱚᱢᱵᱷᱟᱞ-ᱵᱷᱩᱞ",
+    "deva": "सोम्भाल-भुल",
+    "hi": "ध्यान त्रुटि",
+    "gloss": "attention error"
+  },
+  "attention_signal": {
+    "ol": "ᱥᱚᱢᱵᱷᱟᱞ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "सोम्भाल-खबर",
+    "hi": "ध्यान संकेत",
+    "gloss": "attention signal"
+  },
+  "attention_window": {
+    "ol": "ᱥᱚᱢᱵᱷᱟᱞ-ᱫᱩᱟᱹᱨ",
+    "deva": "सोम्भाल-दुआर",
+    "hi": "ध्यान खिड़की",
+    "gloss": "attention window"
+  },
+  "attention_frame": {
+    "ol": "ᱥᱚᱢᱵᱷᱟᱞ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "सोम्भाल-ताल्का",
+    "hi": "ध्यान फ्रेम",
+    "gloss": "attention frame"
+  },
+  "attention_rate": {
+    "ol": "ᱥᱚᱢᱵᱷᱟᱞ-ᱦᱟᱨ",
+    "deva": "सोम्भाल-हर",
+    "hi": "ध्यान दर",
+    "gloss": "attention rate"
+  },
+  "attention_state": {
+    "ol": "ᱥᱚᱢᱵᱷᱟᱞ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "सोम्भाल-ओबोस्ता",
+    "hi": "ध्यान अवस्था",
+    "gloss": "attention state"
+  },
+  "encoder_spectrum": {
+    "ol": "ᱥᱟᱭᱚᱱ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "सायोन-रोंग-सारि",
+    "hi": "कूटक वर्णक्रम",
+    "gloss": "encoder spectrum"
+  },
+  "encoder_filter": {
+    "ol": "ᱥᱟᱭᱚᱱ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "सायोन-सिञ्जोग",
+    "hi": "कूटक संशोधक",
+    "gloss": "encoder filter"
+  },
+  "encoder_model": {
+    "ol": "ᱥᱟᱭᱚᱱ-ᱧᱤᱛᱷᱤ",
+    "deva": "सायोन-ञिथि",
+    "hi": "कूटक मॉडल",
+    "gloss": "encoder model"
+  },
+  "encoder_network": {
+    "ol": "ᱥᱟᱭᱚᱱ-ᱡᱟᱞ",
+    "deva": "सायोन-जाल",
+    "hi": "कूटक जाल",
+    "gloss": "encoder network"
+  },
+  "encoder_layer": {
+    "ol": "ᱥᱟᱭᱚᱱ-ᱥᱛᱷᱟᱨ",
+    "deva": "सायोन-स्थार",
+    "hi": "कूटक परत",
+    "gloss": "encoder layer"
+  },
+  "encoder_frequency": {
+    "ol": "ᱥᱟᱭᱚᱱ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "सायोन-हिड़ि-हिड़ि",
+    "hi": "कूटक आवृत्ति",
+    "gloss": "encoder frequency"
+  },
+  "encoder_error": {
+    "ol": "ᱥᱟᱭᱚᱱ-ᱵᱷᱩᱞ",
+    "deva": "सायोन-भुल",
+    "hi": "कूटक त्रुटि",
+    "gloss": "encoder error"
+  },
+  "encoder_signal": {
+    "ol": "ᱥᱟᱭᱚᱱ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "सायोन-खबर",
+    "hi": "कूटक संकेत",
+    "gloss": "encoder signal"
+  },
+  "encoder_window": {
+    "ol": "ᱥᱟᱭᱚᱱ-ᱫᱩᱟᱹᱨ",
+    "deva": "सायोन-दुआर",
+    "hi": "कूटक खिड़की",
+    "gloss": "encoder window"
+  },
+  "encoder_frame": {
+    "ol": "ᱥᱟᱭᱚᱱ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "सायोन-ताल्का",
+    "hi": "कूटक फ्रेम",
+    "gloss": "encoder frame"
+  },
+  "encoder_rate": {
+    "ol": "ᱥᱟᱭᱚᱱ-ᱦᱟᱨ",
+    "deva": "सायोन-हर",
+    "hi": "कूटक दर",
+    "gloss": "encoder rate"
+  },
+  "encoder_state": {
+    "ol": "ᱥᱟᱭᱚᱱ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "सायोन-ओबोस्ता",
+    "hi": "कूटक अवस्था",
+    "gloss": "encoder state"
+  },
+  "decoder_spectrum": {
+    "ol": "ᱥᱟᱭᱚᱱ-ᱨᱤᱯᱷᱤᱛ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "सायोन-रिफित-रोंग-सारि",
+    "hi": "विकूटक वर्णक्रम",
+    "gloss": "decoder spectrum"
+  },
+  "decoder_filter": {
+    "ol": "ᱥᱟᱭᱚᱱ-ᱨᱤᱯᱷᱤᱛ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "सायोन-रिफित-सिञ्जोग",
+    "hi": "विकूटक संशोधक",
+    "gloss": "decoder filter"
+  },
+  "decoder_model": {
+    "ol": "ᱥᱟᱭᱚᱱ-ᱨᱤᱯᱷᱤᱛ-ᱧᱤᱛᱷᱤ",
+    "deva": "सायोन-रिफित-ञिथि",
+    "hi": "विकूटक मॉडल",
+    "gloss": "decoder model"
+  },
+  "decoder_network": {
+    "ol": "ᱥᱟᱭᱚᱱ-ᱨᱤᱯᱷᱤᱛ-ᱡᱟᱞ",
+    "deva": "सायोन-रिफित-जाल",
+    "hi": "विकूटक जाल",
+    "gloss": "decoder network"
+  },
+  "decoder_layer": {
+    "ol": "ᱥᱟᱭᱚᱱ-ᱨᱤᱯᱷᱤᱛ-ᱥᱛᱷᱟᱨ",
+    "deva": "सायोन-रिफित-स्थार",
+    "hi": "विकूटक परत",
+    "gloss": "decoder layer"
+  },
+  "decoder_frequency": {
+    "ol": "ᱥᱟᱭᱚᱱ-ᱨᱤᱯᱷᱤᱛ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "सायोन-रिफित-हिड़ि-हिड़ि",
+    "hi": "विकूटक आवृत्ति",
+    "gloss": "decoder frequency"
+  },
+  "decoder_error": {
+    "ol": "ᱥᱟᱭᱚᱱ-ᱨᱤᱯᱷᱤᱛ-ᱵᱷᱩᱞ",
+    "deva": "सायोन-रिफित-भुल",
+    "hi": "विकूटक त्रुटि",
+    "gloss": "decoder error"
+  },
+  "decoder_signal": {
+    "ol": "ᱥᱟᱭᱚᱱ-ᱨᱤᱯᱷᱤᱛ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "सायोन-रिफित-खबर",
+    "hi": "विकूटक संकेत",
+    "gloss": "decoder signal"
+  },
+  "decoder_window": {
+    "ol": "ᱥᱟᱭᱚᱱ-ᱨᱤᱯᱷᱤᱛ-ᱫᱩᱟᱹᱨ",
+    "deva": "सायोन-रिफित-दुआर",
+    "hi": "विकूटक खिड़की",
+    "gloss": "decoder window"
+  },
+  "decoder_frame": {
+    "ol": "ᱥᱟᱭᱚᱱ-ᱨᱤᱯᱷᱤᱛ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "सायोन-रिफित-ताल्का",
+    "hi": "विकूटक फ्रेम",
+    "gloss": "decoder frame"
+  },
+  "decoder_rate": {
+    "ol": "ᱥᱟᱭᱚᱱ-ᱨᱤᱯᱷᱤᱛ-ᱦᱟᱨ",
+    "deva": "सायोन-रिफित-हर",
+    "hi": "विकूटक दर",
+    "gloss": "decoder rate"
+  },
+  "decoder_state": {
+    "ol": "ᱥᱟᱭᱚᱱ-ᱨᱤᱯᱷᱤᱛ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "सायोन-रिफित-ओबोस्ता",
+    "hi": "विकूटक अवस्था",
+    "gloss": "decoder state"
+  },
+  "transformer_spectrum": {
+    "ol": "ᱯᱚᱨᱤᱣᱚᱨᱛᱚᱠ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "परिवर्तक-रोंग-सारि",
+    "hi": "ट्रांसफॉर्मर वर्णक्रम",
+    "gloss": "transformer spectrum"
+  },
+  "transformer_filter": {
+    "ol": "ᱯᱚᱨᱤᱣᱚᱨᱛᱚᱠ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "परिवर्तक-सिञ्जोग",
+    "hi": "ट्रांसफॉर्मर संशोधक",
+    "gloss": "transformer filter"
+  },
+  "transformer_model": {
+    "ol": "ᱯᱚᱨᱤᱣᱚᱨᱛᱚᱠ-ᱧᱤᱛᱷᱤ",
+    "deva": "परिवर्तक-ञिथि",
+    "hi": "ट्रांसफॉर्मर मॉडल",
+    "gloss": "transformer model"
+  },
+  "transformer_network": {
+    "ol": "ᱯᱚᱨᱤᱣᱚᱨᱛᱚᱠ-ᱡᱟᱞ",
+    "deva": "परिवर्तक-जाल",
+    "hi": "ट्रांसफॉर्मर जाल",
+    "gloss": "transformer network"
+  },
+  "transformer_layer": {
+    "ol": "ᱯᱚᱨᱤᱣᱚᱨᱛᱚᱠ-ᱥᱛᱷᱟᱨ",
+    "deva": "परिवर्तक-स्थार",
+    "hi": "ट्रांसफॉर्मर परत",
+    "gloss": "transformer layer"
+  },
+  "transformer_frequency": {
+    "ol": "ᱯᱚᱨᱤᱣᱚᱨᱛᱚᱠ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "परिवर्तक-हिड़ि-हिड़ि",
+    "hi": "ट्रांसफॉर्मर आवृत्ति",
+    "gloss": "transformer frequency"
+  },
+  "transformer_error": {
+    "ol": "ᱯᱚᱨᱤᱣᱚᱨᱛᱚᱠ-ᱵᱷᱩᱞ",
+    "deva": "परिवर्तक-भुल",
+    "hi": "ट्रांसफॉर्मर त्रुटि",
+    "gloss": "transformer error"
+  },
+  "transformer_signal": {
+    "ol": "ᱯᱚᱨᱤᱣᱚᱨᱛᱚᱠ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "परिवर्तक-खबर",
+    "hi": "ट्रांसफॉर्मर संकेत",
+    "gloss": "transformer signal"
+  },
+  "transformer_window": {
+    "ol": "ᱯᱚᱨᱤᱣᱚᱨᱛᱚᱠ-ᱫᱩᱟᱹᱨ",
+    "deva": "परिवर्तक-दुआर",
+    "hi": "ट्रांसफॉर्मर खिड़की",
+    "gloss": "transformer window"
+  },
+  "transformer_frame": {
+    "ol": "ᱯᱚᱨᱤᱣᱚᱨᱛᱚᱠ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "परिवर्तक-ताल्का",
+    "hi": "ट्रांसफॉर्मर फ्रेम",
+    "gloss": "transformer frame"
+  },
+  "transformer_rate": {
+    "ol": "ᱯᱚᱨᱤᱣᱚᱨᱛᱚᱠ-ᱦᱟᱨ",
+    "deva": "परिवर्तक-हर",
+    "hi": "ट्रांसफॉर्मर दर",
+    "gloss": "transformer rate"
+  },
+  "transformer_state": {
+    "ol": "ᱯᱚᱨᱤᱣᱚᱨᱛᱚᱠ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "परिवर्तक-ओबोस्ता",
+    "hi": "ट्रांसफॉर्मर अवस्था",
+    "gloss": "transformer state"
+  },
+  "speaker_spectrum": {
+    "ol": "ᱠᱚᱞᱚᱢ-ᱫᱟᱨ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "कोलोम-दार-रोंग-सारि",
+    "hi": "वक्ता वर्णक्रम",
+    "gloss": "speaker spectrum"
+  },
+  "speaker_filter": {
+    "ol": "ᱠᱚᱞᱚᱢ-ᱫᱟᱨ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "कोलोम-दार-सिञ्जोग",
+    "hi": "वक्ता संशोधक",
+    "gloss": "speaker filter"
+  },
+  "speaker_model": {
+    "ol": "ᱠᱚᱞᱚᱢ-ᱫᱟᱨ-ᱧᱤᱛᱷᱤ",
+    "deva": "कोलोम-दार-ञिथि",
+    "hi": "वक्ता मॉडल",
+    "gloss": "speaker model"
+  },
+  "speaker_network": {
+    "ol": "ᱠᱚᱞᱚᱢ-ᱫᱟᱨ-ᱡᱟᱞ",
+    "deva": "कोलोम-दार-जाल",
+    "hi": "वक्ता जाल",
+    "gloss": "speaker network"
+  },
+  "speaker_layer": {
+    "ol": "ᱠᱚᱞᱚᱢ-ᱫᱟᱨ-ᱥᱛᱷᱟᱨ",
+    "deva": "कोलोम-दार-स्थार",
+    "hi": "वक्ता परत",
+    "gloss": "speaker layer"
+  },
+  "speaker_frequency": {
+    "ol": "ᱠᱚᱞᱚᱢ-ᱫᱟᱨ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "कोलोम-दार-हिड़ि-हिड़ि",
+    "hi": "वक्ता आवृत्ति",
+    "gloss": "speaker frequency"
+  },
+  "speaker_error": {
+    "ol": "ᱠᱚᱞᱚᱢ-ᱫᱟᱨ-ᱵᱷᱩᱞ",
+    "deva": "कोलोम-दार-भुल",
+    "hi": "वक्ता त्रुटि",
+    "gloss": "speaker error"
+  },
+  "speaker_signal": {
+    "ol": "ᱠᱚᱞᱚᱢ-ᱫᱟᱨ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "कोलोम-दार-खबर",
+    "hi": "वक्ता संकेत",
+    "gloss": "speaker signal"
+  },
+  "speaker_window": {
+    "ol": "ᱠᱚᱞᱚᱢ-ᱫᱟᱨ-ᱫᱩᱟᱹᱨ",
+    "deva": "कोलोम-दार-दुआर",
+    "hi": "वक्ता खिड़की",
+    "gloss": "speaker window"
+  },
+  "speaker_frame": {
+    "ol": "ᱠᱚᱞᱚᱢ-ᱫᱟᱨ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "कोलोम-दार-ताल्का",
+    "hi": "वक्ता फ्रेम",
+    "gloss": "speaker frame"
+  },
+  "speaker_rate": {
+    "ol": "ᱠᱚᱞᱚᱢ-ᱫᱟᱨ-ᱦᱟᱨ",
+    "deva": "कोलोम-दार-हर",
+    "hi": "वक्ता दर",
+    "gloss": "speaker rate"
+  },
+  "speaker_state": {
+    "ol": "ᱠᱚᱞᱚᱢ-ᱫᱟᱨ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "कोलोम-दार-ओबोस्ता",
+    "hi": "वक्ता अवस्था",
+    "gloss": "speaker state"
+  },
+  "formant_spectrum": {
+    "ol": "ᱨᱚᱝ-ᱠᱷᱟᱹᱯ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "रोंग-खाप-रोंग-सारि",
+    "hi": "स्वरांश वर्णक्रम",
+    "gloss": "formant spectrum"
+  },
+  "formant_filter": {
+    "ol": "ᱨᱚᱝ-ᱠᱷᱟᱹᱯ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "रोंग-खाप-सिञ्जोग",
+    "hi": "स्वरांश संशोधक",
+    "gloss": "formant filter"
+  },
+  "formant_model": {
+    "ol": "ᱨᱚᱝ-ᱠᱷᱟᱹᱯ-ᱧᱤᱛᱷᱤ",
+    "deva": "रोंग-खाप-ञिथि",
+    "hi": "स्वरांश मॉडल",
+    "gloss": "formant model"
+  },
+  "formant_network": {
+    "ol": "ᱨᱚᱝ-ᱠᱷᱟᱹᱯ-ᱡᱟᱞ",
+    "deva": "रोंग-खाप-जाल",
+    "hi": "स्वरांश जाल",
+    "gloss": "formant network"
+  },
+  "formant_layer": {
+    "ol": "ᱨᱚᱝ-ᱠᱷᱟᱹᱯ-ᱥᱛᱷᱟᱨ",
+    "deva": "रोंग-खाप-स्थार",
+    "hi": "स्वरांश परत",
+    "gloss": "formant layer"
+  },
+  "formant_frequency": {
+    "ol": "ᱨᱚᱝ-ᱠᱷᱟᱹᱯ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "रोंग-खाप-हिड़ि-हिड़ि",
+    "hi": "स्वरांश आवृत्ति",
+    "gloss": "formant frequency"
+  },
+  "formant_error": {
+    "ol": "ᱨᱚᱝ-ᱠᱷᱟᱹᱯ-ᱵᱷᱩᱞ",
+    "deva": "रोंग-खाप-भुल",
+    "hi": "स्वरांश त्रुटि",
+    "gloss": "formant error"
+  },
+  "formant_signal": {
+    "ol": "ᱨᱚᱝ-ᱠᱷᱟᱹᱯ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "रोंग-खाप-खबर",
+    "hi": "स्वरांश संकेत",
+    "gloss": "formant signal"
+  },
+  "formant_window": {
+    "ol": "ᱨᱚᱝ-ᱠᱷᱟᱹᱯ-ᱫᱩᱟᱹᱨ",
+    "deva": "रोंग-खाप-दुआर",
+    "hi": "स्वरांश खिड़की",
+    "gloss": "formant window"
+  },
+  "formant_frame": {
+    "ol": "ᱨᱚᱝ-ᱠᱷᱟᱹᱯ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "रोंग-खाप-ताल्का",
+    "hi": "स्वरांश फ्रेम",
+    "gloss": "formant frame"
+  },
+  "formant_rate": {
+    "ol": "ᱨᱚᱝ-ᱠᱷᱟᱹᱯ-ᱦᱟᱨ",
+    "deva": "रोंग-खाप-हर",
+    "hi": "स्वरांश दर",
+    "gloss": "formant rate"
+  },
+  "formant_state": {
+    "ol": "ᱨᱚᱝ-ᱠᱷᱟᱹᱯ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "रोंग-खाप-ओबोस्ता",
+    "hi": "स्वरांश अवस्था",
+    "gloss": "formant state"
+  },
+  "pitch_spectrum": {
+    "ol": "ᱥᱩᱨ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "सुर-रोंग-सारि",
+    "hi": "स्वरमान वर्णक्रम",
+    "gloss": "pitch spectrum"
+  },
+  "pitch_filter": {
+    "ol": "ᱥᱩᱨ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "सुर-सिञ्जोग",
+    "hi": "स्वरमान संशोधक",
+    "gloss": "pitch filter"
+  },
+  "pitch_model": {
+    "ol": "ᱥᱩᱨ-ᱧᱤᱛᱷᱤ",
+    "deva": "सुर-ञिथि",
+    "hi": "स्वरमान मॉडल",
+    "gloss": "pitch model"
+  },
+  "pitch_network": {
+    "ol": "ᱥᱩᱨ-ᱡᱟᱞ",
+    "deva": "सुर-जाल",
+    "hi": "स्वरमान जाल",
+    "gloss": "pitch network"
+  },
+  "pitch_layer": {
+    "ol": "ᱥᱩᱨ-ᱥᱛᱷᱟᱨ",
+    "deva": "सुर-स्थार",
+    "hi": "स्वरमान परत",
+    "gloss": "pitch layer"
+  },
+  "pitch_frequency": {
+    "ol": "ᱥᱩᱨ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "सुर-हिड़ि-हिड़ि",
+    "hi": "स्वरमान आवृत्ति",
+    "gloss": "pitch frequency"
+  },
+  "pitch_error": {
+    "ol": "ᱥᱩᱨ-ᱵᱷᱩᱞ",
+    "deva": "सुर-भुल",
+    "hi": "स्वरमान त्रुटि",
+    "gloss": "pitch error"
+  },
+  "pitch_signal": {
+    "ol": "ᱥᱩᱨ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "सुर-खबर",
+    "hi": "स्वरमान संकेत",
+    "gloss": "pitch signal"
+  },
+  "pitch_window": {
+    "ol": "ᱥᱩᱨ-ᱫᱩᱟᱹᱨ",
+    "deva": "सुर-दुआर",
+    "hi": "स्वरमान खिड़की",
+    "gloss": "pitch window"
+  },
+  "pitch_frame": {
+    "ol": "ᱥᱩᱨ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "सुर-ताल्का",
+    "hi": "स्वरमान फ्रेम",
+    "gloss": "pitch frame"
+  },
+  "pitch_rate": {
+    "ol": "ᱥᱩᱨ-ᱦᱟᱨ",
+    "deva": "सुर-हर",
+    "hi": "स्वरमान दर",
+    "gloss": "pitch rate"
+  },
+  "pitch_state": {
+    "ol": "ᱥᱩᱨ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "सुर-ओबोस्ता",
+    "hi": "स्वरमान अवस्था",
+    "gloss": "pitch state"
+  },
+  "vocoder_spectrum": {
+    "ol": "ᱥᱚᱨ-ᱛᱚᱨᱡᱚᱨ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "सोर-तोरजोर-रोंग-सारि",
+    "hi": "वोकोडर वर्णक्रम",
+    "gloss": "vocoder spectrum"
+  },
+  "vocoder_filter": {
+    "ol": "ᱥᱚᱨ-ᱛᱚᱨᱡᱚᱨ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "सोर-तोरजोर-सिञ्जोग",
+    "hi": "वोकोडर संशोधक",
+    "gloss": "vocoder filter"
+  },
+  "vocoder_model": {
+    "ol": "ᱥᱚᱨ-ᱛᱚᱨᱡᱚᱨ-ᱧᱤᱛᱷᱤ",
+    "deva": "सोर-तोरजोर-ञिथि",
+    "hi": "वोकोडर मॉडल",
+    "gloss": "vocoder model"
+  },
+  "vocoder_network": {
+    "ol": "ᱥᱚᱨ-ᱛᱚᱨᱡᱚᱨ-ᱡᱟᱞ",
+    "deva": "सोर-तोरजोर-जाल",
+    "hi": "वोकोडर जाल",
+    "gloss": "vocoder network"
+  },
+  "vocoder_layer": {
+    "ol": "ᱥᱚᱨ-ᱛᱚᱨᱡᱚᱨ-ᱥᱛᱷᱟᱨ",
+    "deva": "सोर-तोरजोर-स्थार",
+    "hi": "वोकोडर परत",
+    "gloss": "vocoder layer"
+  },
+  "vocoder_frequency": {
+    "ol": "ᱥᱚᱨ-ᱛᱚᱨᱡᱚᱨ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "सोर-तोरजोर-हिड़ि-हिड़ि",
+    "hi": "वोकोडर आवृत्ति",
+    "gloss": "vocoder frequency"
+  },
+  "vocoder_error": {
+    "ol": "ᱥᱚᱨ-ᱛᱚᱨᱡᱚᱨ-ᱵᱷᱩᱞ",
+    "deva": "सोर-तोरजोर-भुल",
+    "hi": "वोकोडर त्रुटि",
+    "gloss": "vocoder error"
+  },
+  "vocoder_signal": {
+    "ol": "ᱥᱚᱨ-ᱛᱚᱨᱡᱚᱨ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "सोर-तोरजोर-खबर",
+    "hi": "वोकोडर संकेत",
+    "gloss": "vocoder signal"
+  },
+  "vocoder_window": {
+    "ol": "ᱥᱚᱨ-ᱛᱚᱨᱡᱚᱨ-ᱫᱩᱟᱹᱨ",
+    "deva": "सोर-तोरजोर-दुआर",
+    "hi": "वोकोडर खिड़की",
+    "gloss": "vocoder window"
+  },
+  "vocoder_frame": {
+    "ol": "ᱥᱚᱨ-ᱛᱚᱨᱡᱚᱨ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "सोर-तोरजोर-ताल्का",
+    "hi": "वोकोडर फ्रेम",
+    "gloss": "vocoder frame"
+  },
+  "vocoder_rate": {
+    "ol": "ᱥᱚᱨ-ᱛᱚᱨᱡᱚᱨ-ᱦᱟᱨ",
+    "deva": "सोर-तोरजोर-हर",
+    "hi": "वोकोडर दर",
+    "gloss": "vocoder rate"
+  },
+  "vocoder_state": {
+    "ol": "ᱥᱚᱨ-ᱛᱚᱨᱡᱚᱨ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "सोर-तोरजोर-ओबोस्ता",
+    "hi": "वोकोडर अवस्था",
+    "gloss": "vocoder state"
+  },
+  "algorithm_spectrum": {
+    "ol": "ᱠᱟᱨᱥᱟ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "कारसा-रोंग-सारि",
+    "hi": "कलनविधि वर्णक्रम",
+    "gloss": "algorithm spectrum"
+  },
+  "algorithm_filter": {
+    "ol": "ᱠᱟᱨᱥᱟ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "कारसा-सिञ्जोग",
+    "hi": "कलनविधि संशोधक",
+    "gloss": "algorithm filter"
+  },
+  "algorithm_model": {
+    "ol": "ᱠᱟᱨᱥᱟ-ᱧᱤᱛᱷᱤ",
+    "deva": "कारसा-ञिथि",
+    "hi": "कलनविधि मॉडल",
+    "gloss": "algorithm model"
+  },
+  "algorithm_network": {
+    "ol": "ᱠᱟᱨᱥᱟ-ᱡᱟᱞ",
+    "deva": "कारसा-जाल",
+    "hi": "कलनविधि जाल",
+    "gloss": "algorithm network"
+  },
+  "algorithm_layer": {
+    "ol": "ᱠᱟᱨᱥᱟ-ᱥᱛᱷᱟᱨ",
+    "deva": "कारसा-स्थार",
+    "hi": "कलनविधि परत",
+    "gloss": "algorithm layer"
+  },
+  "algorithm_frequency": {
+    "ol": "ᱠᱟᱨᱥᱟ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "कारसा-हिड़ि-हिड़ि",
+    "hi": "कलनविधि आवृत्ति",
+    "gloss": "algorithm frequency"
+  },
+  "algorithm_error": {
+    "ol": "ᱠᱟᱨᱥᱟ-ᱵᱷᱩᱞ",
+    "deva": "कारसा-भुल",
+    "hi": "कलनविधि त्रुटि",
+    "gloss": "algorithm error"
+  },
+  "algorithm_signal": {
+    "ol": "ᱠᱟᱨᱥᱟ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "कारसा-खबर",
+    "hi": "कलनविधि संकेत",
+    "gloss": "algorithm signal"
+  },
+  "algorithm_window": {
+    "ol": "ᱠᱟᱨᱥᱟ-ᱫᱩᱟᱹᱨ",
+    "deva": "कारसा-दुआर",
+    "hi": "कलनविधि खिड़की",
+    "gloss": "algorithm window"
+  },
+  "algorithm_frame": {
+    "ol": "ᱠᱟᱨᱥᱟ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "कारसा-ताल्का",
+    "hi": "कलनविधि फ्रेम",
+    "gloss": "algorithm frame"
+  },
+  "algorithm_rate": {
+    "ol": "ᱠᱟᱨᱥᱟ-ᱦᱟᱨ",
+    "deva": "कारसा-हर",
+    "hi": "कलनविधि दर",
+    "gloss": "algorithm rate"
+  },
+  "algorithm_state": {
+    "ol": "ᱠᱟᱨᱥᱟ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "कारसा-ओबोस्ता",
+    "hi": "कलनविधि अवस्था",
+    "gloss": "algorithm state"
+  },
+  "optimization_spectrum": {
+    "ol": "ᱩᱱᱩᱫᱩᱜ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "उनुदुग-रोंग-सारि",
+    "hi": "अनुकूलन वर्णक्रम",
+    "gloss": "optimization spectrum"
+  },
+  "optimization_filter": {
+    "ol": "ᱩᱱᱩᱫᱩᱜ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "उनुदुग-सिञ्जोग",
+    "hi": "अनुकूलन संशोधक",
+    "gloss": "optimization filter"
+  },
+  "optimization_model": {
+    "ol": "ᱩᱱᱩᱫᱩᱜ-ᱧᱤᱛᱷᱤ",
+    "deva": "उनुदुग-ञिथि",
+    "hi": "अनुकूलन मॉडल",
+    "gloss": "optimization model"
+  },
+  "optimization_network": {
+    "ol": "ᱩᱱᱩᱫᱩᱜ-ᱡᱟᱞ",
+    "deva": "उनुदुग-जाल",
+    "hi": "अनुकूलन जाल",
+    "gloss": "optimization network"
+  },
+  "optimization_layer": {
+    "ol": "ᱩᱱᱩᱫᱩᱜ-ᱥᱛᱷᱟᱨ",
+    "deva": "उनुदुग-स्थार",
+    "hi": "अनुकूलन परत",
+    "gloss": "optimization layer"
+  },
+  "optimization_frequency": {
+    "ol": "ᱩᱱᱩᱫᱩᱜ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "उनुदुग-हिड़ि-हिड़ि",
+    "hi": "अनुकूलन आवृत्ति",
+    "gloss": "optimization frequency"
+  },
+  "optimization_error": {
+    "ol": "ᱩᱱᱩᱫᱩᱜ-ᱵᱷᱩᱞ",
+    "deva": "उनुदुग-भुल",
+    "hi": "अनुकूलन त्रुटि",
+    "gloss": "optimization error"
+  },
+  "optimization_signal": {
+    "ol": "ᱩᱱᱩᱫᱩᱜ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "उनुदुग-खबर",
+    "hi": "अनुकूलन संकेत",
+    "gloss": "optimization signal"
+  },
+  "optimization_window": {
+    "ol": "ᱩᱱᱩᱫᱩᱜ-ᱫᱩᱟᱹᱨ",
+    "deva": "उनुदुग-दुआर",
+    "hi": "अनुकूलन खिड़की",
+    "gloss": "optimization window"
+  },
+  "optimization_frame": {
+    "ol": "ᱩᱱᱩᱫᱩᱜ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "उनुदुग-ताल्का",
+    "hi": "अनुकूलन फ्रेम",
+    "gloss": "optimization frame"
+  },
+  "optimization_rate": {
+    "ol": "ᱩᱱᱩᱫᱩᱜ-ᱦᱟᱨ",
+    "deva": "उनुदुग-हर",
+    "hi": "अनुकूलन दर",
+    "gloss": "optimization rate"
+  },
+  "optimization_state": {
+    "ol": "ᱩᱱᱩᱫᱩᱜ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "उनुदुग-ओबोस्ता",
+    "hi": "अनुकूलन अवस्था",
+    "gloss": "optimization state"
+  },
+  "embedding_spectrum": {
+    "ol": "ᱥᱟᱢᱞᱤᱠ-ᱨᱚᱝ-ᱥᱟᱨᱤ",
+    "deva": "सामलिक-रोंग-सारि",
+    "hi": "संलग्नक वर्णक्रम",
+    "gloss": "embedding spectrum"
+  },
+  "embedding_filter": {
+    "ol": "ᱥᱟᱢᱞᱤᱠ-ᱥᱤᱧᱡᱚᱜ",
+    "deva": "सामलिक-सिञ्जोग",
+    "hi": "संलग्नक संशोधक",
+    "gloss": "embedding filter"
+  },
+  "embedding_model": {
+    "ol": "ᱥᱟᱢᱞᱤᱠ-ᱧᱤᱛᱷᱤ",
+    "deva": "सामलिक-ञिथि",
+    "hi": "संलग्नक मॉडल",
+    "gloss": "embedding model"
+  },
+  "embedding_network": {
+    "ol": "ᱥᱟᱢᱞᱤᱠ-ᱡᱟᱞ",
+    "deva": "सामलिक-जाल",
+    "hi": "संलग्नक जाल",
+    "gloss": "embedding network"
+  },
+  "embedding_layer": {
+    "ol": "ᱥᱟᱢᱞᱤᱠ-ᱥᱛᱷᱟᱨ",
+    "deva": "सामलिक-स्थार",
+    "hi": "संलग्नक परत",
+    "gloss": "embedding layer"
+  },
+  "embedding_frequency": {
+    "ol": "ᱥᱟᱢᱞᱤᱠ-ᱦᱤᱲᱤ-ᱦᱤᱲᱤ",
+    "deva": "सामलिक-हिड़ि-हिड़ि",
+    "hi": "संलग्नक आवृत्ति",
+    "gloss": "embedding frequency"
+  },
+  "embedding_error": {
+    "ol": "ᱥᱟᱢᱞᱤᱠ-ᱵᱷᱩᱞ",
+    "deva": "सामलिक-भुल",
+    "hi": "संलग्नक त्रुटि",
+    "gloss": "embedding error"
+  },
+  "embedding_signal": {
+    "ol": "ᱥᱟᱢᱞᱤᱠ-ᱠᱷᱚᱵᱚᱨ",
+    "deva": "सामलिक-खबर",
+    "hi": "संलग्नक संकेत",
+    "gloss": "embedding signal"
+  },
+  "embedding_window": {
+    "ol": "ᱥᱟᱢᱞᱤᱠ-ᱫᱩᱟᱹᱨ",
+    "deva": "सामलिक-दुआर",
+    "hi": "संलग्नक खिड़की",
+    "gloss": "embedding window"
+  },
+  "embedding_frame": {
+    "ol": "ᱥᱟᱢᱞᱤᱠ-ᱛᱟᱹᱞᱠᱟ",
+    "deva": "सामलिक-ताल्का",
+    "hi": "संलग्नक फ्रेम",
+    "gloss": "embedding frame"
+  },
+  "embedding_rate": {
+    "ol": "ᱥᱟᱢᱞᱤᱠ-ᱦᱟᱨ",
+    "deva": "सामलिक-हर",
+    "hi": "संलग्नक दर",
+    "gloss": "embedding rate"
+  },
+  "embedding_state": {
+    "ol": "ᱥᱟᱢᱞᱤᱠ-ᱚᱵᱚᱥᱛᱟ",
+    "deva": "सामलिक-ओबोस्ता",
+    "hi": "संलग्नक अवस्था",
+    "gloss": "embedding state"
+  }
+}

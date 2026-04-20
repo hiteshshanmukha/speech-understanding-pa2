@@ -1,0 +1,49 @@
+# -- Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+
+# -- Datasets (too large for git; reproduce via scripts/prepare_*.py)
+data/_cache_librispeech/
+data/_cache_fleurs/
+data/raw/
+data/train_clips/
+data/lid_train/
+data/lid_cs_train/
+data/synth_lid/
+data/test_cs/
+data/infer/cm_pairs/
+data/infer/inference_audio.m4a
+data/infer/student_voice_ref.m4a
+data/infer/*.log
+data/lid_combined.jsonl
+data/lid_train_prep.log
+data/lid_cs_train.log
+
+# -- Models (large binary checkpoints; reproduce with pipeline.py)
+models/lid_smoke.pt
+models/cm_smoke.pt
+models/lid_train*.log
+
+# -- Reports
+report/*.aux
+report/*.log
+report/*.out
+report/*.synctex.gz
+report/*.bbl
+report/*.blg
+
+# -- OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# -- Claude Code workspace
+.claude/

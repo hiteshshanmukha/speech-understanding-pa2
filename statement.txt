@@ -1,0 +1,91 @@
+Speech Understanding
+Programming Assignment - 2
+
+_______________________________________________
+Instructions
+1. All code needs to be written with Python + PyTorch only.
+2. Create a repository on your Github. Push this Assignment with all of your codes, report and
+readme file on that.
+3. You need to submit a single zip file containing the report, codes and readme file. The zip
+file should be named as Rollno PA1.zip.
+4. In the report and in the private comment of your submission on the Google Classroom, you
+have to mention the link to your Github repository.
+5. Do cite the libraries/codes/references in the report.
+6. Generic use of ChatGPT or basic API-based wrappers (without custom logic for LID or DTW
+warping) will result in a zero grade. This assignment tests the architectural integration of
+speech systems.
+_______________________________________________
+1. Problem Statement
+Current speech technologies excel in monolingual, high-resource settings. However, real-world
+academic discourse in India is heavily Code-Switched (Hinglish). This assignment requires you to build
+a pipeline that transcribes these lectures and re-synthesizes them into a Low-Resource Language
+(LRL) of your choice (e.g., Santhali, Maithili, Gondi, or a specific regional dialect) using your own voice
+via zero-shot cloning.
+2. Part I: Robust Code-Switched Transcription (STT)
+Goal: Create a high-fidelity transcript of a 10-minute segment from the provided class lectures.
+Task 1.1: Multi-Head Language Identification (LID): You must implement an LID system that operates
+at the frame level. Your model must distinguish between English (L2) and Hindi with a minimum
+F1-score of 0.85.
+Task 1.2: Constrained Decoding: Use a pre-trained model (e.g., Whisper-v3 or Wav2Vec 2.0) but modify
+the decoding process. You must implement a Logit Bias or Constrained Beam Search that utilizes a
+custom-built N-gram Language Model trained on the Speech Course Syllabus to ensure technical terms
+(e.g., "stochastic," "cepstrum") are prioritized during transcription.
+Task 1.3: Denoising & Normalization: Implement a preprocessing script using DeepFilterNet or
+Spectral Subtraction to handle classroom background noise and reverb.
+3. Part II: Phonetic Mapping & Translation
+Goal: Bridge the gap between the source (English-Hindi) and the target LRL.
+Task 2.1: IPA Unified Representation: Convert the code-switched transcript into a unified International
+Phonetic Alphabet (IPA) string. Standard G2P (Grapheme-to-Phoneme) tools will fail on
+code-switching; you must manually write or fine-tune a mapping layer for Hinglish phonology.
+
+Task 2.2: Semantic Translation: Translate the IPA/Text into the target LRL. If no machine translation
+exists, you must create a 500-word parallel corpus/dictionary for technical terms related to the
+lecture.
+4. Part III: Zero-Shot Cross-Lingual Voice Cloning (TTS)
+Goal: Synthesize the lecture in the LRL using your own voice.
+Task 3.1: Voice Embedding Extraction: Record exactly 60 seconds of your own voice. Extract a
+high-dimensional speaker embedding (d-vector or x-vector).
+Task 3.2: Prosody Warping: Extract the Fundamental Frequency (F_0) and Energy contours from the
+original professor’s lecture. You must apply Dynamic Time Warping (DTW) to map these prosodic
+features onto your synthesized LRL speech so the "teaching style" is preserved.
+Task 3.3: Synthesis: Use a generative model (e.g., VITS, YourTTS, or Meta MMS) to produce the final
+10-minute lecture in the LRL. The output must be 22.05kHz or higher.
+5. Evaluation Metrics (Strict Passing Criteria)
+To receive a passing grade, your submission must meet these benchmarks:
+- WER (Word Error Rate): Must be <15\% for the English segments and <25\% for Hindi
+segments.
+- MCD (Mel-Cepstral Distortion): The synthesized LRL speech must have an MCD <8.0 when
+compared to your reference voice.
+- LID Switching Accuracy: The timestamp precision for language switches must be within
+200ms.
+- Spoof Detection: Your Anti-Spoofing Classifier must achieve an EER (Equal Error Rate) <
+10% on a test set consisting of your own voice vs. your Task 3.3 cloned output.
+- Adversarial Robustness: Report the minimum perturbation epsilon (\epsilon) required to
+flip the LID prediction.
+6. Part IV: Adversarial Robustness & Spoofing Detection
+Goal: Ensure the pipeline can distinguish between live human speech and synthetic/manipulated
+audio.
+Task 4.1: Anti-Spoofing Classifier (CM): Implement a Countermeasure (CM) system based on LFCC
+(Linear Frequency Cepstral Coefficients) or CQCC (Constant-Q Cepstral Coefficients). Your model must
+be able to classify whether an input audio clip is "Bona Fide" (real human) or "Spoof" (your
+synthesized output from Part III).
+Requirement: Evaluate your classifier using the Equal Error Rate (EER).
+Task 4.2: Adversarial Noise Injection: Experiment with adding Adversarial Perturbations (e.g., Fast
+Gradient Sign Method - FGSM) to a 5-second segment of the lecture. The goal is to find a noise level
+that is inaudible to humans (SNR > 40dB) but causes your LID system from Task 1.1 to misclassify
+Hindi as English.
+
+7. Submission Requirements
+Codebase: A GitHub repository link containing your pipeline.py, environment configs, and the custom
+LID weights.
+Audio Manifest:
+original_segment.wav (The source lecture snippet)
+student_voice_ref.wav (Your 60s reference)
+output_LRL_cloned.wav (The final 10-minute synthesized lecture)
+Report: A 10-page PDF in IEEE/CVPR two-column format detailing:
+- Mathematical formulation of your N-gram logit biasing.
+- Ablation study showing the impact of prosody warping vs. flat synthesis.
+- A "Confusion Matrix" for the code-switching boundaries.
+
+You must submit a 1-page implementation note explaining one non-obvious design choice in each
+question. Generic answers and submission without this document will not receive credit.

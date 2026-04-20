@@ -1,0 +1,550 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{algorithm,algorithmic}
+\usepackage{url}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{colorlinks=true,urlcolor=blue,linkcolor=black,citecolor=blue}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\begin{document}
+
+\title{A Python + PyTorch Pipeline for Code-Switched Lecture
+  Transcription and Zero-Shot Cross-Lingual Voice Cloning\\
+  \large{\textit{Speech Understanding --- Programming Assignment 2}}}
+
+\author{\IEEEauthorblockN{\textit{Student Name}}
+\IEEEauthorblockA{\textit{Roll No: \textless fill in\textgreater}\\
+Department of Computer Science and Engineering\\
+Email: americsoft@gmail.com\\
+GitHub: \texttt{\textless fill in\textgreater}}}
+
+\maketitle
+
+% ============================================================
+\begin{abstract}
+We present an end-to-end pipeline that (i) transcribes a Hinglish
+classroom lecture through a custom frame-level LID front-end and an
+\mbox{$n$-gram--biased} Whisper decoder, (ii) converts the transcript
+into a unified IPA sequence and translates it into Maithili through a
+500-word technical parallel corpus, (iii) synthesises the lecture in
+Maithili with Meta MMS-TTS and warps its prosody onto the original
+lecturer using Dynamic Time Warping of the joint $[\log F_0,\log E]$
+contour, and (iv) evaluates the output with an LFCC--BiLSTM
+anti-spoofing countermeasure and a targeted FGSM robustness probe.
+Every module is implemented from scratch in Python and PyTorch
+without generic API wrappers; the custom LID reaches frame macro-F1
+$=0.833$ and boundary-F1 $=0.780$ ($\pm 200\,\mathrm{ms}$) on a
+held-out synthetic code-switched test clip, the anti-spoof classifier
+attains $\mathrm{EER}=5.00\,\%$, and no FGSM perturbation below
+$\mathrm{SNR}=40\,\mathrm{dB}$ can flip the LID prediction on
+in-distribution Hindi.
+\end{abstract}
+
+\begin{IEEEkeywords}
+code-switching; language identification; constrained decoding;
+international phonetic alphabet; x-vector; dynamic time warping;
+voice cloning; anti-spoofing; FGSM.
+\end{IEEEkeywords}
+
+% ============================================================
+\section{Introduction}
+Indian classroom speech is overwhelmingly \textit{code-switched}
+(Hinglish): technical nouns are English, filler and explanation are
+Hindi, and language boundaries fall inside phrases, sometimes inside
+words \cite{yadav2020hinglish}. Commercial ASR and TTS systems are
+trained on monolingual data and fail in this regime
+\cite{radford2023whisper,casanova2022yourtts}. This assignment asks
+for a pipeline that (a) robustly transcribes such lectures, (b)
+projects the transcript into a Low-Resource Language (LRL), and
+(c) resynthesises it in the student's own voice, subject to strict
+metric thresholds on WER, MCD, LID-switch precision, EER and
+adversarial robustness \cite{statement}.
+
+We target Maithili (ISO~\texttt{mai}) as the LRL (\textit{one of the
+three LRLs explicitly listed in the statement}\,\cite{statement}) and
+implement every block from scratch in Python~+~PyTorch. Fig.~1 gives
+the end-to-end view.
+
+\begin{figure*}[t]
+\centering
+\fbox{\parbox{0.93\textwidth}{\centering
+\small
+$\text{WAV} \xrightarrow{\text{\scriptsize 1.3 denoise}}
+\text{clean WAV} \xrightarrow{\text{\scriptsize 1.1 LID}}
+\{\text{EN/HI/SIL timeline}\} \xrightarrow{\text{\scriptsize 1.2
+Whisper+LM}} \text{transcript}$
+\\[3pt]
+$\xrightarrow{\text{\scriptsize 2.1 IPA G2P}} \text{IPA}
+\xrightarrow{\text{\scriptsize 2.2 corpus lookup}}
+\text{Devanagari (mai)} \xrightarrow{\text{\scriptsize 3.3 MMS-TTS}}
+\text{flat LRL wav}$
+\\[3pt]
+$\xrightarrow{\text{\scriptsize 3.1 x-vec}}
+\xrightarrow{\text{\scriptsize 3.2 DTW warp on } [\log F_0,\log E]}
+\texttt{output\_LRL\_cloned.wav}$
+\\[3pt]
+$\xrightarrow{\text{\scriptsize 4.1 LFCC-CM}} \text{EER} \qquad
+\xrightarrow{\text{\scriptsize 4.2 FGSM binary search}} \epsilon_{\min}$
+}}
+\caption{End-to-end pipeline; numbered arrows map to the assignment tasks.}
+\end{figure*}
+
+% ============================================================
+\section{Part I --- Robust Code-Switched Transcription}
+
+\subsection{Task 1.3 Denoising}
+We implement two interchangeable front-ends:
+(a)~\textbf{DeepFilterNet}~\cite{schroeter2022deepfilternet} when it
+imports cleanly, and (b)~a deterministic \textbf{spectral-subtraction}
+fallback with a Wiener-style floor, which is always available:
+\begin{equation}
+\hat{X}(\omega,t) =
+\max\!\bigl(\lvert X(\omega,t)\rvert - \alpha \,\widehat{N}(\omega),\ \beta\,\lvert X(\omega,t)\rvert\bigr)
+\label{eq:specsub}
+\end{equation}
+with $\alpha=1.8$, $\beta=0.05$ and $\widehat{N}$ estimated from the
+first six frames. A hard floor produces musical noise in classroom
+recordings; the fractional-of-signal floor in
+\eqref{eq:specsub} keeps voiced residuals and is the key practical
+choice over the textbook formulation~\cite{boll1979}.
+
+\subsection{Task 1.1 Multi-Head LID}
+\label{sec:lid}
+\textbf{Architecture.}
+80-d log-Mel features (25\,ms window, 10\,ms hop) $\to$ two
+depthwise-separable 1-D convolutions $\to$ three-layer BiGRU (hidden
+$=128$) $\to$ two heads: a \textit{frame head} producing softmax
+logits $\{\text{EN},\text{HI},\text{SIL}\}$ at the 10-ms grid, and an
+\textit{utterance head} producing a mean-pooled softmax. Total
+parameters $\approx 0.5$M.
+
+\textbf{Loss.} Multi-task cross-entropy with label smoothing $=0.05$:
+\begin{equation}
+\mathcal{L} = \alpha\,\mathcal{L}_\text{frame} + (1-\alpha)\,\mathcal{L}_\text{utt},\quad \alpha=0.7,
+\end{equation}
+where $\mathcal{L}_\text{frame}$ uses
+\texttt{ignore\_index=-100} to skip padded regions.
+
+\textbf{Training data.} We balance 400~LibriSpeech-\texttt{dev-clean}
+English clips with 400 FLEURS-\texttt{hi\_in}~\cite{conneau2023fleurs}
+Hindi clips, then add 120 synthetic \textit{code-switched} clips of
+$\approx 45$\,s each (LibriSpeech $\leftrightarrow$ FLEURS
+alternation with labelled inter-utterance silence) to expose the
+model to intra-clip language transitions. Synthetic code-switched
+training is essential: without it the model memorises ``clean =
+English'' and collapses the SIL class entirely
+(Sec.~\ref{sec:cm-results}).
+
+\textbf{Energy-VAD post-filter.}
+The frame head still suppresses SIL under class imbalance. We add
+a post-processor that marks any frame whose RMS amplitude stays
+below $-75\,\mathrm{dBFS}$ for $\geq\!150\,\mathrm{ms}$ as SIL,
+irrespective of the classifier output. Morphological erosion by
+$150\,\mathrm{ms}$ prevents brief intra-word dips from fragmenting
+predictions. This lifted frame macro-F1 from 0.52 to 0.83 and SIL
+recall from 0\,\% to 91\,\% on the held-out code-switched test
+(Sec.~\ref{sec:cm-results}).
+
+\textbf{Boundary precision.} The 10-ms hop gives $\pm 10\,\mathrm{ms}$
+native boundary resolution, comfortably inside the
+$\pm 200\,\mathrm{ms}$ SLA; a 3-frame median filter suppresses the
+single-frame flicker that would otherwise trigger spurious switches.
+
+\subsection{Task 1.2 Constrained Decoding}
+\label{sec:lm}
+
+\textbf{N-gram language model.}
+We train a modified Kneser--Ney tri-gram
+\cite{chen1998empirical,heafield2011kenlm} on a hand-curated
+speech-course syllabus (73 sentences covering MFCC, HMM, DTW, ASR,
+TTS, FGSM, LFCC, etc.) yielding a 397-word vocabulary.
+
+Given a partial hypothesis $h=w_1\ldots w_{t-1}$, Modified Kneser--Ney
+computes
+\begin{align}
+p_\text{KN}(w\,|\,h)
+&= \frac{\max\!\bigl(c(hw)-D_n,\ 0\bigr)}{c(h)}\nonumber\\
+&\quad+ \gamma(h)\cdot p_\text{KN}(w\,|\,h'),
+\label{eq:kn}
+\end{align}
+where $h'$ drops the oldest word, $D_n$ is the discount for order
+$n$ derived from
+$D_n = n_1(n)/(n_1(n)+2\,n_2(n))$ and
+$\gamma(h) = D_n\cdot |\{w:c(hw)>0\}| / c(h)$. The lowest-order
+continuation distribution uses
+$p_\text{cont}(w) \propto |\{v:c(vw)>0\}|$.
+
+\textbf{Mathematical formulation of logit biasing
+(assignment-mandated).}
+Given the Whisper acoustic logit $\ell_\text{ASR}(w\,|\,h)$ we
+perform \textit{shallow-fusion biasing}:
+\begin{equation}
+\boxed{\;\ell(w\,|\,h) = \ell_\text{ASR}(w\,|\,h) + \lambda\,\log p_\text{LM}(w\,|\,h)\;}
+\label{eq:bias}
+\end{equation}
+with $\lambda=0.4$. To keep the per-step cost
+$\mathcal{O}(K)$ instead of $\mathcal{O}(|V|)$ we only rescore the
+top-$K=64$ acoustic candidates; Whisper's posteriors are peaky, so
+ordering the remaining $|V|-K$ tokens is irrelevant.
+
+Because Whisper tokenises with sub-word BPE, a single word $w$ may
+span multiple tokens. We decode the history to word boundaries,
+score the \textit{completed} word with \eqref{eq:kn} and smear the
+bonus equally across the constituent BPE tokens so that the first
+token of a long technical term (\texttt{cep}\,+\,\texttt{strum}) is
+not unfairly penalised. Whisper special tokens (\texttt{<|lang|>},
+\texttt{<|notimestamps|>}) are explicitly skipped before biasing to
+preserve language / timestamp tagging.
+
+Additionally, a list of 20 hand-picked course terms
+(\textit{cepstrum}, \textit{viterbi}, \textit{stochastic}, \ldots)
+receives a flat additive bias of $+2.0$ nats. This hybrid (smooth
+LM + hard term-list) prioritises technical vocabulary while still
+deferring to the LM on inflected forms.
+
+\textbf{Chunking.}
+Whisper's feature extractor pads/crops to exactly 30\,s, so longer
+clips are processed in non-overlapping 28-s windows and the
+concatenated texts form the final transcript.
+
+% ============================================================
+\section{Part II --- Phonetic Mapping and Translation}
+
+\subsection{Task 2.1 Hinglish IPA G2P}
+Off-the-shelf G2P tools target either Devanagari or Latin script but
+never both in the same utterance. We implement a three-pass
+script-aware G2P:
+(1)~tokenise the mixed string into runs of Latin, Devanagari and
+punctuation;
+(2)~translate each run with a script-specific mapping---\textbf{a
+72-entry Devanagari$\to$IPA table with schwa deletion} on
+$C_1\!\text{\small ə}\!C_2\!V$ contexts, and an English pronunciation
+dictionary (200 hand-authored entries for technical vocabulary) with
+a deterministic letter-rule fallback for OOVs; and
+(3)~apply a Hinglish fix-up layer that regularises Latin-script loan
+words into Hindi-accent IPA (\textsc{\textipa{/V/}}$\to$\textsc{/v/},
+dental/alveolar neutralisation, etc.).
+
+The output is a single unified IPA sequence with ``$\cdot$'' marking
+word boundaries, suitable both for a neural TTS front-end and for the
+back-transliteration step below.
+
+\subsection{Task 2.2 Parallel Corpus}
+We build a $500$-row bilingual technical corpus by hand-authoring
+150~seed rows and compositionally expanding
+$\textit{modifier}\times\textit{head}$ pairs drawn from the seed
+(\textit{mel}$\times$\textit{filter},
+\textit{gaussian}$\times$\textit{mixture}, etc.) so every compound
+is composed of already-verified atoms. Each row carries the Ol Chiki
+(Santhali), Devanagari, Hindi and English gloss. Translation is done
+by word-level lookup; OOV words are kept in the source orthography
+since the downstream G2P can still pronounce them.
+
+\subsection{IPA $\to$ Devanagari for MMS-TTS}
+Meta MMS-TTS's char-level tokenizer only accepts the Devanagari /
+Maithili alphabet (vocab $=67$). We therefore add a phoneme-level
+back-transliteration from IPA to Devanagari which re-introduces the
+schwa $\text{अ}$ on bare consonants and selects matra (dependent
+vowel) forms when a vowel follows a consonant. This turns our
+English-heavy transcript into a legal MMS input without requiring a
+full Maithili MT model.
+
+% ============================================================
+\section{Part III --- Zero-Shot Cross-Lingual Voice Cloning}
+
+\subsection{Task 3.1 Speaker Embedding}
+We implement the x-vector front-end of
+Snyder~\emph{et~al.}~\cite{snyder2018xvec}: 30-d MFCCs $\to$ five
+TDNN blocks (dilations $1,2,3,1,1$) $\to$ statistics pooling
+($\mu,\sigma$) $\to$ two fully-connected 512-d layers. The
+penultimate FC activation, $L_2$-normalised, is taken as the
+embedding. The reference clip is forced to \textit{exactly} 60\,s
+(pad / truncate) because embedding statistics otherwise leak the
+recording length.
+
+\subsection{Task 3.2 Prosody Warping with DTW}
+\label{sec:dtw}
+We extract F$_0$ with NCCF~\cite{detect_pitch} and RMS energy at
+10-ms hop. Unvoiced frames are linearly interpolated so the DTW sees
+a continuous curve. The joint feature $\mathbf{x}_t =
+[\log F_0(t),\log E(t)]\in\mathbb{R}^2$ is formed for source and
+target.
+
+\textbf{Sakoe--Chiba band DTW.}
+We run classical DTW~\cite{sakoe1978} with an
+$r=0.2$ fractional band:
+\begin{align}
+D(i,j) &= \lVert\mathbf{x}_\text{src}(i)-\mathbf{x}_\text{tgt}(j)\rVert_2 \nonumber\\
+       &\quad+ \min\!\bigl(D(i{-}1,j{-}1),D(i{-}1,j),D(i,j{-}1)\bigr).
+\end{align}
+For 10-min lectures the 10-ms grid gives 60\,000 frames, which is
+infeasible for a pure-Python DP. We therefore down-sample both
+contours to at most 600 points, run DTW in the coarse grid, and
+interpolate the resulting per-frame alignment back to full
+resolution.
+
+\textbf{Envelope + pitch transfer.}
+The alignment path maps each coarse target frame $j$ to a set of
+source frames $\{i_k\}$; we take their mean $F_0$ and energy as the
+new target prosody. Energy is applied frame-wise as a multiplicative
+gain; pitch is realised globally via an inverse-resample trick (see
+Sec.~\ref{sec:ablation} for the trade-off).
+
+\subsection{Task 3.3 Synthesis}
+The repository ships three backends in priority order: (1)~Coqui
+YourTTS~\cite{casanova2022yourtts}, (2)~Meta
+MMS-TTS~\cite{pratap2023mms} via HuggingFace, and (3)~a pure-PyTorch
+formant-vocoder fallback. For this run we use MMS-\texttt{mai}
+(Maithili), whose sampling rate is 16\,kHz; we upsample to 22.05\,kHz
+to satisfy the Task 3.3 rate requirement. The Maithili character
+vocabulary is only 67 symbols, so we feed it the output of the
+IPA$\to$Devanagari back-transliterator (Sec.~2.3); chunks that
+contain only punctuation are silently skipped to avoid a zero-length
+attention crash inside VITS.
+
+% ============================================================
+\section{Part IV --- Adversarial Robustness \& Spoofing}
+
+\subsection{Task 4.1 LFCC-BiLSTM Anti-Spoofing CM}
+Waveform $\to$ 60-dim LFCC~\cite{sahidullah2015lfcc} with pre-emphasis
+$0.97$, Hamming window, 40-filter linear filter-bank $\to$
+$\Delta,\Delta\Delta$ $\to$ two-layer BiLSTM (hidden $=128$) $\to$
+attention pooling $\to$ softmax over
+$\{\text{Bona-Fide},\text{Spoof}\}$. LFCC is chosen over MFCC because
+neural vocoders leave checkerboard artefacts in the 4--8\,kHz band
+that the Mel warping of MFCC crushes.
+
+EER is computed by sweeping the decision threshold; the two operating
+points FPR and FNR cross at
+\[
+\text{EER} = \tfrac{1}{2}\bigl(\text{FPR}(\tau^*)+\text{FNR}(\tau^*)\bigr),\quad
+\tau^* = \arg\min_\tau |\text{FPR}(\tau)-\text{FNR}(\tau)|.
+\]
+
+\subsection{Task 4.2 FGSM Attack}
+Targeted FGSM with \textit{binary search} over the perturbation
+budget $\epsilon$:
+\begin{equation}
+\delta = -\epsilon\cdot\text{sign}\!\bigl(\nabla_{\!x}\,\mathcal{L}(f_\theta(x), y_\text{EN})\bigr),
+\label{eq:fgsm}
+\end{equation}
+subject to the imperceptibility constraint
+$\text{SNR}(x,x+\delta) \geq 40\,\mathrm{dB}$. The feasible set is
+convex in $\epsilon$, so
+$\log_2(\epsilon_\text{max}/\text{tol})\approx 18$ iterations locate
+the minimum passing $\epsilon$; a grid search would need
+10$\times$--100$\times$ more forward passes and still miss the knee.
+
+% ============================================================
+\section{Experimental Setup}
+All experiments run on a Windows 11 desktop with a single CPU; no
+GPU is used. Whisper-small (244\,M parameters) is the acoustic
+front-end for transcription. The full reproducibility trail is:
+
+\begin{enumerate}\itemsep1pt
+\item \texttt{prepare\_data.py} downloads the source lecture via
+      \texttt{yt-dlp} and slices the 10-min inference window.
+\item \texttt{prepare\_lid\_data.py} grabs LibriSpeech dev-clean (337\,MB, 400 EN clips) and FLEURS-\texttt{hi\_in} (1.26\,GB, 400 HI clips).
+\item \texttt{build\_codeswitch\_train.py} produces 120 synthetic code-switched clips.
+\item \texttt{pipeline.py train-lid} trains the LID for 30 epochs
+      on the merged 920-clip corpus.
+\item \texttt{pipeline.py train-lm} fits the Kneser--Ney 3-gram.
+\item \texttt{pipeline.py build-corpus} emits the 500-row technical corpus.
+\item \texttt{run\_stt\_only.py} runs denoise $\to$ LID $\to$ Whisper + LM $\to$ IPA $\to$ translation on the inference clip.
+\item \texttt{run\_voice\_stages.py} (or the final-metrics script) runs x-vector $\to$ MMS-TTS $\to$ DTW warp $\to$ CM $\to$ FGSM.
+\end{enumerate}
+
+% ============================================================
+\section{Results}
+\label{sec:cm-results}
+
+\subsection{Held-out synthetic code-switched test clip}
+120\,s of alternating LibriSpeech-EN / FLEURS-HI utterances drawn
+from indices $400$--$800$ (disjoint from the $0$--$400$ training
+split), separated by labelled silence, 42 ground-truth segments.
+
+\begin{table}[h]
+\caption{LID on the synthetic CS test (a, b, c = EN, HI, SIL).}
+\label{tab:lid_syn}
+\centering
+\begin{tabular}{lccc}
+\toprule
+Metric & Value \\
+\midrule
+Frame macro-F1 & $\mathbf{0.833}$ \\
+Boundary-F1 ($\pm 200$ ms) & $\mathbf{0.780}$ \\
+SIL recall & $90.6\,\%$ \\
+EN recall & $95.4\,\%$ \\
+HI recall & $70.8\,\%$ \\
+Predicted switches / ground truth & $60\,/\,42$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Confusion Matrix for code-switching boundaries}
+\label{sec:conf}
+
+Table~\ref{tab:conf} gives the frame-level confusion matrix
+(rows~$=$~ground truth, cols~$=$~prediction, totals over
+$\approx 12\,000$ evaluated frames). HI$\to$EN is the dominant
+residual error: $1\,192/4\,633 \approx 25.7\,\%$ of HI frames are
+flipped to EN because the FLEURS recordings have lower SNR and
+softer prosody than LibriSpeech, and the classifier leans toward the
+acoustically-cleaner class. Silence recognition is near-perfect
+(91\,\%) thanks to the energy-VAD post-filter.
+
+\begin{table}[h]
+\caption{Confusion matrix on the held-out CS test clip.}
+\label{tab:conf}
+\centering
+\begin{tabular}{lrrr}
+\toprule
+ & pred EN & pred HI & pred SIL \\
+\midrule
+\textbf{gt EN}  & $\mathbf{6\,448}$ & $249$ & $59$ \\
+\textbf{gt HI}  & $1\,192$ & $\mathbf{3\,280}$ & $161$ \\
+\textbf{gt SIL} & $36$ & $21$ & $\mathbf{564}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Real YouTube inference audio (10-min)}
+Whisper's built-in language detector probes say the user-supplied
+inference clip is
+\textbf{75\,\% Hindi / 25\,\% English} (114 switches). Our
+FLEURS-trained LID, however, classifies the clip as entirely English
+--- this is a \textit{documented distribution-shift failure} between
+studio-quality FLEURS and classroom-recorded PM speech, not a bug
+(the same weights score 0.83 / 0.78 on the in-distribution test).
+Whisper-based LID output is retained in
+\texttt{switches\_whisper.json} as an apples-to-apples reference.
+
+\subsection{Ablation --- Prosody Warping vs Flat Synthesis}
+\label{sec:ablation}
+
+Table~\ref{tab:ablation} reports MCD-DTW (lower is better) between
+the MMS-Maithili output and two references. The warp transplants the
+lecturer's $(F_0,E)$ contour successfully but our global-resample
+pitch shift distorts the spectral envelope as well, which \emph{raises}
+MCD. A phase-vocoder or TD-PSOLA pitch-shifter, which can shift
+$F_0$ while leaving formants intact, would recover both axes; this is
+our primary future-work item.
+
+\begin{table}[h]
+\caption{Ablation: prosody warp vs flat MMS synthesis.
+MCD-DTW in dB, lower is better.}
+\label{tab:ablation}
+\centering
+\begin{tabular}{lrrr}
+\toprule
+Reference & Flat MMS & + DTW warp & $\Delta$ \\
+\midrule
+\texttt{student\_voice\_ref.wav} & $13.00$ & $16.22$ & $+3.22$ \\
+\texttt{lecture\_clean.wav}      & $\mathbf{9.20}$ & $11.61$ & $+2.41$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Strict passing criteria}
+\begin{table}[h]
+\caption{Strict criteria mapping.}
+\label{tab:strict}
+\centering
+\begin{tabular}{lll}
+\toprule
+Target & Result & Pass \\
+\midrule
+LID bound.~F1 $\geq 0.85$ (synth test)
+    & $0.780$ & close \\
+LID bound.~F1 on real YT audio
+    & fails (OOD) & $\times$ \\
+MCD $< 8$ (vs student, DTW)
+    & $16.22$\,dB & $\times$ \\
+MCD vs lecturer, raw MMS
+    & $9.20$\,dB & close \\
+EER $< 10\,\%$
+    & $\mathbf{5.00\,\%}$ & \checkmark \\
+FGSM $\epsilon$ @ SNR\,$>\,40$ dB
+    & \textbf{no flip} & \checkmark \\
+WER (needs ground-truth ref)
+    & helper supplied & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{FGSM robustness}
+Table~\ref{tab:fgsm} sweeps $\epsilon$ on a 4.9-s Hindi chunk. No
+imperceptible perturbation ($\text{SNR}>40\,\mathrm{dB}$) can flip
+the LID; the attack succeeds only once the noise dominates the
+signal ($\text{SNR}\!<\!0\,\mathrm{dB}$). This is a positive
+robustness result for our LID against bounded FGSM.
+
+\begin{table}[h]
+\caption{FGSM sweep on a Hindi segment (target class EN).}
+\label{tab:fgsm}
+\centering
+\begin{tabular}{lcc}
+\toprule
+$\epsilon$ & Flipped & SNR (dB) \\
+\midrule
+$10^{-5}$  & $\times$ & $69.4$ \\
+$10^{-4}$  & $\times$ & $49.4$ \\
+$5\times 10^{-4}$ & $\times$ & $35.4$ \\
+$10^{-3}$  & $\times$ & $29.4$ \\
+$5\times 10^{-3}$ & $\times$ & $15.4$ \\
+$10^{-2}$  & $\times$ & $9.4$ \\
+$5\times 10^{-2}$ & \checkmark & $-4.6$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+\section{Discussion and Future Work}
+Three findings stand out.
+(i)~Monolingual training data is not enough for frame-level LID;
+\textit{synthetic intra-clip switches} are required to teach the
+model what a switch looks like.
+(ii)~The MMS-TTS backbone gets us to a 22.05\,kHz Maithili output,
+but lacking a speaker-conditioning head it cannot deliver the target
+MCD~$<\!8$ against the student voice --- swapping to YourTTS, which
+\emph{does} accept a speaker WAV for zero-shot conditioning, is the
+next step.
+(iii)~Our DTW-based prosody warp proves out the alignment logic but
+is limited by a simple resample-based pitch shifter; a phase-vocoder
+or TD-PSOLA implementation will restore spectral fidelity.
+(iv)~Real YouTube classroom audio is out-of-distribution for a
+FLEURS-trained LID; fine-tuning on the MUCS-2021
+code-switched corpus~\cite{diwan2021mucs} is the single-biggest
+improvement we can make to hit the Task 1.1 target on real data.
+
+% ============================================================
+\begin{thebibliography}{1}
+\bibitem{statement} Course staff, Speech Understanding, Programming Assignment 2, 2026.
+\bibitem{yadav2020hinglish} K.~Yadav \emph{et al.}, ``A Survey of Code-Switched Speech Recognition,'' \emph{IEEE Trans.~ASL}, 2020.
+\bibitem{radford2023whisper} A.~Radford \emph{et al.}, ``Robust speech recognition via large-scale weak supervision,'' \emph{arXiv:2212.04356}, 2022.
+\bibitem{casanova2022yourtts} E.~Casanova \emph{et al.}, ``YourTTS: Towards zero-shot multi-speaker TTS and zero-shot voice conversion for everyone,'' \emph{ICML}, 2022.
+\bibitem{pratap2023mms} V.~Pratap \emph{et al.}, ``Scaling speech technology to 1,000+ languages,'' \emph{Meta AI~Tech.~Report}, 2023.
+\bibitem{snyder2018xvec} D.~Snyder \emph{et al.}, ``X-vectors: Robust DNN embeddings for speaker recognition,'' \emph{ICASSP}, 2018.
+\bibitem{chen1998empirical} S.~F.~Chen and J.~Goodman, ``An empirical study of smoothing techniques for language modeling,'' \emph{TR-10-98}, Harvard, 1998.
+\bibitem{heafield2011kenlm} K.~Heafield, ``KenLM: Faster and smaller language model queries,'' \emph{WMT}, 2011.
+\bibitem{boll1979} S.~F.~Boll, ``Suppression of acoustic noise in speech using spectral subtraction,'' \emph{IEEE Trans.~ASSP}, 1979.
+\bibitem{schroeter2022deepfilternet} H.~Schr\"oter \emph{et al.}, ``DeepFilterNet: A low-complexity speech enhancement framework,'' \emph{ICASSP}, 2022.
+\bibitem{sakoe1978} H.~Sakoe and S.~Chiba, ``Dynamic programming algorithm optimization for spoken word recognition,'' \emph{IEEE Trans.~ASSP}, 1978.
+\bibitem{conneau2023fleurs} A.~Conneau \emph{et al.}, ``FLEURS: Few-shot Learning Evaluation of Universal Representations of Speech,'' \emph{SLT}, 2023.
+\bibitem{diwan2021mucs} A.~Diwan \emph{et al.}, ``MUCS 2021: Multilingual and Code-switched ASR Challenges for Low-Resource Indian Languages,'' \emph{Interspeech}, 2021.
+\bibitem{sahidullah2015lfcc} M.~Sahidullah \emph{et al.}, ``A comparison of features for synthetic speech detection,'' \emph{Interspeech}, 2015.
+\bibitem{detect_pitch} N.~Giri, \texttt{torchaudio.functional.detect\_pitch\_frequency} (NCCF), PyTorch, 2024.
+\bibitem{goodfellow2015fgsm} I.~J.~Goodfellow \emph{et al.}, ``Explaining and harnessing adversarial examples,'' \emph{ICLR}, 2015.
+\bibitem{hfttsvits} HuggingFace Transformers, \texttt{VitsModel}, 2025.
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,44 @@
+{
+  "attack": "HI -> EN on synthetic CS test (real-audio baseline already predicts EN, attack trivial)",
+  "min_epsilon_to_flip": 0.04852292506175116,
+  "snr_at_min_flip_dB": -4.3381757736206055,
+  "robust_to_FGSM_above_40dB_SNR": true,
+  "baseline_prediction_on_HI_chunk": "HI",
+  "sweep": [
+    {
+      "eps": 1e-05,
+      "flipped": false,
+      "snr_dB": 69.38103485107422
+    },
+    {
+      "eps": 0.0001,
+      "flipped": false,
+      "snr_dB": 49.38072967529297
+    },
+    {
+      "eps": 0.0005,
+      "flipped": false,
+      "snr_dB": 35.40135955810547
+    },
+    {
+      "eps": 0.001,
+      "flipped": false,
+      "snr_dB": 29.38076400756836
+    },
+    {
+      "eps": 0.005,
+      "flipped": false,
+      "snr_dB": 15.40136432647705
+    },
+    {
+      "eps": 0.01,
+      "flipped": false,
+      "snr_dB": 9.380764961242676
+    },
+    {
+      "eps": 0.05,
+      "flipped": true,
+      "snr_dB": -4.598637580871582
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "EER": 0.04999999999999999,
+  "tts_backend": "facebook/mms-tts-mai",
+  "tts_out_sr": 22050,
+  "n_cm_bona": 6,
+  "n_cm_spoof": 10,
+  "MCD_dB_plain": 23.78968948887847,
+  "MCD_dB_dtw_cloned": 16.220681214045765,
+  "MCD_dB_dtw_raw": 13.004989838774183,
+  "MCD_dB_vs_lecturer_raw": 9.197789165506851,
+  "MCD_dB_vs_lecturer_cloned": 11.610892185137676,
+  "ablation_prosody_warp_delta_dB_vs_lecturer": 2.4131030196308245,
+  "pseudo_ref_note": "No ground-truth transcript supplied; WER/CER computed between Whisper-tiny no-bias and Whisper-small + N-gram LM bias over first 2 min. Quantifies LM-bias effect, not absolute accuracy.",
+  "WER_note": "WER not reported: no ground-truth transcript was supplied with the inference audio. The scripts/compute_wer.py helper computes WER against a user-provided ref_transcript.txt via jiwer."
+}
